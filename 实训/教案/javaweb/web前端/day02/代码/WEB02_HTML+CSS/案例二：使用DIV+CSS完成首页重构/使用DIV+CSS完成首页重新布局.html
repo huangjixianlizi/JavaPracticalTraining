@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>首页</title>
+		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+				font-size: 13px;
+			}
+			#container{
+				width: 1300px;
+				border: 1px solid red;
+				height: 2000px;
+				/*居中显示*/
+				margin: auto;
+			}
+			/*#logo{
+				height: 50px;
+				border: 1px solid green;
+			}*/
+			.top{
+				width: 430px;
+				border: 1px solid black;
+				height: 50px;
+				float: left;
+				/*文本内容垂直居中*/
+				line-height:50px ;
+			}
+			
+			#menu{
+				height: 50px;
+				border: 1px solid blue;
+				background-color: black;
+			}
+			#menu ul li{
+				/*display: inline;*/
+				display: inline-block;
+				width: 80px;
+				
+				height: 48px;
+				text-align: center;
+				line-height: 48px;
+				color:gainsboro;
+			}
+			.clear{
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<!--logo部分-->
+			<div id="logo">
+				<div class="top">
+					<img src="../img/logo.png" height="46">
+				</div>
+				<div class="top">
+					<img src="../img/header.png" height="46">
+				</div>
+				<div class="top">
+					<a href="#">登录</a>
+					<a href="#">注册</a>
+					<a href="#">首页</a>
+				</div>
+			</div>
+			<div class="clear"></div>
+			<!--导航部分-->
+			<div id="menu">
+				<ul>
+					<li style="font-size: 20px;">首页</li>
+					<li style="color: white;">手机数码</li>
+					<li>电脑办公</li>
+					<li>服装鞋帽</li>
+					<li>母婴产品</li>
+					<li>奢侈品</li>
+				</ul>
+			</div>
+			
+			<!--轮播-->
+			<div id="adv1">
+				<img src="../img/1.jpg" width="100%">
+			</div>
+			
+			<!--热门商品-->
+			<div id="hot"></div>
+			
+			<!--广告-->
+			<div id="adv2"></div>
+			
+			<!--最新商品-->
+			<div id="new"></div>
+			
+			<!--广告-->
+			<div id="adv3"></div>
+			
+			<!--友情链接-->
+			<div id="foot"></div>
+			
+		</div>
+	</body>
+</html>

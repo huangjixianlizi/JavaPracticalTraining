@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="#" method="get">
+	<!--将所有的表单项放入form标签中
+		name:用于与后台进行交互
+	-->
+			用户名:<input type="text" name="username" value="默认值" size="40" maxlength="6"><br />
+			密码：<input type="password" name="userpass" required placeholder="请输入密码"><br />
+			性别：<input type="radio" name="sex" value="0">男
+			      <input type="radio" name="sex" value="1" checked>女<br />
+			兴趣：<input type="checkbox" name="hobby" value="0" checked>跳舞	
+				<input type="checkbox" name="hobby" value="1" checked>唱歌
+				<input type="checkbox" name="hobby" value="2">运动
+				<input type="checkbox" name="hobby" value="3">编程<br />
+			头像：<input type="file"><br />
+			<!--下拉列表-->
+			籍贯：<select name="province">
+					<option value="-1">--请选择省份--</option>
+					<option value="1">黑龙江</option>
+					<option value="2">江苏</option>
+					<option value="3" selected>浙江</option>
+			</select><br />
+			<!--多行文本框-->
+			描述：<textarea cols="60" rows="10" placeholder="请输入您的详细信息">
+			</textarea><br />
+			
+			<input type="submit" value="注册" /><br>
+			<input type="reset" value="重填" disabled><br />
+			<input type="button" value="普通按钮">
+		</form>
+	</body>
+</html>

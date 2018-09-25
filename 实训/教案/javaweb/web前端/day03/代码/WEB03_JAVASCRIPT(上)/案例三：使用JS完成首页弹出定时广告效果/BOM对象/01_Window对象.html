@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script>
+		
+		function deletePro()
+		{
+			//确认对话框：返回的是用户的选择，“确定”--true  “取消”--false
+//			var confirm = window.confirm("确认要删除该商品吗？");
+//			if(confirm)
+//			{
+//				//选择确定删除，将数据提交到后台进行删除操作
+//			}
+
+			//prompt()
+			//用户提示对话框:返回值使用户输入的内容
+			var content = window.prompt("请输入要删除的商品的ID",1);
+			//alert(content);
+		}
+	</script>
+	<body>
+		<input type="button"  value="删除" onclick="deletePro()">
+			<a href="02_History对象.html">访问History</a>
+	</body>
+</html>

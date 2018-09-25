@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>首页</title>
+		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+				font-size: 13px;
+			}
+			
+			a{
+				color: cornflowerblue;
+				text-decoration: none;
+			}
+			
+			#container{
+				width: 1300px;
+				border:0px solid red;
+				height: 2000px;
+				/*居中显示*/
+				margin: auto;
+			}
+			/*#logo{
+				height: 50px;
+				border:0px solid green;
+			}*/
+			.top{
+				width: 430px;
+				border:0px solid black;
+				height: 50px;
+				float: left;
+				/*文本内容垂直居中*/
+				line-height:50px ;
+			}
+			
+			#menu{
+				height: 50px;
+				border:0px solid blue;
+				background-color: black;
+			}
+			#menu ul li{
+				/*display: inline;*/
+				display: inline-block;
+				width: 80px;
+				
+				height: 48px;
+				text-align: center;
+				line-height: 48px;
+				color:gainsboro;
+			}
+			.clear{
+				clear: both;
+			}
+			.hot{
+				height: 525px;
+				border:0px solid pink;
+			}
+			.hot_top{
+				height: 50px;
+				border:0px solid black;
+				padding-left: 15px;
+				line-height: 50px;
+			}
+			.hot_top span{
+			
+				font-size: 24px;
+			}
+			.hot_bottom{
+				height: 475px;
+				border:0px solid blue;
+			}
+			.hot_bottom_left{
+				width: 220px;
+				height: 475px;
+				border:0px solid green;
+				float: left;
+			}
+			.hot_bottom_right{
+				width:1070px ;
+				height: 475px;
+				border:0px solid red;
+				float: left;
+			}
+			.big_img{
+				width:522px;
+				height: 230px;
+				border:0px solid blue;
+				float: left;
+			}
+			.small_img{
+				text-align: center;
+				width: 173px;
+				height: 230px;
+				border:0px solid red;
+				float: left;
+			}
+			
+			.small_img p{
+				line-height: 40px;
+			}
+			#foot p{
+				text-align: center;
+				font-size: 16px;
+				line-height: 25px;
+			}
+		</style>
+		<script>
+		//页面加载完毕时调用init函数
+			window.onload=init;
+			function init()
+			{
+				//启动定时器,时间单位是毫秒
+				window.setInterval("changImg()",3000);
+			}
+			
+			//定义全局变量
+			var i = 1;
+			function changImg(){
+				i++;
+				//获取轮播图片元素
+				document.getElementById("adv1_img").src="../img/"+i+".jpg";
+				if(i==3)
+				{
+					i=0;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="container">
+			<!--logo部分-->
+			<div id="logo">
+				<div class="top">
+					<img src="../img/logo.png" height="46">
+				</div>
+				<div class="top">
+					<img src="../img/header.png" height="46">
+				</div>
+				<div class="top">
+					<a href="#">登录</a>
+					<a href="#">注册</a>
+					<a href="#">首页</a>
+				</div>
+			</div>
+			<div class="clear"></div>
+			<!--导航部分-->
+			<div id="menu">
+				<ul>
+					<li style="font-size: 20px;">首页</li>
+					<li style="color: white;">手机数码</li>
+					<li>电脑办公</li>
+					<li>服装鞋帽</li>
+					<li>母婴产品</li>
+					<li>奢侈品</li>
+				</ul>
+			</div>
+			
+			<!--轮播-->
+			<div id="adv1">
+				<img id="adv1_img" src="../img/1.jpg" width="100%">
+			</div>
+			
+			<!--热门商品-->
+			<div class="hot">
+				<!--上下两个DIV-->
+				<div class="hot_top">
+					<span>热门商品</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<img src="../img/title2.jpg">
+				</div>
+				<div class="hot_bottom">
+					<!--左侧右侧两个DIV-->
+					<div class="hot_bottom_left">
+						<img src="../img/big01.jpg">
+					</div>
+					<div class="hot_bottom_right">
+						
+						<!--插入10个DIV-->
+						<div class="big_img">
+							<img src="../img/middle01.jpg" width="100%" height="100%">
+						</div>
+						<div class="small_img">
+							<img src="../img/small03.jpg">
+							<p>电炒锅</p>
+							<p>￥299.00</p>
+						</div>
+						<div class="small_img">
+							<img src="../img/small03.jpg">
+							<p>电炒锅</p>
+							<p>￥299.00</p>
+						</div>
+						<div class="small_img">
+							<img src="../img/small03.jpg">
+							<p>电炒锅</p>
+							<p>￥299.00</p>
+						</div>
+						<div class="small_img">
+							<img src="../img/small03.jpg">
+							<p>电炒锅</p>
+							<p>￥299.00</p>
+						</div>
+						<div class="small_img">
+							<img src="../img/small03.jpg">
+							<p>电炒锅</p>
+							<p>￥299.00</p>
+						</div>
+						<div class="small_img">
+							<img src="../img/small03.jpg">
+							<p>电炒锅</p>
+							<p>￥299.00</p>
+						</div>
+						<div class="small_img">
+							<img src="../img/small03.jpg">
+							<p>电炒锅</p>
+							<p>￥299.00</p>
+						</div>
+						<div class="small_img">
+							<img src="../img/small03.jpg">
+							<p>电炒锅</p>
+							<p>￥299.00</p>
+						</div>
+						<div class="small_img">
+							<img src="../img/small03.jpg">
+							<p>电炒锅</p>
+							<p>￥299.00</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!--广告-->
+			<div id="adv2">
+				<img src="../img/ad.jpg" width="100%">
+			</div>
+			
+			<!--最新商品-->
+			<div class="hot">
+				<!--上下两个DIV-->
+				<div class="hot_top">
+					<span>最新商品</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<img src="../img/title2.jpg">
+				</div>
+				<div class="hot_bottom">
+					<!--左侧右侧两个DIV-->
+					<div class="hot_bottom_left">
+						<img src="../img/big01.jpg">
+					</div>
+					<div class="hot_bottom_right">
+						
+						<!--插入10个DIV-->
+						<div class="big_img">
+							<img src="../img/middle01.jpg" width="100%" height="100%">
+						</div>
+						<div class="small_img">
+							<img src="../img/small03.jpg">
+							<p>电炒锅</p>
+							<p>￥299.00</p>
+						</div>
+						<div class="small_img">
+							<img src="../img/small03.jpg">
+							<p>电炒锅</p>
+							<p>￥299.00</p>
+						</div>
+						<div class="small_img">
+							<img src="../img/small03.jpg">
+							<p>电炒锅</p>
+							<p>￥299.00</p>
+						</div>
+						<div class="small_img">
+							<img src="../img/small03.jpg">
+							<p>电炒锅</p>
+							<p>￥299.00</p>
+						</div>
+						<div class="small_img">
+							<img src="../img/small03.jpg">
+							<p>电炒锅</p>
+							<p>￥299.00</p>
+						</div>
+						<div class="small_img">
+							<img src="../img/small03.jpg">
+							<p>电炒锅</p>
+							<p>￥299.00</p>
+						</div>
+						<div class="small_img">
+							<img src="../img/small03.jpg">
+							<p>电炒锅</p>
+							<p>￥299.00</p>
+						</div>
+						<div class="small_img">
+							<img src="../img/small03.jpg">
+							<p>电炒锅</p>
+							<p>￥299.00</p>
+						</div>
+						<div class="small_img">
+							<img src="../img/small03.jpg">
+							<p>电炒锅</p>
+							<p>￥299.00</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!--广告-->
+			<div id="adv3">
+				<img src="../img/footer.jpg" width="100%">
+			</div>
+			
+			<!--友情链接-->
+			<div id="foot">
+					<p>
+						<a href="#">关于我们</a>
+						<a href="#">联系我们</a>
+						<a href="#">招贤纳士</a>
+						<a href="#">法律声明</a>
+						<a href="#">友情链接</a>
+						<a href="#">支付方式</a>
+						<a href="#">配送方式</a>
+						<a href="#">服务声明</a>
+						<a href="#">广告声明</a>
+					</p>
+					<p>
+						Copyright © 2009-2017 极客商城 版权所有
+					</p>
+			</div>
+			
+		</div>
+	</body>
+	
+</html>

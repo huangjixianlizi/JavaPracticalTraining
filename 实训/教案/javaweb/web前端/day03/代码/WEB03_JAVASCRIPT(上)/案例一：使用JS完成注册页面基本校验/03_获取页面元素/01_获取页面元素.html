@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="#">
+			<p>用户名：<input type="text" name="username" id="username"></p>
+			<p>密码><input type="password" name="userpass" id="userpass"></p>
+			<p><input type="button" onclick="getValue()" value="获取"></p>
+		</form>
+	</body>
+	<script>
+		
+		//获取页面元素对象，根据ID获取
+		var uEle = document.getElementById("username");
+		
+		function getValue()
+		{
+//			alert("调用了");
+			//获取控件的属性
+			alert(uEle.value);
+		}
+		
+		
+		
+	</script>
+</html>

@@ -1,0 +1,2807 @@
+<!DOCTYPE html>
+<!--STATUS OK-->
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script src="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/element.js" async=""></script><script src="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/monkey.js" async=""></script><script src="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/dp.js" async=""></script><script src="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/snippetcacher.php" async="" charset="utf-8"></script><script src="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/ackm" async="" type="text/javascript"></script>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="description" content="JQuery是继prototype之后又一个优秀的Javascript库。它是轻量级的js库 ，它兼容CSS3，还兼容各种浏览器（IE 6.0+, FF 1.5+, Safari 2.0+, Opera 9.0+），jQuery2.0及后续版本将不再支持IE6/7/8浏览器。jQuery使用户能更方便地处理HTML（标准通用标记语言下的一个应用）、events、实现动画效果，并且方便地为网站提供AJAX交互。...">
+<title>jQuery_百度百科</title>
+
+<meta name="keywords" content="jQuery jqury jqurey jQuery特点 jQuery历史版本 jQuery使用方法 jQuery实例 jQuery插件机制 jQuery控件">
+<meta name="image" content="http://baike.bdimg.com/cms/static/baike.png">
+<script src="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/alog.js" async=""></script><script type="text/javascript">
+  void function(g,f,j,c,h,d,b){g.alogObjectName=h,g[h]=g[h]||function(){(g[h].q=g[h].q||[]).push(arguments)},g[h].l=g[h].l||+new Date,d=f.createElement(j),d.async=!0,d.src=c,b=f.getElementsByTagName(j)[0],b.parentNode.insertBefore(d,b)}(window,document,"script","http://img.baidu.com/hunter/alog/alog.min.js","alog");void function(){function c(){return;}window.PDC={mark:function(a,b){alog("speed.set",a,b||+new Date);alog.fire&&alog.fire("mark")},init:function(a){alog("speed.set","options",a)},view_start:c,tti:c,page_ready:c}}();void function(n){var o=!1;n.onerror=function(n,e,t,c){var i=!0;return!e&&/^script error/i.test(n)&&(o?i=!1:o=!0),i&&alog("exception.send","exception",{msg:n,js:e,ln:t,col:c}),!1},alog("exception.on","catch",function(n){alog("exception.send","exception",{msg:n.msg,js:n.path,ln:n.ln,method:n.method,flag:"catch"})})}(window);
+</script>
+<meta name="csrf-token" content="">
+
+<!--[if lte IE 9]>
+<script>
+    (function() {
+      var e = "abbr,article,aside,audio,canvas,datalist,details,dialog,eventsource,figure,footer,header,hgroup,mark,menu,meter,nav,output,progress,section,time,video".split(","),
+        i = e.length;
+      while (i--) {
+        document.createElement(e[i]);
+      }
+    })();
+  </script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/wiki-lemma_9f91e0d.css"><link rel="stylesheet" type="text/css" href="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/wiki-common-base_509f53a.css"><link rel="stylesheet" type="text/css" href="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/label_461cbe0.css"><link rel="stylesheet" type="text/css" href="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/sideShare_3e4292c.css"><link rel="stylesheet" type="text/css" href="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/praise_2120cd2.css"><link rel="stylesheet" type="text/css" href="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/toolButtons_a2c470f.css"><link rel="stylesheet" type="text/css" href="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/userInfo_9ba20c1.css"><link rel="stylesheet" type="text/css" href="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/pageMask_ff9a193.css"><link rel="stylesheet" type="text/css" href="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/wiki-lemma-module_65358f6.css"><link rel="stylesheet" type="text/css" href="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/shCore_7fba49a.css"><link rel="stylesheet" type="text/css" href="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/shCoreDefault_3f91dc3.css"><link rel="stylesheet" type="text/css" href="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/mainContent_637f952.css"><link rel="stylesheet" type="text/css" href="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/lemmaRelation_9f629f5.css"><link rel="stylesheet" type="text/css" href="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/zhixin_1c34583.css"><link rel="stylesheet" type="text/css" href="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/searchHeader_e786bfb.css"><script type="text/javascript">
+    alog('speed.set', 'ht', +new Date);
+</script><script src="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/wiki-lemma-module-lemmaRelation_49e0809.js" type="text/javascript"></script><script src="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/lemmaReferenceTip_98e1259.js" type="text/javascript"></script><script src="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/share.js"></script><script id="nstip" src="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/nstip.js" type="text/javascript"></script><link href="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/share_style0_16.css" rel="stylesheet"><link href="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/share_style0_32.css" rel="stylesheet"><script charset="utf-8" type="text/javascript" src="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/qc.php"></script></head>
+
+
+
+<body class="wiki-lemma normal"><div style="position: absolute; left: -1px; bottom: -1px; z-index: 0; width: 0px; height: 0px; overflow: hidden; visibility: hidden; display: none;" id="BAIDU_DUP_fp_wrapper"><iframe style="width: 0px; height: 0px; visibility: hidden; display: none;" src="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/o.htm" id="BAIDU_DUP_fp_iframe"></iframe></div>
+
+
+<div class="header-wrapper">
+<ul class="wgt-userbar"><li class="userbar_user" data-action="showUserMenu">
+<a href="javascript:;"><span>qingyuqiaoqiao</span><em class="cmn-inline-block cmn-icon cmn-icons cmn-icons_userbar-up"></em></a>
+</li>
+<li class="userbar_mall">
+<a href="http://baike.baidu.com/mall/" target="_blank"><em class="cmn-inline-block cmn-icon cmn-icons cmn-icons_userbar-shop"></em>商城</a>
+</li>
+<li class="userbar_message" data-action="showUserMsg">
+<a href="javascript:;"><em class="cmn-inline-block cmn-icon cmn-icons cmn-icons_userbar-message"></em><em class="cmn-icon cmn-icons cmn-icons_userbar-new userbar_message_new"></em>消息</a>
+</li>
+<li class="split">|</li>
+<li>
+<a href="http://www.baidu.com/">百度首页</a>
+</li></ul>
+<div class="header">
+<div class="layout">
+<div class="wgt-searchbar wgt-searchbar-main cmn-clearfix">
+<div class="logo-container">
+<a class="logo cmn-inline-block" title="到百科首页" href="http://baike.baidu.com/">
+<span class="cmn-baike-logo">
+<em class="cmn-icon cmn-icons cmn-icons_logo-bai"></em>
+<em class="cmn-icon cmn-icons cmn-icons_logo-du"></em>
+<em class="cmn-icon cmn-icons cmn-icons_logo-baike"></em>
+</span>
+</a>
+</div>
+<div class="search">
+<div class="nav">
+<a href="http://news.baidu.com/" data-href="http://news.baidu.com/ns?tn=news&amp;cl=2&amp;rn=20&amp;ct=1&amp;fr=bks0000&amp;ie=utf-8&amp;word=">新闻</a><a href="http://www.baidu.com/" data-href="http://www.baidu.com/s?ie=utf-8&amp;fr=bks0000&amp;wd=">网页</a><a href="http://tieba.baidu.com/" data-href="http://tieba.baidu.com/f?ie=utf-8&amp;fr=bks0000&amp;kw=">贴吧</a><a href="http://zhidao.baidu.com/" data-href="http://zhidao.baidu.com/search?pn=0&amp;&amp;rn=10&amp;lm=0&amp;fr=bks0000&amp;word=">知道</a><a href="http://music.baidu.com/" data-href="http://music.baidu.com/search?f=ms&amp;ct=134217728&amp;ie=utf-8&amp;rn=&amp;lm=-1&amp;pn=30fr=bks0000&amp;key=">音乐</a><a href="http://image.baidu.com/" data-href="http://image.baidu.com/search/index?tn=baiduimage&amp;ct=201326592&amp;lm=-1&amp;cl=2&amp;nc=1&amp;ie=utf-8&amp;word=">图片</a><a href="http://v.baidu.com/" data-href="http://v.baidu.com/v?ct=301989888&amp;rn=20&amp;pn=0&amp;db=0&amp;s=22&amp;ie=utf-8&amp;fr=bks0000&amp;word=">视频</a><a href="http://map.baidu.com/" data-href="http://map.baidu.com/m?ie=utf-8&amp;fr=bks0000&amp;word=">地图</a><a class="baike">百科</a><a href="http://wenku.baidu.com/" data-href="http://wenku.baidu.com/search?lm=0&amp;od=0&amp;ie=utf-8&amp;fr=bks0000&amp;word=">文库</a>
+</div>
+<div class="form">
+<form id="searchForm" action="/search/word" method="GET" target="_self">
+<input id="query" name="word" autocomplete="off" autocorrect="off" value="jQuery" type="text"><button id="search" type="button">进入词条</button><button id="searchLemma" type="button">搜索词条</button><a class="help" href="http://baike.baidu.com/help" target="_blank">帮助</a>
+</form>
+<form id="searchLemmaForm" action="/search" method="GET" target="_self">
+<input id="searchLemmaQuery" name="word" type="hidden">
+<input name="pn" value="0" type="hidden">
+<input name="rn" value="0" type="hidden">
+<input name="enc" value="utf8" type="hidden">
+</form>
+<ul style="display: none;" id="suggestion" class="suggestion">
+<div></div>
+<li class="extra">
+<span id="close">关闭</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<a target="_blank" nslog-type="10002202" nslog-params="{&quot;adId&quot;:&quot;513&quot;, &quot;adTitle&quot;: &quot;《欢乐颂》&quot;, &quot;adPos&quot;: 3}" href="http://baike.baidu.com/subview/44396/16953510.htm" title="" style="background:url(http://baike.bdimg.com/cms/static/huanlesongbanner.png ) 0px 0px no-repeat; width:200px; height:100px; outline:0; font-size:0; text-indent:-999em; display:block;position:absolute;right:0px; bottom:0px;"></a></div>
+</div>
+</div>
+<div class="navbar-wrapper">
+<div class="wgt-navbar">
+<div class="navbar-bg">
+<div class="navbar-bg-top">
+<div class="navbar-content layout">
+<div class="navbar-content-box">
+<dl class="index ">
+<dt><a href="http://baike.baidu.com/">首页</a></dt>
+</dl>
+<dl class="cat ">
+<dt><a>分类</a></dt>
+<dd>
+<div><a href="http://baike.baidu.com/art" target="_blank" class="art">艺术</a></div>
+<div><a href="http://baike.baidu.com/science" target="_blank" class="technology">科技</a></div>
+<div><a href="http://baike.baidu.com/ziran" target="_blank">自然</a></div>
+<div><a href="http://baike.baidu.com/wenhua" target="_blank">文化</a></div>
+<div><a href="http://baike.baidu.com/dili" target="_blank">地理</a></div>
+<div><a href="http://baike.baidu.com/shenghuo" target="_blank">生活</a></div>
+<div><a href="http://baike.baidu.com/shehui" target="_blank">社会</a></div>
+<div><a href="http://baike.baidu.com/renwu" target="_blank">人物</a></div>
+<div><a href="http://baike.baidu.com/jingji" target="_blank">经济</a></div>
+<div><a href="http://baike.baidu.com/tiyu" target="_blank">体育</a></div>
+<div><a href="http://baike.baidu.com/lishi" target="_blank">历史</a></div>
+</dd>
+</dl>
+<dl class="special ">
+<dt><a>特色百科</a></dt>
+<dd>
+<div><a href="http://baike.baidu.com/calendar/" target="_blank">历史上的今天</a></div>
+<div><a href="http://baike.baidu.com/museum/" target="_blank">数字博物馆</a></div>
+<div><a href="http://baike.baidu.com/shiji/2015?fr=navbar" target="_blank">史记·2015</a></div>
+<div><a href="http://baike.baidu.com/city/" target="_blank">城市百科</a></div>
+<div><a href="http://baike.baidu.com/operation/worldwar2" target="_blank">二战百科</a></div>
+<div><a href="http://baike.baidu.com/feiyi?fr=dhlfeiyi" target="_blank">非遗百科</a></div>
+</dd>
+</dl>
+<dl class="user">
+<dt><a>用户</a></dt>
+<dd>
+<div><a href="http://baike.baidu.com/kedou/" target="_blank">蝌蚪团</a></div>
+<div><a href="http://baike.baidu.com/event/ranmeng/" target="_blank">燃梦计划</a></div>
+<div><a href="http://baike.baidu.com/task/" target="_blank">百科任务</a></div>
+<div><a href="http://baike.baidu.com/mall/" target="_blank">百科商城</a></div>
+</dd>
+</dl>
+<dl class="cooperation">
+<dt><a>权威合作</a></dt>
+<dd>
+<div><a href="http://baike.baidu.com/operation/cooperation#joint" target="_blank">合作模式</a></div>
+<div><a href="http://baike.baidu.com/operation/cooperation#issue" target="_blank">常见问题</a></div>
+<div><a href="http://baike.baidu.com/operation/cooperation#connection" target="_blank">联系方式</a></div>
+</dd>
+</dl>
+<dl class="mobile">
+<dt><a>手机百科</a></dt>
+<dd>
+<div><a href="http://baike.baidu.com/m#download" target="_blank">客户端</a></div>
+<div><a href="http://baike.baidu.com/m#wap" target="_blank">网页版</a></div>
+</dd>
+</dl>
+<div class="usercenter">
+<div><a href="http://baike.baidu.com/usercenter" target="_blank"><em class="cmn-icon cmn-icons cmn-icons_navbar-usercenter"></em>个人中心</a></div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="body-wrapper">
+<div class="before-content">
+</div>
+<div class="content-wrapper">
+<div class="content">
+<div class="main-content">
+<div class="top-tool">
+<a style="display: inline-block;" class="add-sub-icon" href="javascript:;" title="添加义项" nslog-type="50000101"></a>
+<a href="http://baike.baidu.com/divideload/jQuery" title="拆分词条" target="_blank" class="split-icon" style="display:none;" nslog-type="50000104"></a>
+<div class="top-collect" nslog="area" nslog-type="50000102">
+<span class="collect-text">收藏</span>
+<div class="collect-tip">查看<a href="http://baike.baidu.com/uc/favolemma" target="_blank">我的收藏</a></div>
+</div>
+<a href="javascript:void(0);" class="top-vote" nslog-type="50000103">
+<span class="vote-count">5026</span>
+<span class="vote-tip">有用+1</span>
+<span class="voted-tip">已投票</span>
+</a>
+<div data-bd-bind="1461022753057" class="bdsharebuttonbox top-share bdshare-button-style0-32" data-tag="top-share">
+<a class="bds_more top-share-icon" data-cmd="more" nslog-type="9067">
+<span title="累计分享14次" class="bds_count share-count" id="j-topShareCount" data-cmd="count">3532</span>
+</a>
+</div>
+</div>
+<div style="width:0;height:0;clear:both"></div><dl class="lemmaWgt-lemmaTitle lemmaWgt-lemmaTitle-">
+<dd class="lemmaWgt-lemmaTitle-title">
+<h1>jQuery</h1>
+<a style="display: inline-block;" href="javascript:;" class="edit-lemma cmn-btn-hover-blue cmn-btn-28 j-edit-link"><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_edit-lemma"></em>编辑</a>
+<a class="lock-lemma" target="_blank" href="http://baike.baidu.com/view/10812319.htm" title="锁定"><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_lock-lemma"></em>锁定</a>
+</dd>
+</dl><div class="lemma-summary" label-module="lemmaSummary">
+<div class="para" label-module="para">JQuery是继<a target="_blank" href="http://baike.baidu.com/view/1217697.htm">prototype</a>之后又一个优秀的<a target="_blank" href="http://baike.baidu.com/view/16168.htm">Javascript</a>库。它是轻量级的js库 ，它兼容<a target="_blank" href="http://baike.baidu.com/view/1713027.htm">CSS3</a>，还兼容各种浏览器（<a target="_blank" href="http://baike.baidu.com/subview/703/10271308.htm">IE</a> 6.0+, <a target="_blank" href="http://baike.baidu.com/subview/31049/5089479.htm">FF</a> 1.5+, <a target="_blank" href="http://baike.baidu.com/subview/110484/5036395.htm">Safari</a> 2.0+, <a target="_blank" href="http://baike.baidu.com/subview/10019/7098372.htm">Opera</a> 9.0+），jQuery2.0及后续版本将不再支持IE6/7/8浏览器。jQuery使用户能更方便地处理<a target="_blank" href="http://baike.baidu.com/view/692.htm">HTML</a>（<a target="_blank" href="http://baike.baidu.com/view/5286041.htm">标准通用标记语言</a>下的一个应用）、events、实现动画效果，并且方便地为网站提供<a target="_blank" href="http://baike.baidu.com/subview/1641/5762264.htm">AJAX</a>交互。jQuery还有一个比较大的优势是，它的文档说明很全，而且各种应用也说得很详细，同时还有许多成熟的<a target="_blank" href="http://baike.baidu.com/view/18979.htm">插件</a>可供选择。jQuery能够使用户的html页面保持代码和html内容分离，也就是说，不用再在html里面插入一堆js来调用命令了，只需要定义id即可。</div><div class="para" label-module="para">jQuery是一个兼容多浏览器的<a target="_blank" href="http://baike.baidu.com/view/16168.htm">javascript</a>库，核心理念是write less,do more(写得更少,做得更多)。jQuery在2006年1月由美国人<a target="_blank" href="http://baike.baidu.com/view/3141971.htm">John Resig</a>在纽约的<a target="_blank" href="http://baike.baidu.com/view/1135515.htm">barcamp</a>发布，吸引了来自世界各地的众多JavaScript高手加入，由Dave Methvin率领团队进行开发。如今，jQuery已经成为最流行的javascript库，在世界前10000个访问最多的网站中，有超过55%在使用jQuery。</div><div class="para" label-module="para">jQuery是免费、开源的，使用<a target="_blank" href="http://baike.baidu.com/subview/74918/8382747.htm">MIT</a>许可协议。jQuery的语法设计可以使开发更加便捷，例如操作<a target="_blank" href="http://baike.baidu.com/view/55621.htm">文档</a>对象、选择<a target="_blank" href="http://baike.baidu.com/view/14806.htm">DOM</a>元素、制作动画效果、事件处理、使用<a target="_blank" href="http://baike.baidu.com/view/1641.htm">Ajax</a>以及其他功能。除此以外，jQuery提供API让开发者编写插件。其模块化的使用方式使开发者可以很轻松的开发出功能强大的静态或动态网页。</div><div class="para" label-module="para">jQuery，顾名思义，也就是JavaScript和查询（Query），即是辅助JavaScript开发的库。</div>
+</div>
+<div class="basic-info cmn-clearfix">
+<dl class="basicInfo-block basicInfo-left">
+<dt class="basicInfo-item name">中文名</dt>
+<dd class="basicInfo-item value">
+极快瑞
+</dd>
+<dt class="basicInfo-item name">外文名</dt>
+<dd class="basicInfo-item value">
+Jquery
+</dd>
+<dt class="basicInfo-item name">核心理念</dt>
+<dd class="basicInfo-item value">
+write less,do more
+</dd>
+<dt class="basicInfo-item name">发布时间</dt>
+<dd class="basicInfo-item value">
+2006年1月
+</dd>
+</dl><dl class="basicInfo-block basicInfo-right">
+<dt class="basicInfo-item name">发布人</dt>
+<dd class="basicInfo-item value">
+<a target="_blank" href="http://baike.baidu.com/view/3141971.htm">John Resig</a>
+</dd>
+<dt class="basicInfo-item name">发布地点</dt>
+<dd class="basicInfo-item value">
+美国纽约
+</dd>
+<dt class="basicInfo-item name">最新版本</dt>
+<dd class="basicInfo-item value">
+jQuery 2.1.3
+</dd>
+<dt class="basicInfo-item name">第一个版本</dt>
+<dd class="basicInfo-item value">
+jQuery 1.0（2006年8月）
+</dd>
+</dl></div>
+<div class="lemmaWgt-lemmaCatalog">
+<div class="lemma-catalog">
+<h2 class="block-title">目录</h2>
+<div class="catalog-list column-4">
+<ol>
+<li class="level1">
+<span class="index">1</span>
+<span class="text"><a href="#1">特点</a></span>
+</li>
+<li class="level1">
+<span class="index">2</span>
+<span class="text"><a href="#2">历史版本</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#2_1">jQuery 1.0</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#2_2">jQuery 1.1</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#2_3">jQuery 1.1.3</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#2_4">jQuery 1.2</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#2_5">jQuery 1.2.6</a></span>
+</li>
+</ol><ol><li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#2_6">jQuery 1.3</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#2_7">jQuery 1.3.2</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#2_8">jQuery 1.4</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#2_9">jQuery 1.5</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#2_10">jQuery 1.7</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#2_11">jQuery 1.7.2</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#2_12">jQuery 1.8.3</a></span>
+</li>
+</ol><ol><li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#2_13">jQuery 2.0</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#2_14">jQuery2.1.0</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#2_15">jQuery2.1.1</a></span>
+</li>
+<li class="level1">
+<span class="index">3</span>
+<span class="text"><a href="#3">使用方法</a></span>
+</li>
+<li class="level1">
+<span class="index">4</span>
+<span class="text"><a href="#4">实例</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#4_1">选择器</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#4_2">事件处理</a></span>
+</li>
+</ol><ol><li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#4_3">集合操作</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#4_4">动态特效</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#4_5">AJAX</a></span>
+</li>
+<li class="level1">
+<span class="index">5</span>
+<span class="text"><a href="#5">插件机制</a></span>
+</li>
+<li class="level1">
+<span class="index">6</span>
+<span class="text"><a href="#6">控件</a></span>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="anchor-list">
+<a name="1" class="lemma-anchor para-title"></a>
+<a name="sub1020297_1" class="lemma-anchor "></a>
+<a name="特点" class="lemma-anchor "></a>
+</div><div class="para-title level-2">
+<h2 class="title-text"><span class="title-prefix">jQuery</span>特点</h2>
+<a style="display: block;" class="edit-icon j-edit-link" data-edit-dl="1" href="javascript:;"><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_edit-lemma"></em>编辑</a>
+</div>
+<ol class="custom_cn  para-list list-paddingleft-1"><li class="list-cn-1-1 list-cn-paddingleft-1"><div class="para" label-module="para">动态特效</div>
+</li><li class="list-cn-1-2 list-cn-paddingleft-1"><div class="para" label-module="para"><a target="_blank" href="http://baike.baidu.com/subview/1641/5762264.htm">AJAX</a></div>
+</li><li class="list-cn-1-3 list-cn-paddingleft-1"><div class="para" label-module="para">通过插件来扩展</div>
+</li><li class="list-cn-1-4 list-cn-paddingleft-1"><div class="para" label-module="para">方便的工具 - 例如浏览器版本判断</div>
+</li><li class="list-cn-1-5 list-cn-paddingleft-1"><div class="para" label-module="para">渐进增强</div>
+</li><li class="list-cn-1-6 list-cn-paddingleft-1"><div class="para" label-module="para">链式调用</div>
+</li><li class="list-cn-1-7 list-cn-paddingleft-1"><div class="para" label-module="para">多浏览器支持，支持<a target="_blank" href="http://baike.baidu.com/view/85144.htm">Internet Explorer</a>6.0+、Opera9.0+、<a target="_blank" href="http://baike.baidu.com/view/3279.htm">Firefox</a>2+、<a target="_blank" href="http://baike.baidu.com/view/110484.htm">Safari</a>2.0+、<a target="_blank" href="http://baike.baidu.com/view/1835504.htm">Chrome</a>1.0+（在2.0.0中取消了对Internet Explorer6,7,8的支持）</div>
+</li></ol><div class="anchor-list">
+<a name="2" class="lemma-anchor para-title"></a>
+<a name="sub1020297_2" class="lemma-anchor "></a>
+<a name="历史版本" class="lemma-anchor "></a>
+</div><div class="para-title level-2">
+<h2 class="title-text"><span class="title-prefix">jQuery</span>历史版本</h2>
+<a style="display: block;" class="edit-icon j-edit-link" data-edit-dl="2" href="javascript:;"><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_edit-lemma"></em>编辑</a>
+</div>
+<div class="anchor-list">
+<a name="2_1" class="lemma-anchor para-title"></a>
+<a name="sub1020297_2_1" class="lemma-anchor "></a>
+<a name="jQuery 1.0" class="lemma-anchor "></a>
+</div><div class="para-title level-3">
+<h3 class="title-text"><span class="title-prefix">jQuery</span>jQuery 1.0</h3>
+</div>
+<div class="para" label-module="para">（2006年8月）：该库的第一个稳定版本，已经具有了对CSS选择符、事件处理和AJAX交互的稳健支持。</div><div class="anchor-list">
+<a name="2_2" class="lemma-anchor para-title"></a>
+<a name="sub1020297_2_2" class="lemma-anchor "></a>
+<a name="jQuery 1.1" class="lemma-anchor "></a>
+</div><div class="para-title level-3">
+<h3 class="title-text"><span class="title-prefix">jQuery</span>jQuery 1.1</h3>
+</div>
+<div class="para" label-module="para">（2007年1月）：这一版大幅简化了API。许多较少使用的方法被合并，减少了需要掌握和解释的方法数量。</div><div class="anchor-list">
+<a name="2_3" class="lemma-anchor para-title"></a>
+<a name="sub1020297_2_3" class="lemma-anchor "></a>
+<a name="jQuery 1.1.3" class="lemma-anchor "></a>
+</div><div class="para-title level-3">
+<h3 class="title-text"><span class="title-prefix">jQuery</span>jQuery 1.1.3</h3>
+</div>
+<div class="para" label-module="para">（2007年7月）：这次小版本变化包含了对jQuery选择符引擎执行速度的显著提升。从这个版本开始，jQuery的性能达到了Prototype、Mootools以及Dojo等同类JavaScript库的水平。</div><div class="anchor-list">
+<a name="2_4" class="lemma-anchor para-title"></a>
+<a name="sub1020297_2_4" class="lemma-anchor "></a>
+<a name="jQuery 1.2" class="lemma-anchor "></a>
+</div><div class="para-title level-3">
+<h3 class="title-text"><span class="title-prefix">jQuery</span>jQuery 1.2</h3>
+</div>
+<div class="para" label-module="para">（2007年9月）：这一版去掉了对XPath选择符的支持，原因是相对于CSS语法它已经变得多余了。这一版能够支持对效果的更灵活定制，而且借助新增的命名空间事件，也使<a target="_blank" href="http://baike.baidu.com/view/18979.htm">插件</a>开发变得更容易。</div>
+<div class="para" label-module="para">jQuery UI（2007年9月）：这个新的插件套件是作为曾经流行但已过时的Interface插件的替代项目而发布的。jQuery UI中包含大量预定义好的部件（widget），以及一组用于构建高级元素（例如可拖放的界面元素）的工具。</div><div class="anchor-list">
+<a name="2_5" class="lemma-anchor para-title"></a>
+<a name="sub1020297_2_5" class="lemma-anchor "></a>
+<a name="jQuery 1.2.6" class="lemma-anchor "></a>
+</div><div class="para-title level-3">
+<h3 class="title-text"><span class="title-prefix">jQuery</span>jQuery 1.2.6</h3>
+</div>
+<div class="para" label-module="para">（2008年5月）：这一版主要是将Brandon Aaron开发的流行的Dimensions<a target="_blank" href="http://baike.baidu.com/view/18979.htm">插件</a>的功能移植到了核心库中。</div><div class="anchor-list">
+<a name="2_6" class="lemma-anchor para-title"></a>
+<a name="sub1020297_2_6" class="lemma-anchor "></a>
+<a name="jQuery 1.3" class="lemma-anchor "></a>
+</div><div class="para-title level-3">
+<h3 class="title-text"><span class="title-prefix">jQuery</span>jQuery 1.3</h3>
+</div>
+<div class="para" label-module="para">（2009年1月）：这一版使用了全新的选择符引擎<a target="_blank" href="http://baike.baidu.com/view/4663033.htm">Sizzle</a>，库的性能也因此有了极大提升。这一版正式支持事件委托特性。</div><div class="anchor-list">
+<a name="2_7" class="lemma-anchor para-title"></a>
+<a name="sub1020297_2_7" class="lemma-anchor "></a>
+<a name="jQuery 1.3.2" class="lemma-anchor "></a>
+</div><div class="para-title level-3">
+<h3 class="title-text"><span class="title-prefix">jQuery</span>jQuery 1.3.2</h3>
+</div>
+<div class="para" label-module="para">（2009年2月）：这次小<a target="_blank" href="http://baike.baidu.com/view/421718.htm">版本升级</a>进一步提升了库的性能，例如改进了：visible/:hidden选择符、.height()/.width()方法的底层处理机制。另外，也支持查询的元素按文档顺序返回。</div><div class="anchor-list">
+<a name="2_8" class="lemma-anchor para-title"></a>
+<a name="sub1020297_2_8" class="lemma-anchor "></a>
+<a name="jQuery 1.4" class="lemma-anchor "></a>
+</div><div class="para-title level-3">
+<h3 class="title-text"><span class="title-prefix">jQuery</span>jQuery 1.4</h3>
+</div>
+<div class="para" label-module="para">（2010年1月14号）：对代码库进行了内部重写组织，开始建立一些风
+格规范。老的core.js文件被分为
+attribute.js,css.js,data.js,manipulation.js,traversing.js和queue.js；CSS和
+attribute的逻辑分离。</div>
+<div class="para" label-module="para"><b>⒈4重要新特性</b></div>
+<div class="para" label-module="para">·常用方法的性能大幅提升：重写了大部分较早期的函数；</div>
+<div class="para" label-module="para">·更容易使用的设置函数（setter function）：为所有对象新增了许多易用的设置函数；</div>
+<div class="para" label-module="para">·对Ajax的改进：引入了许多Ajax和JSON处理方面的更新，包括HTML5元素的序列化；</div>
+<div class="para" label-module="para">·attribute（改进了.attr()的性能）、jQuery()核心函数、CSS（.css()性能有两倍提升）、特效和事件、DOM操作等也有显著改进</div><div class="anchor-list">
+<a name="2_9" class="lemma-anchor para-title"></a>
+<a name="sub1020297_2_9" class="lemma-anchor "></a>
+<a name="jQuery 1.5" class="lemma-anchor "></a>
+</div><div class="para-title level-3">
+<h3 class="title-text"><span class="title-prefix">jQuery</span>jQuery 1.5</h3>
+</div>
+<div class="para" label-module="para">（2011年1月31日）：该版本修复了83个bug，解决了460个问
+题。重大改进有：重写了Ajax模块；新增延缓对象（Deferred 
+Objects）；jQuery替身——jQuery.sub()；增强了遍历相邻节点的性能；jQuery开发团队构建系统的改进。</div>
+<div class="para" label-module="para"><b>1.5新版本</b></div>
+<div class="para" label-module="para">美国时间2011年1月31日John 
+Resig在jQuery官方博客发表文章，宣布jQuery 1.5正式版已经如期开发完成，可以下载使用。压缩版本jQuery 
+Minified29KB，不压缩版本jQuery 
+Regular（用于阅读和调试）207KB。由于jQuery已经成为目前最流行的JavaScript库，得到广泛的支持，新版本的发布当然非常引人
+注目。</div>
+<div class="para" label-module="para"><b>重要变化：</b></div>
+<div class="para" label-module="para"><b>1. Ajax重写</b></div>
+<div class="para" label-module="para">Ajax模块完全进行了重写。新增一个jXHR对象，为不同浏览器内置的XMLHttpRequest提供了一致的超集。对于XMLHttpRequest之外的传输机制，比如<a target="_blank" href="http://baike.baidu.com/view/2131174.htm">JSONP</a>请求，jXHR对象也可以进行处理。（详情可以参见：jQuery.ajax文档）</div>
+<div class="para" label-module="para">此外，系统的可扩展性大大增强，可以附加各种数据处理器、过滤器和传输机制，为开发新的Ajax<a target="_blank" href="http://baike.baidu.com/view/18979.htm">插件</a>提供了方便。</div>
+<div class="para" label-module="para"><b>2. 延迟对象</b></div>
+<div class="para" label-module="para">延迟对象（Deferred 
+Object，jQuery.Deferred对象）是一个可链接的（chainable）实用工具对象，实现了Promise接口，可以在回调队列中注
+册多个回调、调用回调队列并转发任何同步/异步函数的成败状态。正如Using Deferreds in jQuery 
+1.5一文中说明的，其结果是在jQuery中能够将依赖于某个任务（事件）结果的逻辑与任务本身解耦了。这一点在JavaScript中其实并不新
+鲜，Mochikit和Dojo等已经实现有些日子了。由于jQuery 
+1.5的Ajax模块内置使用了延迟对象，因此通过jQuery编写Ajax程序将自动获得这一功能。</div>
+<div class="para" label-module="para">开发人员借此可以使用无法立即获得的返回值（如异步Ajax请求的返回结果），而且第一次能够附加多个事件处理器。</div>
+<div class="para" label-module="para">例如，使用了新的jQuery内部Ajax API就可以实现下面的代码了：</div>
+<div class="para" label-module="para">// Assign handlers immediately 
+after making the request,// and remember the jxhr object for this 
+request var jxhr = $.ajax({ url: "example.php" }) .success(function() { 
+alert("success"); }) .error(function() { alert("error"); }) 
+.complete(function() { alert("complete"); });// perform other work here 
+... // Set another completion function for the request above 
+jxhr.complete(function(){ alert("second complete"); });</div>
+<div class="para" label-module="para">此外，使用jQuery.Deferred还可以开发自己的延迟对象。更多详情参见：延迟对象文档。</div>
+<div class="para" label-module="para"><b>3. jQuery.sub()</b></div>
+<div class="para" label-module="para">jQuery 1.5提供了一种创建和修改jQuery副本的方式。可以用来添加不向外部公开的方法，或者对jQuery的某些方法进行重新定义以提供新功能，或者提供更好的封装、避免<a target="_blank" href="http://baike.baidu.com/view/94227.htm">名称空间</a>冲突。当然，也可以用来开发<a target="_blank" href="http://baike.baidu.com/view/18979.htm">插件</a>，但Resig强烈建议在开发插件之前，先考虑jQuery UI widget工厂。</div>
+<div class="para" label-module="para">值得注意的是，sub函数并不提供真正的隔离，所有方法、数据、调用仍然依靠jQuery本身来支持。</div>
+<div class="para" label-module="para"><b>4. 遍历性能提高</b></div>
+<div class="para" label-module="para">在新版本中.children(),.prev(),.next()几个常用的遍历函数性能有了显著提高。</div>
+<div class="para" label-module="para"><b>5. 内部开发系统</b></div>
+<div class="para" label-module="para">John Resig还特别提到了jQuery团队内部开发系统的两点改变：一是服务器端用Node.js替换了老的Java/Rhino系统，使得团队可以专注于JavaScript环境的新变化；二是所用的<a target="_blank" href="http://baike.baidu.com/view/2136208.htm">代码优化</a>程序从Google Closure切换到UglifyJS，新工具的压缩效果非常令人满意。</div>
+<div class="para" label-module="para">jQuery 1.5.2 在1.5的基础上修正的大量的bug</div>
+<div class="para" label-module="para">jQuery 1.7b</div><div class="anchor-list">
+<a name="2_10" class="lemma-anchor para-title"></a>
+<a name="sub1020297_2_10" class="lemma-anchor "></a>
+<a name="jQuery 1.7" class="lemma-anchor "></a>
+</div><div class="para-title level-3">
+<h3 class="title-text"><span class="title-prefix">jQuery</span>jQuery 1.7</h3>
+</div>
+<div class="para" label-module="para">2011年09月29日jQuery 1.7 的第一个 beta 测试版本，该版本修复了超过 50 个的问题以及带来一些新特性。</div>
+<div class="para" label-module="para">2011年11月4日jQuery1.7正式版发布。</div>
+<div class="para" label-module="para">新版本包含了很多新的特征，特别提升了事件委派时的性能尤其是在IE7下。</div>
+<div class="para" label-module="para"><b>新增及改进项：</b></div>
+<div class="para" label-module="para">⒈新的事件 APIs: .on() and .off()；</div>
+<div class="para" label-module="para">⒉提升了事件委派时的性能有了大幅度的提升，尤其是在IE7下；</div>
+<div class="para" label-module="para">⒊更好的在 IE 6/7/8 上支持 HTML5；</div>
+<div class="para" label-module="para">⒋切换动画更加直观；</div>
+<div class="para" label-module="para">⒌匿名模块定义 AWD</div>
+<div class="para" label-module="para">⒍jQuery.Deferred</div>
+<div class="para" label-module="para">⒎jQuery.isNumeric()</div>
+<div class="para" label-module="para">被删除的方法：</div>
+<div class="para" label-module="para">event.layerX and event.layerY</div>
+<div class="para" label-module="para">jQuery.isNaN()</div><div class="anchor-list">
+<a name="2_11" class="lemma-anchor para-title"></a>
+<a name="sub1020297_2_11" class="lemma-anchor "></a>
+<a name="jQuery 1.7.2" class="lemma-anchor "></a>
+</div><div class="para-title level-3">
+<h3 class="title-text"><span class="title-prefix">jQuery</span>jQuery 1.7.2</h3>
+</div>
+<div class="para" label-module="para"><b>2012年03月24日jQuery 1.7.2正式版发布。</b></div>
+<div class="para" label-module="para">该版本在1.7.1的基础上修复了大量的bug，并改进了部分功能。而相
+比于1.7.2 RC1，只修复了一个bug。值得注意的是：如果你正在使用jQuery Mobile，请使用最新的jQuery 
+1.7.2和jQuery Mobile 1.1这两个版本，因为之前的jQuery Mobile版本还基于jQuery core 
+1.7.1或更早的版本。</div><div class="anchor-list">
+<a name="2_12" class="lemma-anchor para-title"></a>
+<a name="sub1020297_2_12" class="lemma-anchor "></a>
+<a name="jQuery 1.8.3" class="lemma-anchor "></a>
+</div><div class="para-title level-3">
+<h3 class="title-text"><span class="title-prefix">jQuery</span>jQuery 1.8.3</h3>
+</div>
+<div class="para" label-module="para"><b>2012年11月14日 jQuery 1.8.3 发布，修复 bug 和性能衰退问题</b></div>
+<div class="para" label-module="para">IE8中的HTML相关Bug</div>
+<div class="para" label-module="para">jQuery 1.8.2在IE9中调用ajax失败的问题</div>
+<div class="para" label-module="para">jQuery 1.7.1不能正确地设置IE7中克隆元素的tabindex属性</div>
+<div class="para" label-module="para">压缩的JS文件包含非ASCII字符</div>
+<div class="para" label-module="para">如果body样式设置为display:none，则$('body').show()无法工作</div>
+<div class="para" label-module="para">在IE9中element.css('filter')返回不明确</div>
+<div class="para" label-module="para">在Android 2.3.4的浏览器中，jQuery 1.8.1转场效果崩溃</div>
+<div class="para" label-module="para">在iPad上缩放一个灯箱效果后，所有动画效果失效</div>
+<div class="para" label-module="para">从1.3.2升级到1.8.2版本后，出现Uncaught TypeError错误</div>
+<div class="para" label-module="para">在Chrome和Safari中，无法正确检测包含可编辑内容的DIV的焦点</div><div class="anchor-list">
+<a name="2_13" class="lemma-anchor para-title"></a>
+<a name="sub1020297_2_13" class="lemma-anchor "></a>
+<a name="jQuery 2.0" class="lemma-anchor "></a>
+</div><div class="para-title level-3">
+<h3 class="title-text"><span class="title-prefix">jQuery</span>jQuery 2.0</h3>
+</div>
+<div class="para" label-module="para"><b>2013年3月 jQuery 2.0 Beta 2 发布</b></div>
+<div class="para" label-module="para">据jQuery官方博客3月消息，jQuery 2.0 Beta 2 发布。</div>
+<div class="para" label-module="para">根据用户对jQuery 2.0 Beta 1 版本的反馈，Beta 2 版做了一些修改。jQuery官方表示，非常需要用户来测试 Beta 2 版，最好同时也能向他们反馈提交建议。</div>
+<div class="para" label-module="para">他们相信，Beta 2 版已非常稳定，值得一试，不需要等 2.0 的最终版本。</div>
+<div class="para" label-module="para">jQuery 团队在官博中再次提醒用户，jQuery 2.0 
+不再支持IE 6/7/8 了，但是 jQuery 1.9 会继续支持。因为旧版 IE 
+浏览器在整个互联网中还有很大部分市场，所以他们非常期望大部分网站能继续使用 jQuery 1.x 一段时间。jQuery 团队也将同时支持 
+jQuery 1.x 和 2.x 。1.9 和 2.0 版的 API 是相同的，所以不必因为你们网站还在用 jQuery 
+1.9，就感觉好像错过了什么，或者是落后了。</div>
+<div class="para" label-module="para">如果你想继续支持 IE 6/7/8，并且又想尝试 jQuery 2.0，那你可以额外加上一些代码。除了老版的 IE，其他所有浏览器都将使用第二脚本，忽略第一个。</div>
+<div class="para" label-module="para">在很多环境中，jQuery 2.0 应当都表现的很好。如下：</div>
+<div class="para" label-module="para">Google Chrome plugins</div>
+<div class="para" label-module="para">Mozilla XUL apps and Firefox extensions</div>
+<div class="para" label-module="para">Firefox OS apps</div>
+<div class="para" label-module="para">Chrome OS apps</div>
+<div class="para" label-module="para">Windows 8 Store (“Modern/Metro UI”) apps</div>
+<div class="para" label-module="para">BlackBerry 10 WebWorks apps</div>
+<div class="para" label-module="para">PhoneGap/Cordova apps</div>
+<div class="para" label-module="para">Apple UIWebView class</div>
+<div class="para" label-module="para">Microsoft WebBrowser control</div>
+<div class="para" label-module="para">Cheerio or jsdom with Node.js</div>
+<div class="para" label-module="para">Intranet applications</div>
+<div class="para" label-module="para"><b><b>2013年4月18日 jQuery 2.0正式版发布</b></b></div>
+<ul class="custom_dot para-list list-paddingleft-1"><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">不再支持IE 6/7/8：如果在IE9/10版本中使用“兼容性视图”模式也将会受到影响。</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">更轻更快：2.0版本文件与1.9.1相比小了12%。</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">可以构建一个更小、更轻量的版本。</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para">jQuery 2.0 API完全兼容jQuery 1.9 API。</div>
+</li></ul><div class="para" label-module="para"><b>jQuery 1.9.1汉化版2013年2月23日发布，由网友翻译非官方</b></div><div class="anchor-list">
+<a name="2_14" class="lemma-anchor para-title"></a>
+<a name="sub1020297_2_14" class="lemma-anchor "></a>
+<a name="jQuery2.1.0" class="lemma-anchor "></a>
+</div><div class="para-title level-3">
+<h3 class="title-text"><span class="title-prefix">jQuery</span>jQuery2.1.0</h3>
+</div>
+<div class="para" label-module="para">2014年1月24日，jQuery2.1.0版发布<sup>[1]</sup><a class="sup-anchor" name="ref_[1]_1020297">&nbsp;</a>
+</div><div class="anchor-list">
+<a name="2_15" class="lemma-anchor para-title"></a>
+<a name="sub1020297_2_15" class="lemma-anchor "></a>
+<a name="jQuery2.1.1" class="lemma-anchor "></a>
+</div><div class="para-title level-3">
+<h3 class="title-text"><span class="title-prefix">jQuery</span>jQuery2.1.1</h3>
+</div>
+<div class="para" label-module="para">2014年5月1日，jQuery2.1.1版发布<sup>[2]</sup><a class="sup-anchor" name="ref_[2]_1020297">&nbsp;</a>
+</div><div class="anchor-list">
+<a name="3" class="lemma-anchor para-title"></a>
+<a name="sub1020297_3" class="lemma-anchor "></a>
+<a name="使用方法" class="lemma-anchor "></a>
+</div><div class="para-title level-2">
+<h2 class="title-text"><span class="title-prefix">jQuery</span>使用方法</h2>
+<a style="display: block;" class="edit-icon j-edit-link" data-edit-dl="3" href="javascript:;"><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_edit-lemma"></em>编辑</a>
+</div>
+<div class="para" label-module="para">jQuery可以下载使用，有两个版本的 jQuery 可供下载</div>
+<div class="para" label-module="para">Production version - 用于实际的网站中，已被精简和压缩。</div>
+<div class="para" label-module="para">Development version - 用于测试和开发（未压缩，是可读的代码）</div>
+<div class="para" label-module="para">jQuery 1.8.0版时压缩前后的对比</div>
+<table log-set-param="table_view" class="table-view log-set-param"><tbody><tr><td align="left" valign="top" width="114"><div class="para" label-module="para">文件</div>
+</td><td align="left" valign="top" width="47"><div class="para" label-module="para">行数</div>
+</td><td align="left" valign="top" width="55"><div class="para" label-module="para">大小</div>
+</td></tr><tr><td align="left" valign="top" width="114"><div class="para" label-module="para">jquery-1.8.0.min.js</div>
+</td><td align="left" valign="top" width="47"><div class="para" label-module="para">2</div>
+</td><td align="left" valign="top" width="55"><div class="para" label-module="para">91KB</div>
+</td></tr><tr><td align="left" valign="top" width="114"><div class="para" label-module="para">jquery-1.8.0.js</div>
+</td><td align="left" valign="top" width="47"><div class="para" label-module="para">9228</div>
+</td><td align="left" valign="top" width="55"><div class="para" label-module="para">254KB</div>
+</td></tr></tbody></table><div class="para" label-module="para">这两个版本都可以从 jQuery.com官网下载。</div>
+<div class="para" label-module="para">也可以从多个公共服务器中选择引用。把jQuery存储在CDN公共库上可加快网站载入速度，CDN公共库是指将常用的JS库存放在CDN节点，以方便广大开发者直接调用。与将JS库存放在服务器单机上相比，CDN公共库更加稳定、高速。国外的有<a target="_blank" href="http://baike.baidu.com/view/105.htm">Google</a>、<a target="_blank" href="http://baike.baidu.com/view/2422.htm">Microsoft</a>等多家公司给jQuery提供CDN服务，国内由新浪云计算(<a target="_blank" href="http://baike.baidu.com/subview/570224/10751351.htm">SAE</a>) 、百度云(BAE)等提供</div>
+<div class="para" label-module="para">下面就介绍几个相对来说比较稳定的CDN。并且有jquery1.1至2.0所有版本下载分享</div>
+<div class="para" label-module="para">Google CDN</div>
+<div><div id="highlighter_923509" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">&lt;script&nbsp;type=</code><code class="js string">"text/javascript"</code><code class="js plain">src=</code><code class="js string">"<a href="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js">http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js</a>"</code><code class="js plain">&gt;&lt;/script&gt;</code></div></div></td></tr></tbody></table></div></div><div class="para" label-module="para">提示：通过 Google CDN 来获得最新可用的版本：</div>
+<div class="para" label-module="para">如果您观察上面的 Google URL - 在 URL 中规定了 
+jQuery 版本 (1.8.0)。如果您希望使用最新版本的 jQuery，也可以从版本字符串的末尾（比如本例 1.8）删除一个数字，谷歌会返回
+ 1.8 系列中最新的可用版本（1.8.0、1.8.1 等等），或者也可以只剩第一个数字，那么谷歌会返回 1 系列中最新的可用版本（从 
+1.1.0 到 1.9.9）。</div>
+<div class="para" label-module="para">Microsoft CDN<sup>[3]</sup><a class="sup-anchor" name="ref_[3]_1020297">&nbsp;</a>
+</div>
+<div><div id="highlighter_405540" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">&lt;script&nbsp;type=</code><code class="js string">"text/javascript"</code><code class="js plain">src=</code><code class="js string">"<a href="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.min.js">http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.min.js</a>"</code><code class="js plain">&gt;&lt;/script&gt;</code></div></div></td></tr></tbody></table></div></div><div class="para" label-module="para">提示：使用谷歌或微软的 jQuery，有一个很大的优势：</div>
+<div class="para" label-module="para">许多用户在访问其他站点时，已经从谷歌或微软加载过 
+jQuery。所有结果是，当他们访问您的站点时，会从缓存中加载 jQuery，这样可以减少加载时间。同时，大多数 CDN 
+都可以确保当用户向其请求文件时，会从离用户最近的服务器上返回响应，这样也可以提高加载速度。</div>
+<div class="para" label-module="para">新浪 CDN<sup>[4]</sup><a class="sup-anchor" name="ref_[4]_1020297">&nbsp;</a>
+</div>
+<div><div id="highlighter_979802" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">&lt;script&nbsp;type=</code><code class="js string">"text/javascript"</code><code class="js plain">src=</code><code class="js string">"<a href="http://libs.baidu.com/jquery/2.0.3/jquery.min.js">http://libs.baidu.com/jquery/2.0.3/jquery.min.js</a>"</code><code class="js plain">&gt;&lt;/script&gt;</code></div></div></td></tr></tbody></table></div></div><div class="para" label-module="para">百度 CDN <sup>[5]</sup><a class="sup-anchor" name="ref_[5]_1020297">&nbsp;</a>
+</div>
+<div><div id="highlighter_997687" class="syntaxhighlighter  ps"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ps plain">&lt;script&nbsp;type=</code><code class="ps string">"text/javascript"</code><code class="ps plain">src=</code><code class="ps string">"<a href="http://libs.baidu.com/jquery/2.0.3/jquery.min.js">http://libs.baidu.com/jquery/2.0.3/jquery.min.js</a>"</code><code class="ps plain">&gt;&lt;/script&gt;</code></div></div></td></tr></tbody></table></div></div><div class="para" label-module="para">为了保险起见，当无法从CDN服务器上获取jQuery时，则使用本地jQuery</div>
+<div><div id="highlighter_548640" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">&lt;script&nbsp;type=</code><code class="js string">"text/javascript"</code><code class="js plain">&gt;window.jQuery||document.write(</code><code class="js string">'&lt;scriptsrc="//localhost/jQuery/jquery-2.1.0.min.js"&gt;&lt;\/script&gt;'</code><code class="js plain">);&lt;/script&gt;</code></div></div></td></tr></tbody></table></div></div><div class="para" label-module="para">在Wordpress主题中使用的方法为</div>
+<div><div id="highlighter_124650" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">&lt;script&nbsp;type=</code><code class="js string">"text/javascript"</code><code class="js plain">&gt;window.jQuery||document.write(</code><code class="js string">'&lt;scripttype="text/javascript"src="&lt;?phpechoget_template_directory_uri();?&gt;/jquery.min.js"&gt;\x3C/script&gt;'</code><code class="js plain">)&lt;/script&gt;</code></div></div></td></tr></tbody></table></div></div><div class="para" label-module="para"><b>注意事项</b></div>
+<div class="para" label-module="para">1、<a target="_blank" href="http://baike.baidu.com/view/23618.htm">Wordpress</a>内
+置jQuery库，其末尾防止JS库冲突而加入的jQuery.noConflict()使得主题中所有jQuery代码都要做一些小修改，更可能导致一
+些插件效果失效。wordpress建议下载官方jQuery-Min库放到当前主题目录下调用，不要使用wp-includes里面的库。</div>
+<div class="para" label-module="para">2、Google CDN库的地址采用了协议相对路径，它可以很好的解决https引起的一些问题，具体可以看Paul Irish的介绍，当然你依旧可以使用带“http:”的路径。</div>
+<div class="para" label-module="para">3、许多网站都采用Google CDN提供的jQuery库，使用它可以得到出色的缓存效果。</div>
+<div class="para" label-module="para">4、把jQuery代码统统放到页面底部可以提高载入速度。</div>
+<div class="para" label-module="para">5、使用<a target="_blank" href="http://baike.baidu.com/view/951383.htm">HTML5</a>重构的页面可省略掉 type="text/javascript"。</div>
+<div class="para" label-module="para">6、推荐使用国内CDN公共库，速度更快，稳定性更高。</div><div class="anchor-list">
+<a name="4" class="lemma-anchor para-title"></a>
+<a name="sub1020297_4" class="lemma-anchor "></a>
+<a name="实例" class="lemma-anchor "></a>
+</div><div class="para-title level-2">
+<h2 class="title-text"><span class="title-prefix">jQuery</span>实例</h2>
+<a style="display: block;" class="edit-icon j-edit-link" data-edit-dl="4" href="javascript:;"><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_edit-lemma"></em>编辑</a>
+</div>
+<div class="para" label-module="para">为元素添加单击</div>
+<div><div id="highlighter_304526" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">&lt;html&gt;</code></div><div class="line number2 index1 alt1">&nbsp;</div><div class="line number3 index2 alt2"><code class="js plain">&lt;head&gt;</code></div><div class="line number4 index3 alt1">&nbsp;</div><div class="line number5 index4 alt2"><code class="js plain">&lt;script&gt;</code></div><div class="line number6 index5 alt1">&nbsp;</div><div class="line number7 index6 alt2"><code class="js plain">$(document).ready(</code><code class="js keyword">function</code><code class="js plain">(){</code></div><div class="line number8 index7 alt1"><code class="js plain">$(</code><code class="js string">"p"</code><code class="js plain">).click(</code><code class="js keyword">function</code><code class="js plain">(){$(</code><code class="js keyword">this</code><code class="js plain">).hide();});});</code></div><div class="line number9 index8 alt2">&nbsp;</div><div class="line number10 index9 alt1"><code class="js plain">&lt;/script&gt;</code></div><div class="line number11 index10 alt2">&nbsp;</div><div class="line number12 index11 alt1"><code class="js plain">&lt;/head&gt;</code></div><div class="line number13 index12 alt2">&nbsp;</div><div class="line number14 index13 alt1"><code class="js plain">&lt;body&gt;</code></div><div class="line number15 index14 alt2">&nbsp;</div><div class="line number16 index15 alt1"><code class="js plain">&lt;p&gt;Ifyouclickonme,Iwilldisappear.&lt;/p&gt;</code></div><div class="line number17 index16 alt2">&nbsp;</div><div class="line number18 index17 alt1"><code class="js plain">&lt;/body&gt;</code></div><div class="line number19 index18 alt2">&nbsp;</div><div class="line number20 index19 alt1"><code class="js plain">&lt;/html&gt;</code></div></div></td></tr></tbody></table></div></div><div class="para" label-module="para">结果:隐藏页面内的&lt;p&gt;标签<sup>[6]</sup><a class="sup-anchor" name="ref_[6]_1020297">&nbsp;</a>
+</div><div class="anchor-list">
+<a name="4_1" class="lemma-anchor para-title"></a>
+<a name="sub1020297_4_1" class="lemma-anchor "></a>
+<a name="选择器" class="lemma-anchor "></a>
+</div><div class="para-title level-3">
+<h3 class="title-text"><span class="title-prefix">jQuery</span>选择器</h3>
+</div>
+<div class="para" label-module="para">jQuery 使用<a target="_blank" href="http://baike.baidu.com/view/4663033.htm">sizzle</a>引擎，支持css选取，Xpath选取等方式。</div>
+<div class="para" label-module="para">$("p") 选取全部 &lt;p&gt; 元素。</div>
+<div class="para" label-module="para">$("p.intro") 选取所有包含class为"intro"的 &lt;p&gt; 元素。</div>
+<div class="para" label-module="para">$("#demo") 选取 id为"demo" 的元素。</div>
+<div class="para" label-module="para">$("[href]") 选取所有带有 href 属性的元素。</div>
+<div class="para" label-module="para">$("[href='#']") 选取所有带有 href 值等于 "#" 的元素。</div>
+<div class="para" label-module="para">$("[href!='#']") 选取所有带有 href 值不等于 "#" 的元素。</div>
+<div class="para" label-module="para">$("[href$='.jpg']") 选取所有 href 值以 ".jpg" 结尾的元素。</div>
+<div class="para" label-module="para">$("[href^='/imgaes/']") 选取所有 href 值以 /imgaes/" 开头的元素。</div>
+<div class="para" label-module="para">更多详细信息请参见jQuery API的Selectors部分。</div><div class="anchor-list">
+<a name="4_2" class="lemma-anchor para-title"></a>
+<a name="sub1020297_4_2" class="lemma-anchor "></a>
+<a name="事件处理" class="lemma-anchor "></a>
+</div><div class="para-title level-3">
+<h3 class="title-text"><span class="title-prefix">jQuery</span>事件处理</h3>
+</div>
+<div class="para" label-module="para">直接绑定指定事件，事件类型即方法名，支持click、focus、blur、submit等。</div>
+<div class="para" label-module="para">$("#button").click(function(){</div>
+<div class="para" label-module="para">//script goes here</div>
+<div class="para" label-module="para">});</div>
+<div class="para" label-module="para">用on来绑定事件，off来解绑事件，第一个参数为事件名，第二个参数为回调函数。1.7.2版本开始支持。</div>
+<div class="para" label-module="para">$("#button").on('click',function(){</div>
+<div class="para" label-module="para">//script goes here</div>
+<div class="para" label-module="para">});</div>
+<div class="para" label-module="para">在1.7.1或更早版本，需要用bind/unbind（常规绑定），live/die（预绑定）来替代on/off。</div>
+<div class="para" label-module="para">更多详细信息请参见jQuery API的Events部分。</div>
+<div class="para" label-module="para">jQuery还支持如下方法:</div>
+<div class="para" label-module="para">.blur() 表单元素失去焦点。</div>
+<div class="para" label-module="para">.change() 表单元素的值发生变化</div>
+<div class="para" label-module="para">.click() 鼠标单击</div>
+<div class="para" label-module="para">.dblclick() 鼠标双击</div>
+<div class="para" label-module="para">.focus() 表单元素获得焦点</div>
+<div class="para" label-module="para">.focusin() 子元素获得焦点</div>
+<div class="para" label-module="para">.focusout() 子元素失去焦点</div>
+<div class="para" label-module="para">.hover() 同时为mouseenter和mouseleave事件指定处理函数</div>
+<div class="para" label-module="para">.keydown() 按下键盘（长时间按键，只返回一个事件）</div>
+<div class="para" label-module="para">.keypress() 按下键盘（长时间按键，将返回多个事件）</div>
+<div class="para" label-module="para">.keyup() 松开键盘</div>
+<div class="para" label-module="para">.load() 元素加载完毕</div>
+<div class="para" label-module="para">.mousedown() 按下鼠标</div>
+<div class="para" label-module="para">.mouseenter() 鼠标进入（进入子元素不触发）</div>
+<div class="para" label-module="para">.mouseleave() 鼠标离开（离开子元素不触发）</div>
+<div class="para" label-module="para">.mousemove() 鼠标在元素内部移动</div>
+<div class="para" label-module="para">.mouseout() 鼠标离开（离开子元素也触发）</div>
+<div class="para" label-module="para">.mouseover() 鼠标进入（进入子元素也触发）</div>
+<div class="para" label-module="para">.mouseup() 松开鼠标</div>
+<div class="para" label-module="para">.ready() DOM加载完成</div>
+<div class="para" label-module="para">.resize() 浏览器窗口的大小发生改变</div>
+<div class="para" label-module="para">.scroll() 滚动条的位置发生变化</div>
+<div class="para" label-module="para">.select() 用户选中文本框中的内容</div>
+<div class="para" label-module="para">.submit() 用户递交表单</div>
+<div class="para" label-module="para">.toggle() 根据鼠标点击的次数，依次运行多个函数</div>
+<div class="para" label-module="para">.unload() .当用户离开页面时，会发生 unload 事件。</div>
+<div class="para" label-module="para"><sup>[7]</sup><a class="sup-anchor" name="ref_[7]_1020297">&nbsp;</a>
+</div><div class="anchor-list">
+<a name="4_3" class="lemma-anchor para-title"></a>
+<a name="sub1020297_4_3" class="lemma-anchor "></a>
+<a name="集合操作" class="lemma-anchor "></a>
+</div><div class="para-title level-3">
+<h3 class="title-text"><span class="title-prefix">jQuery</span>集合操作</h3>
+</div>
+<div class="para" label-module="para">$(function(){</div>
+<div class="para" label-module="para">var tbody = "";<br>　　//------------遍历对象 .each的使用-------------<br>　　//对象语法JSON数据格式(当服务器端回调回来的对象数据格式是json数据格式，必须保证JSON的格式要求，回调的对象必须使用<b>eval函数</b>进行转化（否则将得不到Object）。本文不作详细介绍服务器端回调的数据问题，我们将直接自定义对象)<br>　　var obj =[{"name":"项海军","password":"123456"}];<br>　　$("#result").html("------------遍历对象 .each的使用-------------");<br>　　alert(obj);//是个object元素<br>　　//下面使用each进行遍历<br>　　$.each(obj,function(n,value) {<br>　　alert(n+' '+value);<br>　　var trs = "";<br>　　trs += "&lt;tr&gt;&lt;td&gt;" + value.name +"&lt;/td&gt; &lt;td&gt;" + value.password +"&lt;/td&gt;&lt;/tr&gt;";<br>　　tbody += trs;<br>　　});</div>
+<div class="para" label-module="para">$("#project").append(tbody);<br>　　});</div><div class="anchor-list">
+<a name="4_4" class="lemma-anchor para-title"></a>
+<a name="sub1020297_4_4" class="lemma-anchor "></a>
+<a name="动态特效" class="lemma-anchor "></a>
+</div><div class="para-title level-3">
+<h3 class="title-text"><span class="title-prefix">jQuery</span>动态特效</h3>
+</div>
+<div class="para" label-module="para">较快速度的淡入</div>
+<div class="para" label-module="para">$("#msg").show("fast");</div>
+<div class="para" label-module="para">较慢速度的淡出</div>
+<div class="para" label-module="para">$("#msg").hide("slow");</div>
+<div class="para" label-module="para">淡入淡出</div>
+<div class="para" label-module="para">$("#msg").fadeIn();</div>
+<div class="para" label-module="para">$("#msg").fadeOut();</div>
+<div class="para" label-module="para">带参数的淡入淡出</div>
+<div class="para" label-module="para">$(selector).fadeIn(speed,callback);</div>
+<div class="para" label-module="para">可选的 speed 参数规定效果的时长。它可以取以下值："slow"、"fast" 或毫秒。</div>
+<div class="para" label-module="para">可选的 callback 参数是 fading 完成后所执行的函数名称。</div>
+<div class="para" label-module="para">滑动</div>
+<div class="para" label-module="para">$(selector).slideDown(speed,callback);</div>
+<div class="para" label-module="para">可选的 speed 参数规定效果的时长。它可以取以下值："slow"、"fast" 或毫秒。</div>
+<div class="para" label-module="para">可选的 callback 参数是滑动完成后所执行的函数名称。</div>
+<div class="para" label-module="para">动画</div>
+<div class="para" label-module="para">$(selector).animate({params},speed,callback);</div>
+<div class="para" label-module="para">必需的 params 参数定义形成动画的 CSS 属性。</div>
+<div class="para" label-module="para">可选的 speed 参数规定效果的时长。它可以取以下值："slow"、"fast" 或毫秒。</div>
+<div class="para" label-module="para">可选的 callback 参数是动画完成后所执行的函数名称。</div>
+<div class="para" label-module="para">以上代码实现一个id为Msg的jQuery对象的渐入和淡出。函数接受的参数除了快慢等，还可以接收<a target="_blank" href="http://baike.baidu.com/view/1311503.htm">整型</a>，作为渐入或淡出的完成时间，单位为ms。更多详细信息请参见jQuery API的Effects部分。</div><div class="anchor-list">
+<a name="4_5" class="lemma-anchor para-title"></a>
+<a name="sub1020297_4_5" class="lemma-anchor "></a>
+<a name="AJAX" class="lemma-anchor "></a>
+</div><div class="para-title level-3">
+<h3 class="title-text"><span class="title-prefix">jQuery</span>AJAX</h3>
+</div>
+<div class="para" label-module="para">jQuery 提供多个与 AJAX 有关的方法<sup>[7]</sup><a class="sup-anchor" name="ref_[7]_1020297">&nbsp;</a>
+。</div>
+<div class="para" label-module="para">通过 jQuery AJAX 方法，您能够使用 HTTP Get 和 HTTP Post 从远程服务器上请求文本、<a target="_blank" href="http://baike.baidu.com/view/692.htm">HTML</a>（<a target="_blank" href="http://baike.baidu.com/view/5286041.htm">标准通用标记语言</a>下的一个应用）、<a target="_blank" href="http://baike.baidu.com/view/63.htm">XML</a>（标准通用标记语言下的一个子集） 或 JSON - 同时您能够把这些外部数据直接载入网页的被选元素中。</div>
+<ul class="custom_dash  para-list list-paddingleft-1"><li class="list-dash list-dash-paddingleft"><div class="para" label-module="para">jQuery - AJAX load() 方法</div>
+</li></ul><div class="para" label-module="para">jQuery load() 方法是简单但强大的 AJAX 方法。</div>
+<div class="para" label-module="para">load() 方法从服务器加载数据，并把返回的数据放入被选元素中。</div>
+<div class="para" label-module="para"><b>语法:</b></div>
+<div><div id="highlighter_15918" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">$(</code></div><div class="line number2 index1 alt1"><code class="js plain">selector</code></div><div class="line number3 index2 alt2"><code class="js plain">).load(</code></div><div class="line number4 index3 alt1"><code class="js plain">URL,data,callback</code></div><div class="line number5 index4 alt2"><code class="js plain">);</code></div></div></td></tr></tbody></table></div></div><div class="para" label-module="para">必需的 <i>URL</i> 参数规定您希望加载的 URL。</div>
+<div class="para" label-module="para">可选的 <i>data</i> 参数规定与请求一同发送的查询字符串键/值对集合。</div>
+<div class="para" label-module="para">可选的 <i>callback</i> 参数是 load() 方法完成后所执行的函数名称。</div>
+<div class="para" label-module="para">jQuery - AJAX get() 和 post() 方法</div>
+<div class="para" label-module="para">jQuery get() 和 post() 方法用于通过 HTTP GET 或 POST 请求从服务器请求数据。</div>
+<div class="para" label-module="para">两种在客户端和服务器端进行请求-响应的常用方法是：GET 和 POST。</div>
+<ul class="custom_dot para-list list-paddingleft-1"><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para"><i>GET</i> - 从指定的资源请求数据</div>
+</li><li class="list-dot list-dot-paddingleft"><div class="para" label-module="para"><i>POST</i> - 向指定的资源提交要处理的数据</div>
+</li></ul><div class="para" label-module="para">GET 基本上用于从服务器获得（取回）数据。注释：GET 方法可能返回缓存数据。</div>
+<div class="para" label-module="para">POST 也可用于从服务器获取数据。不过，POST 方法不会缓存数据，并且常用于连同请求一起发送数据。</div>
+<ul class="custom_dash  para-list list-paddingleft-1"><li class="list-dash list-dash-paddingleft"><div class="para" label-module="para"><b>jQuery $.get() 方法<sup>[7]</sup><a class="sup-anchor" name="ref_[7]_1020297">&nbsp;</a>
+</b></div>
+</li></ul><div class="para" label-module="para">$.get() 方法通过 HTTP GET 请求从服务器上请求数据。</div>
+<div class="para" label-module="para"><b>语法:</b></div>
+<div><div id="highlighter_850266" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">$.get(URL,callback);</code></div></div></td></tr></tbody></table></div></div><div class="para" label-module="para">必需的 <i>URL</i> 参数规定您希望请求的 URL。</div>
+<div class="para" label-module="para">可选的 <i>callback</i> 参数是请求成功后所执行的函数名。</div>
+<ul class="custom_dash  para-list list-paddingleft-1"><li class="list-dash list-dash-paddingleft"><div class="para" label-module="para"><b>jQuery $.post() 方法<sup>[7]</sup><a class="sup-anchor" name="ref_[7]_1020297">&nbsp;</a>
+</b></div>
+</li></ul><div class="para" label-module="para">$.post() 方法通过 HTTP POST 请求从服务器上请求数据。</div>
+<div class="para" label-module="para"><b>语法:</b></div>
+<div><div id="highlighter_620761" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">$.post(</code></div><div class="line number2 index1 alt1"><code class="js plain">URL,data,callback</code></div><div class="line number3 index2 alt2"><code class="js plain">);</code></div></div></td></tr></tbody></table></div></div><div class="para" label-module="para">必需的 <i>URL</i> 参数规定您希望请求的 URL。</div>
+<div class="para" label-module="para">可选的 <i>data</i> 参数规定连同请求发送的数据。</div>
+<div class="para" label-module="para">可选的 <i>callback</i> 参数是请求成功后所执行的函数名。</div>
+<ul class="custom_dash  para-list list-paddingleft-1"><li class="list-dash list-dash-paddingleft"><div class="para" label-module="para">使用jquery实现ajax方式如下所示：</div>
+</li></ul><div><div id="highlighter_863868" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">$.ajax({</code></div><div class="line number2 index1 alt1"><code class="js plain">async&nbsp;:&nbsp;</code><code class="js keyword">false</code><code class="js plain">,</code></div><div class="line number3 index2 alt2"><code class="js plain">type:&nbsp;</code><code class="js string">"POST"</code><code class="js plain">,</code></div><div class="line number4 index3 alt1"><code class="js plain">url:&nbsp;</code><code class="js string">"example.php"</code><code class="js plain">,</code></div><div class="line number5 index4 alt2"><code class="js plain">data:&nbsp;</code><code class="js string">"name=John&amp;location=Boston"</code></div><div class="line number6 index5 alt1"><code class="js plain">}).done(</code><code class="js keyword">function</code><code class="js plain">(msg){</code></div><div class="line number7 index6 alt2"><code class="js plain">alert(</code><code class="js string">"Data&nbsp;Saved:&nbsp;"</code>&nbsp;<code class="js plain">+&nbsp;msg);</code></div><div class="line number8 index7 alt1"><code class="js plain">}).fail(</code><code class="js keyword">function</code><code class="js plain">(xmlHttpRequest,statusText,errorThrown)&nbsp;{</code></div><div class="line number9 index8 alt2"><code class="js plain">alert(</code></div><div class="line number10 index9 alt1"><code class="js string">"Your&nbsp;form&nbsp;submission&nbsp;failed.\n\n"</code></div><div class="line number11 index10 alt2"><code class="js plain">+&nbsp;</code><code class="js string">"XML&nbsp;Http&nbsp;Request:&nbsp;"</code>&nbsp;<code class="js plain">+&nbsp;JSON.stringify(xmlHttpRequest)</code></div><div class="line number12 index11 alt1"><code class="js plain">+&nbsp;</code><code class="js string">",\nStatus&nbsp;Text:&nbsp;"</code>&nbsp;<code class="js plain">+&nbsp;statusText</code></div><div class="line number13 index12 alt2"><code class="js plain">+&nbsp;</code><code class="js string">",\nError&nbsp;Thrown:&nbsp;"</code>&nbsp;<code class="js plain">+&nbsp;errorThrown);</code></div><div class="line number14 index13 alt1"><code class="js plain">});</code></div></div></td></tr></tbody></table></div></div><div class="para" label-module="para">这个例子发送name=John和location=Boston两个数据给服务端的example.php，请求成功后会提示用户。</div>
+<div class="para" label-module="para">更多详细信息请参见jQuery API的<a target="_blank" href="http://baike.baidu.com/view/1641.htm">Ajax</a>部分。</div>
+<div class="para" label-module="para"><a target="_blank" href="http://baike.baidu.com/view/2300730.htm">async</a>默
+认的设置值为true，这种情况为异步方式，就是说当 
+ajax发送请求后，在等待server端返回的这个过程中，前台会继续执行ajax块后面的脚本，直到server端返回正确的结果才会去执行
+success，也就是说这时候执行的是两个线程，ajax块发出请求后一个线程和ajax块后面的脚本（另一个线程）</div><div class="anchor-list">
+<a name="5" class="lemma-anchor para-title"></a>
+<a name="sub1020297_5" class="lemma-anchor "></a>
+<a name="插件机制" class="lemma-anchor "></a>
+</div><div class="para-title level-2">
+<h2 class="title-text"><span class="title-prefix">jQuery</span>插件机制</h2>
+<a style="display: block;" class="edit-icon j-edit-link" data-edit-dl="5" href="javascript:;"><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_edit-lemma"></em>编辑</a>
+</div>
+<div class="para" label-module="para">jQuery的官方插件是jQuery 
+UI。开发者可以任意扩展jQuery的函数库或者按照自己的需求开发UI组件。网上已经有数以万计的jQuery插件，覆盖各种各样的需求。例如
+Ajax辅助、数据表格、动态列表、XML工具、拖曳、cookie处理、弹出层等等。jQuery 
+的文档说明很全，而且各种应用也说得很详细，同时还有许多成熟的插件可供选择,例如ComponentOne Studio for ASP NET 
+Wijmo.</div>
+<div class="para" label-module="para">随着jQuery插件在网站建设过程中的使用率不断的增加，所以有必要跟
+进时代步伐开发出一些新的插件/代码片段，以此来巩固并提高前端用户体验，将用户体验提升到一个新的高度。其中包括Flat jQuery Price 
+Slider、Gmaps jQuery Map Plugin 、FormChimp——MailChimp Ajax plugin for 
+jQuery 等。<sup>[8]</sup><a class="sup-anchor" name="ref_[8]_1020297">&nbsp;</a>
+</div><div class="anchor-list">
+<a name="6" class="lemma-anchor para-title"></a>
+<a name="sub1020297_6" class="lemma-anchor "></a>
+<a name="控件" class="lemma-anchor "></a>
+</div><div class="para-title level-2">
+<h2 class="title-text"><span class="title-prefix">jQuery</span>控件</h2>
+<a style="display: block;" class="edit-icon j-edit-link" data-edit-dl="6" href="javascript:;"><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_edit-lemma"></em>编辑</a>
+</div>
+<div class="para" label-module="para">jQuery Gantt控件是一个基于原生HTML5/jQuery，功能丰富的控件，该控件真正实现了跨平台，在许多设备和浏览器中无缝的运行。</div>
+<ol class="custom_cn  para-list list-paddingleft-1"><li class="list-cn-1-1 list-cn-paddingleft-1"><div class="para" label-module="para">使用项目甘特图中内置的调度，依赖等功能实现任务分层列表的可视化。</div>
+</li><li class="list-cn-1-2 list-cn-paddingleft-1"><div class="para" label-module="para">使用资源甘特图实现一个资源利用视图。</div>
+</li><li class="list-cn-1-3 list-cn-paddingleft-1"><div class="para" label-module="para">使用基于<a target="_blank" href="http://baike.baidu.com/subview/16068/5889234.htm">API</a>的jQuery或者基于API的MVC可帮您轻松地安装甘特图并加快应用速度。</div>
+</li><li class="list-cn-1-4 list-cn-paddingleft-1"><div class="para" label-module="para">可与诸如KnockOut(KO),jQuery.tmpl等流行的jQuery模式一同使用。</div>
+</li></ol><div class="rs-container-foot">
+<a name="rs-1"></a>
+<a name="rs_1020297_5829" class="anchor-2"></a>
+<div id="rs-container-1020297-5829" class="rslazy rs-container" lazy-init="lemmars.tableAction(baidu.g('rs-1020297-5829'))"><div class="rs-table " id="rs-1020297-5829" rs-data="{isTop:false,subId:1020297,entryId:2320465,templateId:789,fentryTableId:5829}">	<div id="rs5829" class="lemma-relation-table clearfix ">		<div class="relation-table-banner relation-banner-1020297 " id="table-banner-1020297-5829">			<span class="relation-table-view-control"><a id="relation-title-edit-1020297-5829" title="编辑" class="title-edit" target="_blank" href="http://baike.baidu.com/guanxi/view/%E7%BD%91%E9%A1%B5%E7%BC%96%E7%A8%8B/2320465?e=1#789" hidefocus="true"></a>				<a class="title-folder " href="javascript:void(0)" hidefocus="true" title="收起"></a>			</span>			<h3 class="relation-table-title"><a id="relation-title-1020297-5829" class="table-title" href="http://baike.baidu.com/guanxi/view/%E7%BD%91%E9%A1%B5%E7%BC%96%E7%A8%8B/2320465#789" target="_blank" hidefocus="true">WEB技术</a>			</h3>		</div>		<div style="" class="relation-table-main" id="relation-table-main-1020297-5829"></div>		</div></div></div>
+</div><script type="text/javascript">
+        window.rsInsertData = window['rsInsertData'] || [];
+        var rsdataList = 
+{"foot":[{"fentryTableId":5829,"fentryTableName":"WEB\u6280\u672f","fentryTableType":0,"entryId":2320465,"templateId":789,"entryTitle":"\u7f51\u9875\u7f16\u7a0b","isManual":0,"isExpand":1}],"top":[]};
+
+
+        if (rsdataList.top || rsdataList.foot) {
+            rsInsertData.push([1020297, rsdataList]);
+        }
+    </script>
+<dl class="lemma-reference collapse nslog-area log-set-param" data-nslog-type="2" log-set-param="ext_reference">
+<dt class="reference-title">参考资料<em class="toggle"></em></dt>
+<dd class="reference-list-wrap">
+<ul class="reference-list">
+<li class="reference-item " id="reference-[1]-1020297-wrap">
+<span class="index">1.</span>
+<a class="gotop anchor" name="refIndex_1_1020297" id="refIndex_1_1020297" title="向上跳转" href="#ref_[1]_1020297">&nbsp;&nbsp;</a>
+<a rel="nofollow" href="http://baike.baidu.com/redirect/f909cUgpX6x1P9eFZ7Fnf6EsOp4rmxRSet9rMcX4gBUdfA-J5Lu3cFLOqvJvH-XbGI_OsWsJBw75Y55ARKJQCkPN6hZPj3XUgt8NcsGG74aL9uFHU94rN8ytAN4" target="_blank" class="text">jQuery 1.11 and 2.1 Released<span class="linkout">&nbsp;</span></a>
+<span class="site">．jQuery</span><span>[引用日期2015-03-29]</span></li><li class="reference-item " id="reference-[2]-1020297-wrap">
+<span class="index">2.</span>
+<a class="gotop anchor" name="refIndex_2_1020297" id="refIndex_2_1020297" title="向上跳转" href="#ref_[2]_1020297">&nbsp;&nbsp;</a>
+<a rel="nofollow" href="http://baike.baidu.com/redirect/78036SFv7kiGv816TBKpUYU6_xs2nEkMQADPelaF3Ud6oJEd8WEd9IBL4kFChXHex9eQAtyhZsSuc2L5gvJR7-IXx9uw7H9b2O3UTSN3dfwc2h2DpgZ6fwzY3B47Yamo" target="_blank" class="text">jQuery 1.11.1 and 2.1.1 Released<span class="linkout">&nbsp;</span></a>
+<span class="site">．jQuery</span><span>[引用日期2015-03-29]</span></li><li class="reference-item " id="reference-[3]-1020297-wrap">
+<span class="index">3.</span>
+<a class="gotop anchor" name="refIndex_3_1020297" id="refIndex_3_1020297" title="向上跳转" href="#ref_[3]_1020297">&nbsp;&nbsp;</a>
+<a rel="nofollow" href="http://baike.baidu.com/redirect/10dbb8AjMkBScMhoM8T3gkBKPFPANqCTODtjNjS6pYbAC5GL75fdlw4_CkEiofIvXMyIJMGWiDVbq3n8N9BNFeM4aDa9XTDJmSJU9LC7xaWA_Brdvuhxe3PppYvH9apfsg" target="_blank" class="text">Microsoft CDN  <span class="linkout">&nbsp;</span></a>
+<span class="site">．Microsoft  </span><span>[引用日期2014-02-17]</span></li><li class="reference-item " id="reference-[4]-1020297-wrap">
+<span class="index">4.</span>
+<a class="gotop anchor" name="refIndex_4_1020297" id="refIndex_4_1020297" title="向上跳转" href="#ref_[4]_1020297">&nbsp;&nbsp;</a>
+<a rel="nofollow" href="http://baike.baidu.com/redirect/6c6fE8swYL4WW60Yl20AxOa0A3gXzYE09U3YiRZma48lyyZYQwl-ZWKEoU0lgQdtFzvCcwQoSRT5nWv16OKkytaGAV8jt02TK08" target="_blank" class="text">新浪SAE文档中心<span class="linkout">&nbsp;</span></a>
+<span class="site">．新浪 </span><span>[引用日期2014-02-17]</span></li><li class="reference-item " id="reference-[5]-1020297-wrap">
+<span class="index">5.</span>
+<a class="gotop anchor" name="refIndex_5_1020297" id="refIndex_5_1020297" title="向上跳转" href="#ref_[5]_1020297">&nbsp;&nbsp;</a>
+<a rel="nofollow" href="http://baike.baidu.com/redirect/0a6ba1sBpY3IPXBRi5tB5gc9zc5v6tFJu1XHHzQLybJU6DtMN5NZDT7Bo98uvF7UF7WHmfWgJJyjFSx1guXy_t8RAZebIxvX3BMPt_kApw5thqtdJgbm4jUxV6o98wvh-dH9" target="_blank" class="text">百度CDN公共库<span class="linkout">&nbsp;</span></a>
+<span class="site">．百度 </span><span>[引用日期2014-02-17]</span></li><li class="reference-item " id="reference-[6]-1020297-wrap">
+<span class="index">6.</span>
+<a class="gotop anchor" name="refIndex_6_1020297" id="refIndex_6_1020297" title="向上跳转" href="#ref_[6]_1020297">&nbsp;&nbsp;</a>
+<a rel="nofollow" href="http://baike.baidu.com/redirect/b9c7gKhtVq2bx50tTpjZxf825o_RRMm2EH0s2gzoFEh7KeooyN0C7_kPMkbh885JndqoM-3H31K089Pp6GQEpYKRJxJWlKkVCZtkSGsJeQYameD8Aa76cg" target="_blank" class="text">jquery经典实例<span class="linkout">&nbsp;</span></a>
+<span class="site">．jquery实例</span><span>[引用日期2014-02-17]</span></li><li class="reference-item " id="reference-[7]-1020297-wrap">
+<span class="index">7.</span>
+<a class="gotop anchor" name="refIndex_7_1020297" id="refIndex_7_1020297" title="向上跳转" href="#ref_[7]_1020297">&nbsp;&nbsp;</a>
+<a rel="nofollow" href="http://baike.baidu.com/redirect/ce2dne-0R-H3smHjbheOmMclw7TrJ2bcGr7yeaV4CYIYrnArcc4keLUEj4MEbkSPCGwngf4yrBGB2fkWKWIZmvPtnmLTL0HuZ3kWI9BdMn8" target="_blank" class="text">jQuery 教程<span class="linkout">&nbsp;</span></a>
+<span class="site">．W3Cschool 菜鸟教程</span><span>[引用日期2014-01-21]</span></li><li class="reference-item " id="reference-[8]-1020297-wrap">
+<span class="index">8.</span>
+<a class="gotop anchor" name="refIndex_8_1020297" id="refIndex_8_1020297" title="向上跳转" href="#ref_[8]_1020297">&nbsp;&nbsp;</a>
+<a rel="nofollow" href="http://baike.baidu.com/redirect/c0148pzW_BvCoyYwzwfaVxyz0fFQ3rKe4l5eqop39BE5GPm9aBnilty63_0SQH7ufJ9X60RAcqd95B9VFfN3dQ7TIL6jIIsM4_9lqMe2" target="_blank" class="text">25个可遇不可求的jQuery插件<span class="linkout">&nbsp;</span></a>
+<span class="site">．TechTarget SOA</span><span>[引用日期2015-06-24]</span></li></ul>
+</dd>
+</dl>
+<div id="open-tag">
+<div class="open-tag-title">词条标签：</div>
+<dd id="open-tag-item">
+<span class="taglist">
+计算机学
+</span>
+，<span class="taglist">
+科技产品
+</span>
+，<span class="taglist">
+科学
+</span>
+</dd>
+<div style="display: none;" class="open-tag-collapse" id="open-tag-collapse"></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="side-content">
+<div class="summary-pic">
+<a href="http://baike.baidu.com/pic/jQuery/5385065/0/37d12f2eb9389b507400922b8735e5dde6116ecf?fr=lemma&amp;ct=single" target="_blank" nslog-type="10002401">
+<img src="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/37d12f2eb9389b507400922b8735e5dde6116ecf.jpg">
+<button class="picAlbumBtn"><em></em><span>图集</span></button>
+<div>jQuery图册</div>
+</a>
+</div>
+<div style="display: block;" class="lemmaWgt-promotion-vbaike">
+<div class="promotion_title">V百科<a href="http://baike.baidu.com/vbaike#gallary" target="_blank">往期回顾</a></div>
+<div class="promotion_viewport">
+<dl style="position: absolute; width: 536px; height: 152px; left: 0px;"><dd style="float: left;" class="wgt_carousel_aniUnit">
+<a href="http://click.hm.baidu.com/clk?de027b74ec4618f764d33f9af0586963" target="_blank" title="" nslog-type="10002202" nslog-params="{&quot;adId&quot;:&quot;519&quot;, &quot;adTitle&quot;:&quot;解读霍金教授&quot;, &quot;adPos&quot;: 1}">
+<img src="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/bba1cd11728b4710cd1b845cc4cec3fdfc03236d.png">
+</a>
+</dd></dl>
+<div class="promotion_viewport_pager wgt_horPager">
+<span class="pTagBox">
+<a href="javascript:;" class="pTag prev" p-index="1"><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_arrow-left"></em></a>
+<a href="javascript:;" class="pTag next" p-index="3"><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_arrow-right"></em></a>
+</span>
+</div>
+</div>
+</div><div class="lemmaWgt-promotion-rightPreciseAd" data-lemmaid="5385065" data-lemmatitle="jQuery"></div><div style="display: block;" class="lemmaWgt-promotion-slide">
+<div class="promotion_viewport">
+<dl style="position: absolute; width: 540px; height: 260px; left: 0px;"><dd style="float: left;" class="wgt_carousel_aniUnit">
+<a href="http://baike.baidu.com/art" target="_blank" title="" nslog-type="10002202" nslog-params="{&quot;adId&quot;:&quot;39&quot;, &quot;adTitle&quot;:&quot;常规-艺术百科&quot;, &quot;adPos&quot;: 2}">
+<img src="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/yishubaike0418.jpg">
+</a>
+</dd></dl>
+<div class="promotion_viewport_pager wgt_horPager"><span class="pTagBox">
+<a href="javascript:;" class="pTag prev" p-index="1"><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_arrow-left"></em></a><span><a href="javascript:;" class="dot pTag" p-index="1"><em class="cmn-icon cmn-icons cmn-icons_userbar-new"></em></a><a href="javascript:;" class="dot pTag cur"><em class="cmn-icon cmn-icons cmn-icons_userbar-new"></em></a><a href="javascript:;" class="dot pTag" p-index="3"><em class="cmn-icon cmn-icons cmn-icons_userbar-new"></em></a></span><a href="javascript:;" class="pTag next" p-index="3"><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_arrow-right"></em></a>
+</span></div>
+</div>
+</div><div class="lemmaWgt-promotion-rightBigAd">
+</div><dl class="side-box lemma-statistics">
+<dt class="title">词条统计</dt>
+<dd class="description">
+<ul>
+<li>浏览次数：<span id="j-lemmaStatistics-pv">1596291</span>次</li>
+<li>编辑次数：228次<a href="http://baike.baidu.com/historylist/jQuery/5385065" class="nslog:1021" target="_blank">历史版本</a></li>
+<li>最近更新：<span class="j-modified-time" style="">2016-03-11</span></li>
+<li>创建者：<a class="show-userCard" data-uid="15026464" title="查看此用户资料" target="_blank" href="http://www.baidu.com/p/kindwell" nslog-type="1022">kindwell</a></li>
+</ul>
+</dd>
+</dl>
+<div class="side-catalog" style="visibility:hidden">
+<div class="side-bar">
+<em class="circle start"></em>
+<em class="circle end"></em>
+</div>
+<div class="catalog-scroller">
+<dl class="catalog-list">
+<dt class="catalog-title level1">
+<em class="pointer"></em>
+<span class="text">
+<span class="title-index">1</span>
+<a href="#1" class="title-link" nslog-type="1026">特点</a>
+</span>
+</dt>
+<dt class="catalog-title level1">
+<em class="pointer"></em>
+<span class="text">
+<span class="title-index">2</span>
+<a href="#2" class="title-link" nslog-type="1026">历史版本</a>
+</span>
+</dt>
+<dd class="catalog-title level2">
+<span class="text">
+<span class="title-index">2.1</span>
+<a href="#2_1" class="title-link" nslog-type="1026">jQuery 1.0</a>
+</span>
+</dd>
+<dd class="catalog-title level2">
+<span class="text">
+<span class="title-index">2.2</span>
+<a href="#2_2" class="title-link" nslog-type="1026">jQuery 1.1</a>
+</span>
+</dd>
+<dd class="catalog-title level2">
+<span class="text">
+<span class="title-index">2.3</span>
+<a href="#2_3" class="title-link" nslog-type="1026">jQuery 1.1.3</a>
+</span>
+</dd>
+<dd class="catalog-title level2">
+<span class="text">
+<span class="title-index">2.4</span>
+<a href="#2_4" class="title-link" nslog-type="1026">jQuery 1.2</a>
+</span>
+</dd>
+<dd class="catalog-title level2">
+<span class="text">
+<span class="title-index">2.5</span>
+<a href="#2_5" class="title-link" nslog-type="1026">jQuery 1.2.6</a>
+</span>
+</dd>
+<dd class="catalog-title level2">
+<span class="text">
+<span class="title-index">2.6</span>
+<a href="#2_6" class="title-link" nslog-type="1026">jQuery 1.3</a>
+</span>
+</dd>
+<dd class="catalog-title level2">
+<span class="text">
+<span class="title-index">2.7</span>
+<a href="#2_7" class="title-link" nslog-type="1026">jQuery 1.3.2</a>
+</span>
+</dd>
+<dd class="catalog-title level2">
+<span class="text">
+<span class="title-index">2.8</span>
+<a href="#2_8" class="title-link" nslog-type="1026">jQuery 1.4</a>
+</span>
+</dd>
+<dd class="catalog-title level2">
+<span class="text">
+<span class="title-index">2.9</span>
+<a href="#2_9" class="title-link" nslog-type="1026">jQuery 1.5</a>
+</span>
+</dd>
+<dd class="catalog-title level2">
+<span class="text">
+<span class="title-index">2.10</span>
+<a href="#2_10" class="title-link" nslog-type="1026">jQuery 1.7</a>
+</span>
+</dd>
+<dd class="catalog-title level2">
+<span class="text">
+<span class="title-index">2.11</span>
+<a href="#2_11" class="title-link" nslog-type="1026">jQuery 1.7.2</a>
+</span>
+</dd>
+<dd class="catalog-title level2">
+<span class="text">
+<span class="title-index">2.12</span>
+<a href="#2_12" class="title-link" nslog-type="1026">jQuery 1.8.3</a>
+</span>
+</dd>
+<dd class="catalog-title level2">
+<span class="text">
+<span class="title-index">2.13</span>
+<a href="#2_13" class="title-link" nslog-type="1026">jQuery 2.0</a>
+</span>
+</dd>
+<dd class="catalog-title level2">
+<span class="text">
+<span class="title-index">2.14</span>
+<a href="#2_14" class="title-link" nslog-type="1026">jQuery2.1.0</a>
+</span>
+</dd>
+<dd class="catalog-title level2">
+<span class="text">
+<span class="title-index">2.15</span>
+<a href="#2_15" class="title-link" nslog-type="1026">jQuery2.1.1</a>
+</span>
+</dd>
+<dt class="catalog-title level1">
+<em class="pointer"></em>
+<span class="text">
+<span class="title-index">3</span>
+<a href="#3" class="title-link" nslog-type="1026">使用方法</a>
+</span>
+</dt>
+<dt class="catalog-title level1">
+<em class="pointer"></em>
+<span class="text">
+<span class="title-index">4</span>
+<a href="#4" class="title-link" nslog-type="1026">实例</a>
+</span>
+</dt>
+<dd class="catalog-title level2">
+<span class="text">
+<span class="title-index">4.1</span>
+<a href="#4_1" class="title-link" nslog-type="1026">选择器</a>
+</span>
+</dd>
+<dd class="catalog-title level2">
+<span class="text">
+<span class="title-index">4.2</span>
+<a href="#4_2" class="title-link" nslog-type="1026">事件处理</a>
+</span>
+</dd>
+<dd class="catalog-title level2">
+<span class="text">
+<span class="title-index">4.3</span>
+<a href="#4_3" class="title-link" nslog-type="1026">集合操作</a>
+</span>
+</dd>
+<dd class="catalog-title level2">
+<span class="text">
+<span class="title-index">4.4</span>
+<a href="#4_4" class="title-link" nslog-type="1026">动态特效</a>
+</span>
+</dd>
+<dd class="catalog-title level2">
+<span class="text">
+<span class="title-index">4.5</span>
+<a href="#4_5" class="title-link" nslog-type="1026">AJAX</a>
+</span>
+</dd>
+<dt class="catalog-title level1">
+<em class="pointer"></em>
+<span class="text">
+<span class="title-index">5</span>
+<a href="#5" class="title-link" nslog-type="1026">插件机制</a>
+</span>
+</dt>
+<dt class="catalog-title level1">
+<em class="pointer"></em>
+<span class="text">
+<span class="title-index">6</span>
+<a href="#6" class="title-link" nslog-type="1026">控件</a>
+</span>
+</dt>
+<a class="arrow" href="javascript:void(0);"></a>
+</dl>
+</div>
+<div class="right-wrap">
+<a class="go-up disable" href="javascript:void(0);"></a>
+<a class="go-down" href="javascript:void(0);"></a>
+</div>
+<div class="bottom-wrap">
+<a class="toggle-button" href="javascript:void(0);"></a>
+<a class="gotop-button" href="javascript:void(0);"></a>
+</div>
+</div>
+<div class="unionAd_fromPs side-box" id="unionAd_fromPs">
+<script runed="true" type="BAIDU_HH">
+    {
+        type : 'pageembed',
+        di   : 'u2140330',
+        rsi0 : 270,
+        rsi1 : 175
+    }
+    </script><iframe src="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/home.htm" style="width:270px;height:175px;background-color:transparent" marginwidth="0" marginheight="0" class="BAIDU_SS_HHIFRAME" scrolling="no" allowtransparency="true" frameborder="0" align="center,center"></iframe>
+</div>
+<div style="display: block;" id="side_box_fengchao" class="fengchao side-box" nslog="area" nslog-type="10000902"><style>.ec-ui-tip{margin-left:5px;}.c-icon{background:url(http://s1.bdstatic.com/r/www/cache/biz/ecom/common/api/img/ns-credit/icons.png)
+ no-repeat 0 
+0;_background-image:url(http://s1.bdstatic.com/r/www/cache/biz/ecom/common/api/img/ns-credit/icons.gif);}.c-frame{margin-bottom:18px;}.c-offset{padding-left:10px;}.c-gray{color:#666;}.c-gap-top-small{margin-top:5px;}.c-gap-top{margin-top:10px;}.c-gap-bottom-small{margin-bottom:5px;}.c-gap-bottom{margin-bottom:10px;}.c-gap-left{margin-left:12px;}.c-gap-left-small{margin-left:6px;}.c-gap-right{margin-right:12px;}.c-gap-right-small{margin-right:6px;}.c-gap-icon-right-small{margin-right:5px;}.c-gap-icon-right{margin-right:10px;}.c-gap-icon-left-small{margin-left:5px;}.c-gap-icon-left{margin-left:10px;}.c-container{width:538px;font-size:13px;line-height:1.54;word-wrap:break-word;word-break:break-all;}.c-container
+ .c-container{width:auto;}.c-container 
+table{border-collapse:collapse;border-spacing:0;}.c-container 
+td{font-size:13px;line-height:1.54;}.c-default{font-size:13px;line-height:1.54;word-wrap:break-word;word-break:break-all;}.c-container
+ .t,.c-default .t{line-height:1.54;}.c-default 
+.t{margin-bottom:0;}.cr-content{width:259px;font-size:13px;line-height:1.54;color:#333;}.cr-content
+ table{border-collapse:collapse;border-spacing:0;}.cr-content 
+td{font-size:13px;line-height:1.54;vertical-align:top;}.cr-offset{padding-left:17px;}.container_l
+ .cr-content{width:351px;}.container_l 
+.cr-content-narrow{width:259px;}.cr-title{font-size:14px;line-height:1.29;font-weight:bold;}.cr-title-sub{float:right;font-size:13px;font-weight:normal;}.c-row{*zoom:1;}.c-row:after{display:block;height:0;content:"";clear:both;visibility:hidden;}.c-span2{width:29px;}.c-span3{width:52px;}.c-span4{width:75px;}.c-span5{width:98px;}.c-span6{width:121px;}.c-span7{width:144px;}.c-span8{width:167px;}.c-span9{width:190px;}.c-span10{width:213px;}.c-span11{width:236px;}.c-span12{width:259px;}.c-span13{width:282px;}.c-span14{width:305px;}.c-span15{width:328px;}.c-span16{width:351px;}.c-span17{width:374px;}.c-span18{width:397px;}.c-span19{width:420px;}.c-span20{width:443px;}.c-span21{width:466px;}.c-span22{width:489px;}.c-span23{width:512px;}.c-span24{width:535px;}.c-span2,.c-span3,.c-span4,.c-span5,.c-span6,.c-span7,.c-span8,.c-span9,.c-span10,.c-span11,.c-span12,.c-span13,.c-span14,.c-span15,.c-span16,.c-span17,.c-span18,.c-span19,.c-span20,.c-span21,.c-span22,.c-span23,.c-span24{float:left;_display:inline;margin-right:17px;list-style:none;}.c-span-last{margin-right:0;}.c-span-last-s{margin-right:0;}.container_l
+ .c-span-last-s{margin-right:17px;}.cr-content-narrow 
+.c-span-last-s{margin-right:0;}.c-border{width:518px;padding:9px;border:1px
+ solid 
+#e3e3e3;border-bottom-color:#e0e0e0;border-right-color:#ececec;box-shadow:1px
+ 2px 1px rgba(0,0,0,0.072);-webkit-box-shadow:1px 2px 1px 
+rgba(0,0,0,0.072);-moz-box-shadow:1px 2px 1px 
+rgba(0,0,0,0.072);-o-box-shadow:1px 2px 1px rgba(0,0,0,0.072);}.c-border
+ .c-gap-left{margin-left:10px;}.c-border 
+.c-gap-left-small{margin-left:5px;}.c-border 
+.c-gap-right{margin-right:10px;}.c-border 
+.c-gap-right-small{margin-right:5px;}.c-border 
+.c-border{width:auto;padding:0;border:none;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;-o-box-shadow:none;}.c-border
+ .c-span2{width:34px;}.c-border .c-span3{width:56px;}.c-border 
+.c-span4{width:78px;}.c-border .c-span5{width:100px;}.c-border 
+.c-span6{width:122px;}.c-border .c-span7{width:144px;}.c-border 
+.c-span8{width:166px;}.c-border .c-span9{width:188px;}.c-border 
+.c-span10{width:210px;}.c-border .c-span11{width:232px;}.c-border 
+.c-span12{width:254px;}.c-border .c-span13{width:276px;}.c-border 
+.c-span14{width:298px;}.c-border .c-span15{width:320px;}.c-border 
+.c-span16{width:342px;}.c-border .c-span17{width:364px;}.c-border 
+.c-span18{width:386px;}.c-border .c-span19{width:408px;}.c-border 
+.c-span20{width:430px;}.c-border .c-span21{width:452px;}.c-border 
+.c-span22{width:474px;}.c-border .c-span23{width:496px;}.c-border 
+.c-span24{width:518px;}.c-border .c-span2,.c-border .c-span3,.c-border 
+.c-span4,.c-border .c-span5,.c-border .c-span6,.c-border 
+.c-span7,.c-border .c-span8,.c-border .c-span9,.c-border 
+.c-span10,.c-border .c-span11,.c-border .c-span12,.c-border 
+.c-span13,.c-border .c-span14,.c-border .c-span15,.c-border 
+.c-span16,.c-border .c-span17,.c-border .c-span18,.c-border 
+.c-span19,.c-border .c-span20,.c-border .c-span21,.c-border 
+.c-span22,.c-border .c-span23,.c-border 
+.c-span24{margin-right:10px;}.c-border 
+.c-span-last{margin-right:0;}.c-border 
+.c-span-last-s{margin-right:0;}.c-border .container_l 
+.c-span-last-s{margin-right:10px;}.c-loading{display:block;width:50px;height:50px;background:url(http://www.baidu.com/aladdin/img/tools/loading.gif)
+ no-repeat 0 0;}.c-vline{display:inline-block;margin:0 
+3px;border-left:1px solid 
+#ddd;width:0;height:12px;_vertical-align:middle;_overflow:hidden;}.c-icon{display:inline-block;width:14px;height:14px;vertical-align:text-bottom;font-style:normal;overflow:hidden;}.c-icon-unfold,.c-icon-fold,.c-icon-chevron-unfold,.c-icon-chevron-fold{width:12px;height:12px;}.c-icon-star,.c-icon-star-gray{width:60px;}.c-icon-qa-empty,.c-icon-safeguard,.c-icon-register-empty,.c-icon-zan,.c-icon-location,.c-icon-warning,.c-icon-doc,.c-icon-xls,.c-icon-ppt,.c-icon-pdf,.c-icon-txt,.c-icon-play-black,.c-icon-gift,.c-icon-baidu-share,.c-icon-bear,.c-icon-sfda,.c-icon-bear-border,.c-icon-location-blue,.c-icon-hotAirBall,.c-icon-moon,.c-icon-streetMap,.c-icon-mv{width:16px;height:16px;}.c-icon-bear-circle,.c-icon-warning-circle,.c-icon-warning-triangle{width:18px;height:18px;}.c-icon-tieba,.c-icon-zhidao,.c-icon-bear-p,.c-icon-bear-pn{width:24px;height:24px;}.c-icon-ball-blue,.c-icon-ball-red{width:38px;height:38px;}.c-icon-unfold:hover,.c-icon-fold:hover,.c-icon-chevron-unfold:hover,.c-icon-chevron-fold:hover,.c-icon-download:hover,.c-icon-lyric:hover,.c-icon-v:hover,.c-icon-hui:hover,.c-icon-bao:hover,.c-icon-person:hover,.c-icon-high-v:hover,.c-icon-phone:hover,.c-icon-nuo:hover,.c-icon-med:hover,.c-icon-air:hover,.c-icon-share2:hover,.c-icon-v1:hover,.c-icon-v2:hover,.c-icon-v3:hover{border-color:#388bff;}.c-icon-unfold:active,.c-icon-fold:active,.c-icon-chevron-unfold:active,.c-icon-chevron-fold:active,.c-icon-download:active,.c-icon-lyric:active,.c-icon-v:active,.c-icon-hui:active,.c-icon-bao:active,.c-icon-person:active,.c-icon-high-v:active,.c-icon-phone:active,.c-icon-nuo:active,.c-icon-med:active,.c-icon-air:active,.c-icon-share2:active,.c-icon-v1:active,.c-icon-v2:active,.c-icon-v3:active{border-color:#a2a6ab;background-color:#f0f0f0;box-shadow:inset
+ 1px 1px 1px #c7c7c7;-webkit-box-shadow:inset 1px 1px 1px 
+#c7c7c7;-moz-box-shadow:inset 1px 1px 1px #c7c7c7;-o-box-shadow:inset 
+1px 1px 1px 
+#c7c7c7;}.c-icon-unfold,.c-icon-fold,.c-icon-chevron-unfold,.c-icon-chevron-fold,.c-icon-download,.c-icon-lyric{border:1px
+ solid 
+#d8d8d8;cursor:pointer;}.c-icon-v,.c-icon-hui,.c-icon-bao,.c-icon-person,.c-icon-high-v,.c-icon-phone,.c-icon-nuo,.c-icon-med,.c-icon-air,.c-icon-share2,.c-icon-v1,.c-icon-v2,.c-icon-v3{border:1px
+ solid 
+#d8d8d8;cursor:pointer;border-color:transparent;_border-color:#ff6347;_filter:chroma(color=#ff6347);}.c-icon-v1,.c-icon-v2,.c-icon-v3,.c-icon-v1-noborder,.c-icon-v2-noborder,.c-icon-v3-noborder,.c-icon-v1-noborder-disable,.c-icon-v2-noborder-disable,.c-icon-v3-noborder-disable{width:19px;}.c-icon-download,.c-icon-lyric{width:16px;height:16px;}.c-icon-play-circle,.c-icon-stop-circle{width:18px;height:18px;}.c-icon-play-circle-middle,.c-icon-stop-circle-middle{width:24px;height:24px;}.c-icon-play-black-large,.c-icon-stop-black-large{width:38px;height:38px;}.c-icon-flag{background-position:0
+ -144px;}.c-icon-bus{background-position:-24px 
+-144px;}.c-icon-calendar{background-position:-48px 
+-144px;}.c-icon-street{background-position:-72px 
+-144px;}.c-icon-map{background-position:-96px 
+-144px;}.c-icon-bag{background-position:-120px 
+-144px;}.c-icon-money{background-position:-144px 
+-144px;}.c-icon-game{background-position:-168px 
+-144px;}.c-icon-user{background-position:-192px 
+-144px;}.c-icon-globe{background-position:-216px 
+-144px;}.c-icon-lock{background-position:-240px 
+-144px;}.c-icon-plane{background-position:-264px 
+-144px;}.c-icon-list{background-position:-288px 
+-144px;}.c-icon-star-gray{background-position:-312px 
+-144px;}.c-icon-circle-gray{background-position:-384px 
+-144px;}.c-icon-triangle-down{background-position:-408px 
+-144px;}.c-icon-triangle-up{background-position:-432px 
+-144px;}.c-icon-triangle-up-empty{background-position:-456px 
+-144px;}.c-icon-sort-gray{background-position:-480px 
+-144px;}.c-icon-sort-up{background-position:-504px 
+-144px;}.c-icon-sort-down{background-position:-528px 
+-144px;}.c-icon-down-gray{background-position:-552px 
+-144px;}.c-icon-up-gray{background-position:-576px 
+-144px;}.c-icon-download-noborder{background-position:-600px 
+-144px;}.c-icon-lyric-noborder{background-position:-624px 
+-144px;}.c-icon-download-white{background-position:-648px 
+-144px;}.c-icon-close{background-position:-672px 
+-144px;}.c-icon-fail{background-position:-696px 
+-144px;}.c-icon-success{background-position:-720px 
+-144px;}.c-icon-triangle-down-g{background-position:-744px 
+-144px;}.c-icon-fullscreen{background-position:0 
+-168px;}.c-icon-safe{background-position:-24px 
+-168px;}.c-icon-exchange{background-position:-48px 
+-168px;}.c-icon-chevron-bottom{background-position:-72px 
+-168px;}.c-icon-chevron-top{background-position:-96px 
+-168px;}.c-icon-unfold{background-position:-120px 
+-168px;}.c-icon-fold{background-position:-144px 
+-168px;}.c-icon-chevron-unfold{background-position:-168px 
+-168px;}.c-icon-qa{background-position:-192px 
+-168px;}.c-icon-register{background-position:-216px 
+-168px;}.c-icon-star{background-position:-240px 
+-168px;}.c-icon-star-gray{position:relative;}.c-icon-star-gray 
+.c-icon-star{position:absolute;top:0;left:0;}.c-icon-play-blue{background-position:-312px
+ -168px;}.c-icon-pic{width:16px;background-position:-336px 
+-168px;}.c-icon-chevron-fold{background-position:-360px 
+-168px;}.c-icon-video{width:18px;background-position:-384px 
+-168px;}.c-icon-circle-blue{background-position:-408px 
+-168px;}.c-icon-circle-yellow{background-position:-432px 
+-168px;}.c-icon-play-white{background-position:-456px 
+-168px;}.c-icon-triangle-down-blue{background-position:-480px 
+-168px;}.c-icon-chevron-unfold2{background-position:-504px 
+-168px;}.c-icon-right{background-position:-528px 
+-168px;}.c-icon-right-empty{background-position:-552px 
+-168px;}.c-icon-new-corner{width:15px;background-position:-576px 
+-168px;}.c-icon-horn{background-position:-600px 
+-168px;}.c-icon-right-large{width:18px;background-position:-624px 
+-168px;}.c-icon-wrong-large{background-position:-648px 
+-168px;}.c-icon-circle-blue-s{background-position:-672px 
+-168px;}.c-icon-play-gray{background-position:-696px 
+-168px;}.c-icon-up{background-position:-720px 
+-168px;}.c-icon-down{background-position:-744px 
+-168px;}.c-icon-stable{background-position:-768px 
+-168px;}.c-icon-calendar-blue{background-position:-792px 
+-168px;}.c-icon-triangle-down-blue2{background-position:-816px 
+-168px;}.c-icon-triangle-up-blue2{background-position:-840px 
+-168px;}.c-icon-down-blue{background-position:-864px 
+-168px;}.c-icon-up-blue{background-position:-888px 
+-168px;}.c-icon-ting{background-position:-912px 
+-168px;}.c-icon-v,.c-icon-v-noborder{background-position:0 
+-192px;}.c-icon-hui{background-position:-24px 
+-192px;}.c-icon-bao{background-position:-48px 
+-192px;}.c-icon-phone{background-position:-72px 
+-192px;}.c-icon-qa-empty{background-position:-96px 
+-192px;}.c-icon-safeguard{background-position:-120px 
+-192px;}.c-icon-register-empty{background-position:-144px 
+-192px;}.c-icon-zan{background-position:-168px 
+-192px;}.c-icon-location{background-position:-240px 
+-192px;}.c-icon-warning{background-position:-264px 
+-192px;}.c-icon-doc{background-position:-288px 
+-192px;}.c-icon-xls{background-position:-312px 
+-192px;}.c-icon-ppt{background-position:-336px 
+-192px;}.c-icon-pdf{background-position:-360px 
+-192px;}.c-icon-txt{background-position:-384px 
+-192px;}.c-icon-play-black{background-position:-408px 
+-192px;}.c-icon-play-black:hover{background-position:-432px 
+-192px;}.c-icon-gift{background-position:-456px 
+-192px;}.c-icon-baidu-share{background-position:-480px 
+-192px;}.c-icon-bear{background-position:-504px 
+-192px;}.c-icon-sfda{width:31px;background-position:-528px 
+-192px;}.c-icon-bear-border{background-position:-576px 
+-192px;}.c-icon-person,.c-icon-person-noborder{background-position:-600px
+ -192px;}.c-icon-location-blue{background-position:-624px 
+-192px;}.c-icon-hotAirBall{background-position:-648px 
+-192px;}.c-icon-moon{background-position:-672px 
+-192px;}.c-icon-streetMap{background-position:-696px 
+-192px;}.c-icon-high-v,.c-icon-high-v-noborder{background-position:-720px
+ -192px;}.c-icon-nuo{background-position:-744px 
+-192px;}.c-icon-mv{background-position:-768px 
+-192px;}.c-icon-med{background-position:-816px 
+-192px;}.c-icon-air{background-position:-840px 
+-192px;}.c-icon-share2{background-position:-864px 
+-192px;}.c-icon-v1,.c-icon-v1-noborder{background-position:-888px 
+-192px;}.c-icon-v2,.c-icon-v2-noborder{background-position:-912px 
+-192px;}.c-icon-v3,.c-icon-v3-noborder{background-position:-936px 
+-192px;}.c-icon-v1-noborder-disable{background-position:-960px 
+-192px;}.c-icon-v2-noborder-disable{background-position:-984px 
+-192px;}.c-icon-v3-noborder-disable{background-position:-1008px 
+-192px;}.c-icon-bear-circle{background-position:0 
+-216px;}.c-icon-warning-circle{background-position:-24px 
+-216px;}.c-icon-warning-triangle{width:24px;background-position:-48px 
+-216px;}.c-icon-ball-red{background-position:0 
+-240px;}.c-icon-ball-blue{background-position:-48px 
+-240px;}.c-icon-tieba{background-position:0 
+-288px;}.c-icon-zhidao{background-position:-48px 
+-288px;}.c-icon-bear-p{background-position:-96px 
+-288px;}.c-icon-bear-pn{background-position:-144px 
+-288px;}.c-icon-download{background-position:0 
+-336px;}.c-icon-lyric{background-position:-24px 
+-336px;}.c-icon-play-circle{background-position:-48px 
+-336px;}.c-icon-play-circle:hover{background-position:-72px 
+-336px;}.c-icon-stop-circle{background-position:-96px 
+-336px;}.c-icon-stop-circle:hover{background-position:-120px 
+-336px;}.c-icon-play-circle-middle{background-position:0 
+-360px;}.c-icon-play-circle-middle:hover{background-position:-48px 
+-360px;}.c-icon-stop-circle-middle{background-position:-96px 
+-360px;}.c-icon-stop-circle-middle:hover{background-position:-144px 
+-360px;}.c-icon-play-black-large{background-position:0 
+-408px;}.c-icon-play-black-large:hover{background-position:-48px 
+-408px;}.c-icon-stop-black-large{background-position:-96px 
+-408px;}.c-icon-stop-black-large:hover{background-position:-144px 
+-408px;}.c-text{display:inline-block;padding:2px;text-align:center;vertical-align:text-bottom;font-size:12px;line-height:100%;font-style:normal;color:#fff;overflow:hidden;}a.c-text{text-decoration:none;}.c-text-new{background-color:#f13f40;}.c-text-info{padding-left:0;padding-right:0;font-weight:bold;color:#2b99ff;*vertical-align:baseline;_position:relative;_top:2px;}.c-text-info
+ b{_position:relative;_top:-1px;}.c-text-info span{padding:0 
+2px;font-weight:normal;}.c-text-important{background-color:#1cb7fd;}.c-text-public{background-color:#2b99ff;}.c-text-warning{background-color:#ff830f;}.c-text-prompt{background-color:#f5c537;}.c-text-danger{background-color:#f13f40;}.c-text-safe{background-color:#52c277;}.c-text-empty{padding-top:1px;padding-bottom:1px;border:1px
+ solid 
+#d8d8d8;cursor:pointer;color:#23b9fd;background-color:#fff;}.c-text-empty:hover{border-color:#388bff;}.c-text-empty:active{border-color:#a2a6ab;background-color:#f0f0f0;box-shadow:inset
+ 1px 1px 1px #c7c7c7;-webkit-box-shadow:inset 1px 1px 1px 
+#c7c7c7;-moz-box-shadow:inset 1px 1px 1px #c7c7c7;-o-box-shadow:inset 
+1px 1px 1px 
+#c7c7c7;}.c-text-mult{padding-left:5px;padding-right:5px;}.c-container 
+.vd_newest_main{width:auto;}.c-customicon{display:inline-block;width:16px;height:16px;vertical-align:text-bottom;font-style:normal;overflow:hidden;}.c-tip-icon
+ 
+i{display:inline-block;cursor:pointer;}.c-tip-con{position:absolute;z-index:1;top:22px;left:-35px;background:#fff;border:1px
+ solid #dcdcdc;border:1px solid 
+rgba(0,0,0,0.2);-webkit-transition:opacity .218s;transition:opacity 
+.218s;-webkit-box-shadow:0 2px 4px rgba(0,0,0,0.2);box-shadow:0 2px 4px 
+rgba(0,0,0,0.2);padding:5px 0 5px 
+0;display:none;font-size:12px;line-height:20px;}.c-tip-arrow{width:0;height:0;font-size:0;line-height:0;display:block;position:absolute;top:-16px;}.c-tip-arrow
+ em,.c-tip-arrow 
+ins{width:0;height:0;font-size:0;line-height:0;display:block;position:absolute;border:8px
+ solid #000;border-style:dashed dashed solid dashed;}.c-tip-arrow 
+em{border-color:transparent transparent #d8d8d8 
+transparent;}.c-tip-arrow ins{border-color:transparent transparent #fff 
+transparent;top:2px;}.c-tip-con h3{font-size:12px;}.c-tip-con 
+.c-tip-title{margin:0 10px;display:inline-block;width:239px;}.c-tip-con 
+.c-tip-info{color:#666;margin:0 10px 1px 10px;width:239px;}.c-tip-con 
+.c-tip-cer{width:354px;color:#666;margin:0 10px 1px 10px;}.c-tip-con 
+.c-tip-cer ul{margin:0;padding:0;list-style:none;}.c-tip-con 
+.c-tip-title{width:auto;_width:354px;}.c-tip-con 
+.c-tip-item-i{padding:3px 0 3px 20px;line-height:14px;}.c-tip-con 
+.c-tip-item-i .c-tip-item-icon{margin-left:-20px;}.c-tip-con .c-tip-menu
+ ul{width:74px;}.c-tip-con .c-tip-menu ul{text-align:center;}.c-tip-con 
+.c-tip-menu li 
+a{display:block;text-decoration:none;cursor:pointer;background-color:#fff;padding:3px
+ 0;color:#0000d0;}.c-tip-con .c-tip-menu li 
+a:hover{display:block;background-color:#ebebeb;}.c-tip-con 
+.c-tip-notice{width:239px;padding:0 10px;}.c-tip-con .c-tip-notice 
+.c-tip-notice-succ{color:#4cbd37;}.c-tip-con .c-tip-notice 
+.c-tip-notice-fail{color:#f13f40;}.c-tip-con .c-tip-notice 
+.c-tip-item-succ{color:#444;}.c-tip-con .c-tip-notice 
+.c-tip-item-fail{color:#aaa;}.c-tip-con .c-tip-notice 
+.c-tip-item-faila{color:#aaa;}.c-tip-close{right:10px;position:absolute;cursor:pointer;}.c-tools{display:inline;}.c-tools-share{width:239px;padding:0
+ 
+10px;}.icp_info{color:#666;margin-top:2px;font-size:13px;}.icon-gw,.icon-unsafe-icon{background:#2c99ff;vertical-align:text-bottom;*vertical-align:baseline;height:16px;padding-top:0;padding-bottom:0;padding-left:6px;padding-right:6px;line-height:16px;_padding-top:2px;_height:14px;_line-height:14px;font-size:12px;font-family:simsun;margin-left:10px;overflow:hidden;display:inline-block;-moz-border-radius:1px;-webkit-border-radius:1px;border-radius:1px;color:#fff;}a.icon-gw{color:#fff;background:#2196ff;text-decoration:none;cursor:pointer;}a.icon-gw:hover{background:#1e87ef;}a.icon-gw:active{height:15px;_height:13px;line-height:15px;_line-height:13px;padding-left:5px;background:#1c80d9;border-left:1px
+ solid #145997;border-top:1px solid 
+#145997;}.icon-unsafe-icon{background:#e54d4b;}#con-at{margin-bottom:15px;}#con-ar{margin-bottom:40px;}#con-at
+ 
+.result-op{margin-bottom:15px;font-size:13px;line-height:1.52em;}#con-ar
+ 
+.result-op{margin-bottom:28px;font-size:13px;line-height:1.52em;}#content_left
+ .result-op,#content_left 
+.result{margin-bottom:14px;border-collapse:collapse;}#content_left 
+.c-border .result-op,#content_left .c-border 
+.result{margin-bottom:25px;}#content_left .c-border 
+.result-op:last-child,#content_left .c-border 
+.result:last-child{margin-bottom:12px;}#content_left .result 
+.f,#content_left .result-op 
+.f{padding:0;}.subLink_factory{border-collapse:collapse;}.subLink_factory
+ td{padding:0;}.subLink_factory td.middle,.subLink_factory 
+td.last{color:#666;}.subLink_factory td 
+a{text-decoration:underline;}.subLink_factory 
+td.rightTd{text-align:right;}.subLink_factory_right{width:100%;}.subLink_factory_left
+ td{padding-right:26px;}.subLink_factory_left 
+td.last{padding:0;}.subLink_factory_left 
+td.first{padding-right:75px;}.subLink_factory_right 
+td{width:90px;}.subLink_factory_right 
+td.first{width:auto;}.general_image_pic{margin-top:2px;}.general_image_pic
+ a{background:#fff no-repeat center 
+center;text-decoration:none;display:block;overflow:hidden;text-align:center;}.c-icon-v1,.c-icon-v2,.c-icon-v3{border:1px
+ solid 
+#d8d8d8;cursor:pointer;border-color:transparent;_border-color:#ff6347;_filter:chroma(color=#ff6347);}.c-icon-v1:active,.c-icon-v2:active,.c-icon-v3:active{border-color:#a2a6ab;background-color:#f0f0f0;box-shadow:inset
+ 1px 1px 1px #c7c7c7;-webkit-box-shadow:inset 1px 1px 1px 
+#c7c7c7;-moz-box-shadow:inset 1px 1px 1px #c7c7c7;-o-box-shadow:inset 
+1px 1px 1px 
+#c7c7c7;}.c-icon-v1:hover,.c-icon-v2:hover,.c-icon-v3:hover{border-color:#388bff;}@-moz-document
+ 
+url-prefix(){.result,.f{width:538px;}}.opui-honourCard{font-size:12px;color:#666;line-height:1.5em;width:354px;}.opui-honourCard-score{width:60px;padding:4px
+ 2px 4px 2px;text-align:center;float:left;}.opui-honourCard-score 
+em{width:63px;display:block;font-size:37px;line-height:37px;color:#8e8d8d;font-family:arial;font-style:normal;}.opui-honourCard-info{background:#f5f5f5;overflow:hidden;zoom:1;}.opui-honourCard-title
+ a{*font-family:Microsoft YaHei;}.opui-honourCard-title a 
+i{position:relative;left:-65px;*left:-68px;}.opui-honourCard 
+ol{list-style:none;margin:0;padding:0;float:left;_padding-top:5px;}.opui-honourCard
+ 
+li{height:20px;line-height:20px;padding-left:20px;_vertical-align:bottom;}.opui-honourCard
+ li 
+i{vertical-align:middle;_vertical-align:bottom;}.opui-honourCard-selected{color:#2b2a2a;font-weight:bold;background:url(http://s1.bdstatic.com/r/www/cache/biz/ecom/common/api/img/ns-credit/honourCard.png)
+ no-repeat 3px 5px;*background-position:3px 2px;}</style><div id="ec_im_container" style="word-wrap:break-word;word-break:break-all;"><div style="font-size:12px;text-align:right;margin-bottom:15px;"><font color="#666666">推广链接</font></div><div style="cursor:pointer;"><a href="http://www.baidu.com/baidu.php?url=af00000zKTB9LHe8jn4MSaxqEXCcXziTaHLYpSM-40Snx55sfDjjtXF_PGDFhBLVZRxttQvo-_rsLHwc7sv__sEYuiLhkBtRTdVZ86zMZe5z0HgvKaO1YCYqLtJlz0OY2BT_GBT.7Y_iHF8xnhA94wEYL_SNK-deQbfHgI3ynDgg6msw5I7AMHdeyQPv4Mu_deqvkMWIg3qMgAkGYt8HGlXrHF8vTEZIuvN4nMQkerzz1F_erVeZuugvyyyyI-X1FktX1kllv2J7jZ93SLjbS8ZFqTEw4RPQPABWjbSVjHA-hpAojkSE2SQZ6CT_PHnYppAZWt_7jgMvmTMHvGYTjGo_5Z4uxu6HPCs4PLM_s4PLVttrHIeptrHI4qrZF8LSrZF8qXMjbLXXejbLUqSZF8q81jblTXQjkSyMHz4rMG34nheuztIdMugbzTEZ_eQQnh1_s4rhurEZBstx-GYt8HGlXrHF8vTEZIuvN4nMQkerzz1F_enrHGEstx-vyNq----Mug_zTxZ_tNPeQSd5QWdQjPakbtIh1cC.U1Yk0ZDqp-7dugF40ZfqpM7dugF4EnU2_TUL0A-V5Hc1P6KM5g9hn6KdpHY0TA-b5HD0mv-b5Hn3n6KVIjYknjDL0AVG5H00TMfqPHRd0ANGujY3njc0mhbqn0KVm1Y3rHcsP1DsPsKkTA-b5H00TyPGujYs0ZFMIA7M5H00ULu_5fKVpyfqn0KGTgfqn0K9mWYsg100ugFM5H00TZ0qn0K8IM0qna3snj0snj0sn0KVIZ0qn0KbuAqs5H00ThCqn0KhIjYs0ZKC5H00ULnqn0KBI1Ys0A4Y5H00TLCq0ZwdT1YknHcknHn4njTknWT4n1RkrHc0ThNkIjYkPjmknjczP1Rdnj0L0ZPGujYsnju-nAP9P1fdPH0dmhPh0A7W5HD0XMfqn0KWThnqnWfLrHR" target="_blank" style="line-height:18px;"><font style="font-size:14px;">找jquery计时器-上天猫商..</font></a><br><a href="http://www.baidu.com/baidu.php?url=af00000zKTB9LHe8jn4MSaxqEXCcXziTaHLYpSM-40Snx55sfDjjtXF_PGDFhBLVZRxttQvo-_rsLHwc7sv__sEYuiLhkBtRTdVZ86zMZe5z0HgvKaO1YCYqLtJlz0OY2BT_GBT.7Y_iHF8xnhA94wEYL_SNK-deQbfHgI3ynDgg6msw5I7AMHdeyQPv4Mu_deqvkMWIg3qMgAkGYt8HGlXrHF8vTEZIuvN4nMQkerzz1F_erVeZuugvyyyyI-X1FktX1kllv2J7jZ93SLjbS8ZFqTEw4RPQPABWjbSVjHA-hpAojkSE2SQZ6CT_PHnYppAZWt_7jgMvmTMHvGYTjGo_5Z4uxu6HPCs4PLM_s4PLVttrHIeptrHI4qrZF8LSrZF8qXMjbLXXejbLUqSZF8q81jblTXQjkSyMHz4rMG34nheuztIdMugbzTEZ_eQQnh1_s4rhurEZBstx-GYt8HGlXrHF8vTEZIuvN4nMQkerzz1F_enrHGEstx-vyNq----Mug_zTxZ_tNPeQSd5QWdQjPakbtIh1cC.U1Yk0ZDqp-7dugF40ZfqpM7dugF4EnU2_TUL0A-V5Hc1P6KM5g9hn6KdpHY0TA-b5HD0mv-b5Hn3n6KVIjYknjDL0AVG5H00TMfqPHRd0ANGujY3njc0mhbqn0KVm1Y3rHcsP1DsPsKkTA-b5H00TyPGujYs0ZFMIA7M5H00ULu_5fKVpyfqn0KGTgfqn0K9mWYsg100ugFM5H00TZ0qn0K8IM0qna3snj0snj0sn0KVIZ0qn0KbuAqs5H00ThCqn0KhIjYs0ZKC5H00ULnqn0KBI1Ys0A4Y5H00TLCq0ZwdT1YknHcknHn4njTknWT4n1RkrHc0ThNkIjYkPjmknjczP1Rdnj0L0ZPGujYsnju-nAP9P1fdPH0dmhPh0A7W5HD0XMfqn0KWThnqnWfLrHR" target="_blank" style="font-size:13px;line-height:18px;text-decoration:none;color:#ffffff;"><font color="#000000">找jquery计时器尽在天猫商城,更高折扣,品质护航购物无忧,7天无..</font><br><font style="margin-right:8px;" color="#008000">www.tmall.com</font></a><a style="cursor:pointer;text-decoration:none;" href="https://www.baidu.com/s?wd=www.taobao.com@v&amp;vmp_ec=1460458823&amp;vmp_ectm=49f89672a7acb2512cac1YE2NTXw2f266Nd620095O5zdcg71ke19zdml64lc23Xe58e355d&amp;from=fc&amp;url=af00000zKTB9LHe8jn4MSaxqEXCcXziTaHLYpSM-40Snx55sfDjjtXF_PGDFhBLVZRxttQvo-_rsLHwc7sv__sEYuiLhkBtRTdVZ86zMZe5z0HgvKaO1YCYqLtJlz0OY2BT_GBT.7Y_iHF8xnhA94wEYL_SNK-deQbfHgI3ynDgg6msw5I7AMHdeyQPv4Mu_deqvkMWIg3qMgAkGYt8HGlXrHF8vTEZIuvN4nMQkerzz1F_erVeZuugvyyyyI-X1FktX1kllv2J7jZ93SLjbS8ZFqTEw4RPQPABWjbSVjHA-hpAojkSE2SQZ6CT_PHnYppAZWt_7jgMvmTMHvGYTjGo_5Z4uxu6HPCs4PLM_s4PLVttrHIeptrHI4qrZF8LSrZF8qXMjbLXXejbLUqSZF8q81jblTXQjkSyMHz4rMG34nheuztIdMugbzTEZ_eQQnh1_s4rhurEZBstx-GYt8HGlXrHF8vTEZIuvN4nMQkerzz1F_enrHGEstx-vyNq----Mug_zTxZ_tNPeQSd5QWdQjPakbtIh1cC.U1Yk0ZDqp-7dugF40ZfqpM7dugF4EnU2_TUL0A-V5Hc1P6KM5g9hn6KdpHY0TA-b5HD0mv-b5Hn3n6KVIjYknjDL0AVG5H00TMfqPHRd0ANGujY3njc0mhbqn0KVm1Y3rHcsP1DsPsKkTA-b5H00TyPGujYs0ZFMIA7M5H00ULu_5fKVpyfqn0KGTgfqn0K9mWYsg100ugFM5H00TZ0qn0K8IM0qna3snj0snj0sn0KVIZ0qn0KbuAqs5H00ThCqn0KhIjYs0ZKC5H00ULnqn0KBI1Ys0A4Y5H00TLCq0ZwdT1YknHcknHn4njTknWT4n1RkrHc0ThNkIjYkPjmknjczP1Rdnj0L0ZPGujYsnju-nAP9P1fdPH0dmhPh0A7W5HD0XMfqn0KWThnqnWfLrHR&amp;dataTime=84" target="_blank"><i data-renzheng="{title: '杭州阿里妈妈软件服务有限公司：',favorite: {fm: '',rsvMt: '',p1: '',url: 'http://i.baidu.com/myfavorite/set?url=af00000zKTB9LHe8jn4MSaxqEXCcXziTaHLYpSM-40Snx55sfDjjtXF_PGDFhBLVZRxttQvo-_rsLHwc7sv__sEYuiLhkBtRTdVZ86zMZe5z0HgvKaO1YCYqLtJlz0OY2BT_GBT.7Y_iHF8xnhA94wEYL_SNK-deQbfHgI3ynDgg6msw5I7AMHdeyQPv4Mu_deqvkMWIg3qMgAkGYt8HGlXrHF8vTEZIuvN4nMQkerzz1F_erVeZuugvyyyyI-X1FktX1kllv2J7jZ93SLjbS8ZFqTEw4RPQPABWjbSVjHA-hpAojkSE2SQZ6CT_PHnYppAZWt_7jgMvmTMHvGYTjGo_5Z4uxu6HPCs4PLM_s4PLVttrHIeptrHI4qrZF8LSrZF8qXMjbLXXejbLUqSZF8q81jblTXQjkSyMHz4rMG34nheuztIdMugbzTEZ_eQQnh1_s4rhurEZBstx-GYt8HGlXrHF8vTEZIuvN4nMQkerzz1F_enrHGEstx-vyNq----Mug_zTxZ_tNPeQSd5QWdQjPakbtIh1cC.U1Yk0ZDqp-7dugF40ZfqpM7dugF4EnU2_TUL0A-V5Hc1P6KM5g9hn6KdpHY0TA-b5HD0mv-b5Hn3n6KVIjYknjDL0AVG5H00TMfqPHRd0ANGujY3njc0mhbqn0KVm1Y3rHcsP1DsPsKkTA-b5H00TyPGujYs0ZFMIA7M5H00ULu_5fKVpyfqn0KGTgfqn0K9mWYsg100ugFM5H00TZ0qn0K8IM0qna3snj0snj0sn0KVIZ0qn0KbuAqs5H00ThCqn0KhIjYs0ZKC5H00ULnqn0KBI1Ys0A4Y5H00TLCq0ZwdT1YknHcknHn4njTknWT4n1RkrHc0ThNkIjYkPjmknjczP1Rdnj0L0ZPGujYsnju-nAP9P1fdPH0dmhPh0A7W5HD0XMfqn0KWThnqnWfLrHR'},appraise: {fm: '',rsvMt: '',p1: '',url: 'http://trust.baidu.com/womc/comt/?url=af00000zKTB9LHe8jn4MSaxqEXCcXziTaHLYpSM-40Snx55sfDjjtXF_PGDFhBLVZRxttQvo-_rsLHwc7sv__sEYuiLhkBtRTdVZ86zMZe5z0HgvKaO1YCYqLtJlz0OY2BT_GBT.7Y_iHF8xnhA94wEYL_SNK-deQbfHgI3ynDgg6msw5I7AMHdeyQPv4Mu_deqvkMWIg3qMgAkGYt8HGlXrHF8vTEZIuvN4nMQkerzz1F_erVeZuugvyyyyI-X1FktX1kllv2J7jZ93SLjbS8ZFqTEw4RPQPABWjbSVjHA-hpAojkSE2SQZ6CT_PHnYppAZWt_7jgMvmTMHvGYTjGo_5Z4uxu6HPCs4PLM_s4PLVttrHIeptrHI4qrZF8LSrZF8qXMjbLXXejbLUqSZF8q81jblTXQjkSyMHz4rMG34nheuztIdMugbzTEZ_eQQnh1_s4rhurEZBstx-GYt8HGlXrHF8vTEZIuvN4nMQkerzz1F_enrHGEstx-vyNq----Mug_zTxZ_tNPeQSd5QWdQjPakbtIh1cC.U1Yk0ZDqp-7dugF40ZfqpM7dugF4EnU2_TUL0A-V5Hc1P6KM5g9hn6KdpHY0TA-b5HD0mv-b5Hn3n6KVIjYknjDL0AVG5H00TMfqPHRd0ANGujY3njc0mhbqn0KVm1Y3rHcsP1DsPsKkTA-b5H00TyPGujYs0ZFMIA7M5H00ULu_5fKVpyfqn0KGTgfqn0K9mWYsg100ugFM5H00TZ0qn0K8IM0qna3snj0snj0sn0KVIZ0qn0KbuAqs5H00ThCqn0KhIjYs0ZKC5H00ULnqn0KBI1Ys0A4Y5H00TLCq0ZwdT1YknHcknHn4njTknWT4n1RkrHc0ThNkIjYkPjmknjczP1Rdnj0L0ZPGujYsnju-nAP9P1fdPH0dmhPh0A7W5HD0XMfqn0KWThnqnWfLrHR'},report: {fm: '',rsvMt: '',p1: '',url: 'http://baozhang.baidu.com/guarantee/accu/?url=af00000zKTB9LHe8jn4MSaxqEXCcXziTaHLYpSM-40Snx55sfDjjtXF_PGDFhBLVZRxttQvo-_rsLHwc7sv__sEYuiLhkBtRTdVZ86zMZe5z0HgvKaO1YCYqLtJlz0OY2BT_GBT.7Y_iHF8xnhA94wEYL_SNK-deQbfHgI3ynDgg6msw5I7AMHdeyQPv4Mu_deqvkMWIg3qMgAkGYt8HGlXrHF8vTEZIuvN4nMQkerzz1F_erVeZuugvyyyyI-X1FktX1kllv2J7jZ93SLjbS8ZFqTEw4RPQPABWjbSVjHA-hpAojkSE2SQZ6CT_PHnYppAZWt_7jgMvmTMHvGYTjGo_5Z4uxu6HPCs4PLM_s4PLVttrHIeptrHI4qrZF8LSrZF8qXMjbLXXejbLUqSZF8q81jblTXQjkSyMHz4rMG34nheuztIdMugbzTEZ_eQQnh1_s4rhurEZBstx-GYt8HGlXrHF8vTEZIuvN4nMQkerzz1F_enrHGEstx-vyNq----Mug_zTxZ_tNPeQSd5QWdQjPakbtIh1cC.U1Yk0ZDqp-7dugF40ZfqpM7dugF4EnU2_TUL0A-V5Hc1P6KM5g9hn6KdpHY0TA-b5HD0mv-b5Hn3n6KVIjYknjDL0AVG5H00TMfqPHRd0ANGujY3njc0mhbqn0KVm1Y3rHcsP1DsPsKkTA-b5H00TyPGujYs0ZFMIA7M5H00ULu_5fKVpyfqn0KGTgfqn0K9mWYsg100ugFM5H00TZ0qn0K8IM0qna3snj0snj0sn0KVIZ0qn0KbuAqs5H00ThCqn0KhIjYs0ZKC5H00ULnqn0KBI1Ys0A4Y5H00TLCq0ZwdT1YknHcknHn4njTknWT4n1RkrHc0ThNkIjYkPjmknjczP1Rdnj0L0ZPGujYsnju-nAP9P1fdPH0dmhPh0A7W5HD0XMfqn0KWThnqnWfLrHR'},identity: {a: {fm: '',rsvMt: '1017',p1:'',url: 'https://www.baidu.com/s?wd=www.taobao.com@v&amp;vmp_ec=1460458823&amp;vmp_ectm=49f89672a7acb2512cac1YE2NTXw2f266Nd620095O5zdcg71ke19zdml64lc23Xe58e355d&amp;from=fc&amp;url=af00000zKTB9LHe8jn4MSaxqEXCcXziTaHLYpSM-40Snx55sfDjjtXF_PGDFhBLVZRxttQvo-_rsLHwc7sv__sEYuiLhkBtRTdVZ86zMZe5z0HgvKaO1YCYqLtJlz0OY2BT_GBT.7Y_iHF8xnhA94wEYL_SNK-deQbfHgI3ynDgg6msw5I7AMHdeyQPv4Mu_deqvkMWIg3qMgAkGYt8HGlXrHF8vTEZIuvN4nMQkerzz1F_erVeZuugvyyyyI-X1FktX1kllv2J7jZ93SLjbS8ZFqTEw4RPQPABWjbSVjHA-hpAojkSE2SQZ6CT_PHnYppAZWt_7jgMvmTMHvGYTjGo_5Z4uxu6HPCs4PLM_s4PLVttrHIeptrHI4qrZF8LSrZF8qXMjbLXXejbLUqSZF8q81jblTXQjkSyMHz4rMG34nheuztIdMugbzTEZ_eQQnh1_s4rhurEZBstx-GYt8HGlXrHF8vTEZIuvN4nMQkerzz1F_enrHGEstx-vyNq----Mug_zTxZ_tNPeQSd5QWdQjPakbtIh1cC.U1Yk0ZDqp-7dugF40ZfqpM7dugF4EnU2_TUL0A-V5Hc1P6KM5g9hn6KdpHY0TA-b5HD0mv-b5Hn3n6KVIjYknjDL0AVG5H00TMfqPHRd0ANGujY3njc0mhbqn0KVm1Y3rHcsP1DsPsKkTA-b5H00TyPGujYs0ZFMIA7M5H00ULu_5fKVpyfqn0KGTgfqn0K9mWYsg100ugFM5H00TZ0qn0K8IM0qna3snj0snj0sn0KVIZ0qn0KbuAqs5H00ThCqn0KhIjYs0ZKC5H00ULnqn0KBI1Ys0A4Y5H00TLCq0ZwdT1YknHcknHn4njTknWT4n1RkrHc0ThNkIjYkPjmknjczP1Rdnj0L0ZPGujYsnju-nAP9P1fdPH0dmhPh0A7W5HD0XMfqn0KWThnqnWfLrHR&amp;dataTime=84'}, img: '', text: '',credit: '5',process: '99',process_level: '2'}}" class="c-icon icon-certify c-icon-v2 c-icon-v efc-cert vtip-inited" data-tip-limite="true" data-tooltips="bc"></i>
+</a></div><br><div style="cursor:pointer;"><a href="http://www.baidu.com/baidu.php?url=af00000RAbiKF06um8L_4kWRBCSitu6CQsg8wRLF4ot9oVcnDjsHKkaA_z922a4kzw87ASNOuvreotjmAMVq2_ihf7iEHf77mg0cTxmlorQxwTkv9BcUKe6FI2EYTTgIz6ZiaUb.7R_iHF8xnhA94wEYL_SNK-deQbfHgI3ynDgg6msw5I7AMHdeyQPv4Mu_deqvkMWIg3qMgAkGYt8HGlXrHF8vTEZIuvN4nMQkerzz1F_erVeZuugvyyyyI-hek3q--MgykNfCmt5Zv3TMds45o-l529GuCYRmTMdCpmY_1fdmX5d4gkmt7j-9JuhWHfstx-6CptS1jblXdrW6IPI93OQQenauVAZFl3The1vmThedenrHIex-9zUE5ks4Pv1x9zUEUEs4PLM_s4PLot_rHIeXMjblTXQjkSyMHz4rMG34nheuztIdMugbzTEZ_eQQnh1_s4rhurEZBstx-GYt8HGlXrHF8vTEZIuvN4nMQkerzz1F_enrHGEstx-vyNq----Muu8tX5uumGEuxvG4TXGmuCyrrOGLS26.U1Yz0ZDqp-7dugF40ZfqpM7dugF4FHcs8Uoreerd0A-V5Hc1P6KM5g9hn6KdpHY0TA-b5HD0mv-b5Hn3n6KVIjYknjDL0AVG5H00TMfqPHRd0ANGujY3njc0mhbqn0KVm1Y3rHcsn1mvPsKkTA-b5H00TyPGujYs0ZFMIA7M5H00ULu_5fKVpyfqn0KGTgfqn0K9mWYsg100ugFM5H00TZ0qn0K8IM0qna3snj0snj0sn0KVIZ0qn0KbuAqs5H00ThCqn0KhIjYs0ZKC5H00ULnqn0KBI1Ys0A4Y5H00TLCq0ZwdT1YLrjnsPWT1PjfvPW6vnWRYnWbs0ZF-TgfqnHfvnH0znWTdPH0sPsK1pyfqnj0vuHKWmHTYPHRsPyFWu6K9m1Yk0ZGY5H00mLFW5Hn4P163" target="_blank" style="line-height:18px;"><font style="font-size:14px;">找jquery 购物车-上天猫商..</font></a><br><a href="http://www.baidu.com/baidu.php?url=af00000RAbiKF06um8L_4kWRBCSitu6CQsg8wRLF4ot9oVcnDjsHKkaA_z922a4kzw87ASNOuvreotjmAMVq2_ihf7iEHf77mg0cTxmlorQxwTkv9BcUKe6FI2EYTTgIz6ZiaUb.7R_iHF8xnhA94wEYL_SNK-deQbfHgI3ynDgg6msw5I7AMHdeyQPv4Mu_deqvkMWIg3qMgAkGYt8HGlXrHF8vTEZIuvN4nMQkerzz1F_erVeZuugvyyyyI-hek3q--MgykNfCmt5Zv3TMds45o-l529GuCYRmTMdCpmY_1fdmX5d4gkmt7j-9JuhWHfstx-6CptS1jblXdrW6IPI93OQQenauVAZFl3The1vmThedenrHIex-9zUE5ks4Pv1x9zUEUEs4PLM_s4PLot_rHIeXMjblTXQjkSyMHz4rMG34nheuztIdMugbzTEZ_eQQnh1_s4rhurEZBstx-GYt8HGlXrHF8vTEZIuvN4nMQkerzz1F_enrHGEstx-vyNq----Muu8tX5uumGEuxvG4TXGmuCyrrOGLS26.U1Yz0ZDqp-7dugF40ZfqpM7dugF4FHcs8Uoreerd0A-V5Hc1P6KM5g9hn6KdpHY0TA-b5HD0mv-b5Hn3n6KVIjYknjDL0AVG5H00TMfqPHRd0ANGujY3njc0mhbqn0KVm1Y3rHcsn1mvPsKkTA-b5H00TyPGujYs0ZFMIA7M5H00ULu_5fKVpyfqn0KGTgfqn0K9mWYsg100ugFM5H00TZ0qn0K8IM0qna3snj0snj0sn0KVIZ0qn0KbuAqs5H00ThCqn0KhIjYs0ZKC5H00ULnqn0KBI1Ys0A4Y5H00TLCq0ZwdT1YLrjnsPWT1PjfvPW6vnWRYnWbs0ZF-TgfqnHfvnH0znWTdPH0sPsK1pyfqnj0vuHKWmHTYPHRsPyFWu6K9m1Yk0ZGY5H00mLFW5Hn4P163" target="_blank" style="font-size:13px;line-height:18px;text-decoration:none;color:#ffffff;"><font color="#000000">找jquery 购物车尽在天猫商城,更高折扣,品质护航购物无忧,7天无..</font><br><font style="margin-right:8px;" color="#008000">www.tmall.com</font></a><a style="cursor:pointer;text-decoration:none;" href="https://www.baidu.com/s?wd=www.taobao.com@v&amp;vmp_ec=1460458824&amp;vmp_ectm=d9368cd700ba6d6c8a098Tw15Ezdmlad2116U0604dzXe5gOeNb34N5k0lcc2dcX6766e590&amp;from=fc&amp;url=af00000RAbiKF06um8L_4kWRBCSitu6CQsg8wRLF4ot9oVcnDjsHKkaA_z922a4kzw87ASNOuvreotjmAMVq2_ihf7iEHf77mg0cTxmlorQxwTkv9BcUKe6FI2EYTTgIz6ZiaUb.7R_iHF8xnhA94wEYL_SNK-deQbfHgI3ynDgg6msw5I7AMHdeyQPv4Mu_deqvkMWIg3qMgAkGYt8HGlXrHF8vTEZIuvN4nMQkerzz1F_erVeZuugvyyyyI-hek3q--MgykNfCmt5Zv3TMds45o-l529GuCYRmTMdCpmY_1fdmX5d4gkmt7j-9JuhWHfstx-6CptS1jblXdrW6IPI93OQQenauVAZFl3The1vmThedenrHIex-9zUE5ks4Pv1x9zUEUEs4PLM_s4PLot_rHIeXMjblTXQjkSyMHz4rMG34nheuztIdMugbzTEZ_eQQnh1_s4rhurEZBstx-GYt8HGlXrHF8vTEZIuvN4nMQkerzz1F_enrHGEstx-vyNq----Muu8tX5uumGEuxvG4TXGmuCyrrOGLS26.U1Yz0ZDqp-7dugF40ZfqpM7dugF4FHcs8Uoreerd0A-V5Hc1P6KM5g9hn6KdpHY0TA-b5HD0mv-b5Hn3n6KVIjYknjDL0AVG5H00TMfqPHRd0ANGujY3njc0mhbqn0KVm1Y3rHcsn1mvPsKkTA-b5H00TyPGujYs0ZFMIA7M5H00ULu_5fKVpyfqn0KGTgfqn0K9mWYsg100ugFM5H00TZ0qn0K8IM0qna3snj0snj0sn0KVIZ0qn0KbuAqs5H00ThCqn0KhIjYs0ZKC5H00ULnqn0KBI1Ys0A4Y5H00TLCq0ZwdT1YLrjnsPWT1PjfvPW6vnWRYnWbs0ZF-TgfqnHfvnH0znWTdPH0sPsK1pyfqnj0vuHKWmHTYPHRsPyFWu6K9m1Yk0ZGY5H00mLFW5Hn4P163&amp;dataTime=84" target="_blank"><i data-renzheng="{title: '杭州阿里妈妈软件服务有限公司：',favorite: {fm: '',rsvMt: '',p1: '',url: 'http://i.baidu.com/myfavorite/set?url=af00000RAbiKF06um8L_4kWRBCSitu6CQsg8wRLF4ot9oVcnDjsHKkaA_z922a4kzw87ASNOuvreotjmAMVq2_ihf7iEHf77mg0cTxmlorQxwTkv9BcUKe6FI2EYTTgIz6ZiaUb.7R_iHF8xnhA94wEYL_SNK-deQbfHgI3ynDgg6msw5I7AMHdeyQPv4Mu_deqvkMWIg3qMgAkGYt8HGlXrHF8vTEZIuvN4nMQkerzz1F_erVeZuugvyyyyI-hek3q--MgykNfCmt5Zv3TMds45o-l529GuCYRmTMdCpmY_1fdmX5d4gkmt7j-9JuhWHfstx-6CptS1jblXdrW6IPI93OQQenauVAZFl3The1vmThedenrHIex-9zUE5ks4Pv1x9zUEUEs4PLM_s4PLot_rHIeXMjblTXQjkSyMHz4rMG34nheuztIdMugbzTEZ_eQQnh1_s4rhurEZBstx-GYt8HGlXrHF8vTEZIuvN4nMQkerzz1F_enrHGEstx-vyNq----Muu8tX5uumGEuxvG4TXGmuCyrrOGLS26.U1Yz0ZDqp-7dugF40ZfqpM7dugF4FHcs8Uoreerd0A-V5Hc1P6KM5g9hn6KdpHY0TA-b5HD0mv-b5Hn3n6KVIjYknjDL0AVG5H00TMfqPHRd0ANGujY3njc0mhbqn0KVm1Y3rHcsn1mvPsKkTA-b5H00TyPGujYs0ZFMIA7M5H00ULu_5fKVpyfqn0KGTgfqn0K9mWYsg100ugFM5H00TZ0qn0K8IM0qna3snj0snj0sn0KVIZ0qn0KbuAqs5H00ThCqn0KhIjYs0ZKC5H00ULnqn0KBI1Ys0A4Y5H00TLCq0ZwdT1YLrjnsPWT1PjfvPW6vnWRYnWbs0ZF-TgfqnHfvnH0znWTdPH0sPsK1pyfqnj0vuHKWmHTYPHRsPyFWu6K9m1Yk0ZGY5H00mLFW5Hn4P163'},appraise: {fm: '',rsvMt: '',p1: '',url: 'http://trust.baidu.com/womc/comt/?url=af00000RAbiKF06um8L_4kWRBCSitu6CQsg8wRLF4ot9oVcnDjsHKkaA_z922a4kzw87ASNOuvreotjmAMVq2_ihf7iEHf77mg0cTxmlorQxwTkv9BcUKe6FI2EYTTgIz6ZiaUb.7R_iHF8xnhA94wEYL_SNK-deQbfHgI3ynDgg6msw5I7AMHdeyQPv4Mu_deqvkMWIg3qMgAkGYt8HGlXrHF8vTEZIuvN4nMQkerzz1F_erVeZuugvyyyyI-hek3q--MgykNfCmt5Zv3TMds45o-l529GuCYRmTMdCpmY_1fdmX5d4gkmt7j-9JuhWHfstx-6CptS1jblXdrW6IPI93OQQenauVAZFl3The1vmThedenrHIex-9zUE5ks4Pv1x9zUEUEs4PLM_s4PLot_rHIeXMjblTXQjkSyMHz4rMG34nheuztIdMugbzTEZ_eQQnh1_s4rhurEZBstx-GYt8HGlXrHF8vTEZIuvN4nMQkerzz1F_enrHGEstx-vyNq----Muu8tX5uumGEuxvG4TXGmuCyrrOGLS26.U1Yz0ZDqp-7dugF40ZfqpM7dugF4FHcs8Uoreerd0A-V5Hc1P6KM5g9hn6KdpHY0TA-b5HD0mv-b5Hn3n6KVIjYknjDL0AVG5H00TMfqPHRd0ANGujY3njc0mhbqn0KVm1Y3rHcsn1mvPsKkTA-b5H00TyPGujYs0ZFMIA7M5H00ULu_5fKVpyfqn0KGTgfqn0K9mWYsg100ugFM5H00TZ0qn0K8IM0qna3snj0snj0sn0KVIZ0qn0KbuAqs5H00ThCqn0KhIjYs0ZKC5H00ULnqn0KBI1Ys0A4Y5H00TLCq0ZwdT1YLrjnsPWT1PjfvPW6vnWRYnWbs0ZF-TgfqnHfvnH0znWTdPH0sPsK1pyfqnj0vuHKWmHTYPHRsPyFWu6K9m1Yk0ZGY5H00mLFW5Hn4P163'},report: {fm: '',rsvMt: '',p1: '',url: 'http://baozhang.baidu.com/guarantee/accu/?url=af00000RAbiKF06um8L_4kWRBCSitu6CQsg8wRLF4ot9oVcnDjsHKkaA_z922a4kzw87ASNOuvreotjmAMVq2_ihf7iEHf77mg0cTxmlorQxwTkv9BcUKe6FI2EYTTgIz6ZiaUb.7R_iHF8xnhA94wEYL_SNK-deQbfHgI3ynDgg6msw5I7AMHdeyQPv4Mu_deqvkMWIg3qMgAkGYt8HGlXrHF8vTEZIuvN4nMQkerzz1F_erVeZuugvyyyyI-hek3q--MgykNfCmt5Zv3TMds45o-l529GuCYRmTMdCpmY_1fdmX5d4gkmt7j-9JuhWHfstx-6CptS1jblXdrW6IPI93OQQenauVAZFl3The1vmThedenrHIex-9zUE5ks4Pv1x9zUEUEs4PLM_s4PLot_rHIeXMjblTXQjkSyMHz4rMG34nheuztIdMugbzTEZ_eQQnh1_s4rhurEZBstx-GYt8HGlXrHF8vTEZIuvN4nMQkerzz1F_enrHGEstx-vyNq----Muu8tX5uumGEuxvG4TXGmuCyrrOGLS26.U1Yz0ZDqp-7dugF40ZfqpM7dugF4FHcs8Uoreerd0A-V5Hc1P6KM5g9hn6KdpHY0TA-b5HD0mv-b5Hn3n6KVIjYknjDL0AVG5H00TMfqPHRd0ANGujY3njc0mhbqn0KVm1Y3rHcsn1mvPsKkTA-b5H00TyPGujYs0ZFMIA7M5H00ULu_5fKVpyfqn0KGTgfqn0K9mWYsg100ugFM5H00TZ0qn0K8IM0qna3snj0snj0sn0KVIZ0qn0KbuAqs5H00ThCqn0KhIjYs0ZKC5H00ULnqn0KBI1Ys0A4Y5H00TLCq0ZwdT1YLrjnsPWT1PjfvPW6vnWRYnWbs0ZF-TgfqnHfvnH0znWTdPH0sPsK1pyfqnj0vuHKWmHTYPHRsPyFWu6K9m1Yk0ZGY5H00mLFW5Hn4P163'},identity: {a: {fm: '',rsvMt: '1017',p1:'',url: 'https://www.baidu.com/s?wd=www.taobao.com@v&amp;vmp_ec=1460458824&amp;vmp_ectm=d9368cd700ba6d6c8a098Tw15Ezdmlad2116U0604dzXe5gOeNb34N5k0lcc2dcX6766e590&amp;from=fc&amp;url=af00000RAbiKF06um8L_4kWRBCSitu6CQsg8wRLF4ot9oVcnDjsHKkaA_z922a4kzw87ASNOuvreotjmAMVq2_ihf7iEHf77mg0cTxmlorQxwTkv9BcUKe6FI2EYTTgIz6ZiaUb.7R_iHF8xnhA94wEYL_SNK-deQbfHgI3ynDgg6msw5I7AMHdeyQPv4Mu_deqvkMWIg3qMgAkGYt8HGlXrHF8vTEZIuvN4nMQkerzz1F_erVeZuugvyyyyI-hek3q--MgykNfCmt5Zv3TMds45o-l529GuCYRmTMdCpmY_1fdmX5d4gkmt7j-9JuhWHfstx-6CptS1jblXdrW6IPI93OQQenauVAZFl3The1vmThedenrHIex-9zUE5ks4Pv1x9zUEUEs4PLM_s4PLot_rHIeXMjblTXQjkSyMHz4rMG34nheuztIdMugbzTEZ_eQQnh1_s4rhurEZBstx-GYt8HGlXrHF8vTEZIuvN4nMQkerzz1F_enrHGEstx-vyNq----Muu8tX5uumGEuxvG4TXGmuCyrrOGLS26.U1Yz0ZDqp-7dugF40ZfqpM7dugF4FHcs8Uoreerd0A-V5Hc1P6KM5g9hn6KdpHY0TA-b5HD0mv-b5Hn3n6KVIjYknjDL0AVG5H00TMfqPHRd0ANGujY3njc0mhbqn0KVm1Y3rHcsn1mvPsKkTA-b5H00TyPGujYs0ZFMIA7M5H00ULu_5fKVpyfqn0KGTgfqn0K9mWYsg100ugFM5H00TZ0qn0K8IM0qna3snj0snj0sn0KVIZ0qn0KbuAqs5H00ThCqn0KhIjYs0ZKC5H00ULnqn0KBI1Ys0A4Y5H00TLCq0ZwdT1YLrjnsPWT1PjfvPW6vnWRYnWbs0ZF-TgfqnHfvnH0znWTdPH0sPsK1pyfqnj0vuHKWmHTYPHRsPyFWu6K9m1Yk0ZGY5H00mLFW5Hn4P163&amp;dataTime=84'}, img: '', text: '',credit: '5',process: '99',process_level: '2'}}" class="c-icon icon-certify c-icon-v2 c-icon-v efc-cert vtip-inited" data-tip-limite="true" data-tooltips="bc"></i>
+</a></div><br><div style="cursor:pointer;"><a href="http://www.baidu.com/baidu.php?url=af00000Rel50LUO-AQE1W-2c9tsXMhVgbuDDIakqACoGiC2DfZ2uzaJAov56bqTukBnnXSwOXl0yW_xEdWvi0Lt5QYct_UOCVKD5qn25Rjkt3d9exMt2cUTbae5NLkdU-G3M-hD.7R_imS1ZA-hpAozolIhkDA5_kddqbA5_kkGuh9J6IodGhzHqSdrW6IPIAk-qhKnvWjlvmxg_sOj8sSLI9qIvZ133xgdsOgksOjeT5s4n5otrZlSxy7YUlayQvTyjQ-lYgf_YZ8BmC_kg51TVj_lYFhmXLDkblIhzzzz8EI8lXrHGz2UvgqJXgZJyAp7WFYvUqz6.U1Y10ZDqp-7dugF40ZfqpM7dugF4_QH7GUgW8Ox2so1S0A-V5Hc1P6KM5g9hn6KdpHY0TA-b5HD0mv-b5Hn3n6KVIjYknjDL0AVG5H00TMfqPHRd0ANGujY3njc0mhbqn0KVm1Y3rHT3rHndPfKkTA-b5H00TyPGujYs0ZFMIA7M5H00ULu_5fKVpyfqn0KGTgfqn0K9mWYsg100ugFM5H00TZ0qn0K8IM0qna3snj0snj0sn0KVIZ0qn0KbuAqs5H00ThCqn0KhIjYs0ZKC5H00ULnqn0KBI1Ys0A4Y5H00TLCq0ZwdT1YkPHT1PHf4nH0kPjRdnHckPWm1nsKzug7Y5HDYPWDsnWcLPHRsnjT0Tv-b5H0sPhRsmvDLPjRdnjNBmvm0mynqnfKlIjYs0APzm1YvnH6LP0" target="_blank" style="line-height:18px;"><font style="font-size:14px;">jquery按钮点击事件_阿里..</font></a><br><a href="http://www.baidu.com/baidu.php?url=af00000Rel50LUO-AQE1W-2c9tsXMhVgbuDDIakqACoGiC2DfZ2uzaJAov56bqTukBnnXSwOXl0yW_xEdWvi0Lt5QYct_UOCVKD5qn25Rjkt3d9exMt2cUTbae5NLkdU-G3M-hD.7R_imS1ZA-hpAozolIhkDA5_kddqbA5_kkGuh9J6IodGhzHqSdrW6IPIAk-qhKnvWjlvmxg_sOj8sSLI9qIvZ133xgdsOgksOjeT5s4n5otrZlSxy7YUlayQvTyjQ-lYgf_YZ8BmC_kg51TVj_lYFhmXLDkblIhzzzz8EI8lXrHGz2UvgqJXgZJyAp7WFYvUqz6.U1Y10ZDqp-7dugF40ZfqpM7dugF4_QH7GUgW8Ox2so1S0A-V5Hc1P6KM5g9hn6KdpHY0TA-b5HD0mv-b5Hn3n6KVIjYknjDL0AVG5H00TMfqPHRd0ANGujY3njc0mhbqn0KVm1Y3rHT3rHndPfKkTA-b5H00TyPGujYs0ZFMIA7M5H00ULu_5fKVpyfqn0KGTgfqn0K9mWYsg100ugFM5H00TZ0qn0K8IM0qna3snj0snj0sn0KVIZ0qn0KbuAqs5H00ThCqn0KhIjYs0ZKC5H00ULnqn0KBI1Ys0A4Y5H00TLCq0ZwdT1YkPHT1PHf4nH0kPjRdnHckPWm1nsKzug7Y5HDYPWDsnWcLPHRsnjT0Tv-b5H0sPhRsmvDLPjRdnjNBmvm0mynqnfKlIjYs0APzm1YvnH6LP0" target="_blank" style="font-size:13px;line-height:18px;text-decoration:none;color:#ffffff;"><font color="#000000">阿里巴巴1688.com,全球领先B2B平台,汇聚海量商机信息,提供便捷..</font><br><font style="margin-right:8px;" color="#008000">www.1688.com</font></a><a style="cursor:pointer;text-decoration:none;" href="https://www.baidu.com/s?wd=www.tmall.com@v&amp;vmp_ec=1460963878&amp;vmp_ectm=b90657c10f212dcaea1ac=T58dkMlD38zdeccbM272d80OXYbkN310acaml282bX1e112f22&amp;from=fc&amp;url=af00000Rel50LUO-AQE1W-2c9tsXMhVgbuDDIakqACoGiC2DfZ2uzaJAov56bqTukBnnXSwOXl0yW_xEdWvi0Lt5QYct_UOCVKD5qn25Rjkt3d9exMt2cUTbae5NLkdU-G3M-hD.7R_imS1ZA-hpAozolIhkDA5_kddqbA5_kkGuh9J6IodGhzHqSdrW6IPIAk-qhKnvWjlvmxg_sOj8sSLI9qIvZ133xgdsOgksOjeT5s4n5otrZlSxy7YUlayQvTyjQ-lYgf_YZ8BmC_kg51TVj_lYFhmXLDkblIhzzzz8EI8lXrHGz2UvgqJXgZJyAp7WFYvUqz6.U1Y10ZDqp-7dugF40ZfqpM7dugF4_QH7GUgW8Ox2so1S0A-V5Hc1P6KM5g9hn6KdpHY0TA-b5HD0mv-b5Hn3n6KVIjYknjDL0AVG5H00TMfqPHRd0ANGujY3njc0mhbqn0KVm1Y3rHT3rHndPfKkTA-b5H00TyPGujYs0ZFMIA7M5H00ULu_5fKVpyfqn0KGTgfqn0K9mWYsg100ugFM5H00TZ0qn0K8IM0qna3snj0snj0sn0KVIZ0qn0KbuAqs5H00ThCqn0KhIjYs0ZKC5H00ULnqn0KBI1Ys0A4Y5H00TLCq0ZwdT1YkPHT1PHf4nH0kPjRdnHckPWm1nsKzug7Y5HDYPWDsnWcLPHRsnjT0Tv-b5H0sPhRsmvDLPjRdnjNBmvm0mynqnfKlIjYs0APzm1YvnH6LP0&amp;dataTime=84" target="_blank"><i data-renzheng="{title: '杭州阿里妈妈软件服务有限公司：',favorite: {fm: '',rsvMt: '',p1: '',url: 'http://i.baidu.com/myfavorite/set?url=af00000Rel50LUO-AQE1W-2c9tsXMhVgbuDDIakqACoGiC2DfZ2uzaJAov56bqTukBnnXSwOXl0yW_xEdWvi0Lt5QYct_UOCVKD5qn25Rjkt3d9exMt2cUTbae5NLkdU-G3M-hD.7R_imS1ZA-hpAozolIhkDA5_kddqbA5_kkGuh9J6IodGhzHqSdrW6IPIAk-qhKnvWjlvmxg_sOj8sSLI9qIvZ133xgdsOgksOjeT5s4n5otrZlSxy7YUlayQvTyjQ-lYgf_YZ8BmC_kg51TVj_lYFhmXLDkblIhzzzz8EI8lXrHGz2UvgqJXgZJyAp7WFYvUqz6.U1Y10ZDqp-7dugF40ZfqpM7dugF4_QH7GUgW8Ox2so1S0A-V5Hc1P6KM5g9hn6KdpHY0TA-b5HD0mv-b5Hn3n6KVIjYknjDL0AVG5H00TMfqPHRd0ANGujY3njc0mhbqn0KVm1Y3rHT3rHndPfKkTA-b5H00TyPGujYs0ZFMIA7M5H00ULu_5fKVpyfqn0KGTgfqn0K9mWYsg100ugFM5H00TZ0qn0K8IM0qna3snj0snj0sn0KVIZ0qn0KbuAqs5H00ThCqn0KhIjYs0ZKC5H00ULnqn0KBI1Ys0A4Y5H00TLCq0ZwdT1YkPHT1PHf4nH0kPjRdnHckPWm1nsKzug7Y5HDYPWDsnWcLPHRsnjT0Tv-b5H0sPhRsmvDLPjRdnjNBmvm0mynqnfKlIjYs0APzm1YvnH6LP0'},appraise: {fm: '',rsvMt: '',p1: '',url: 'http://trust.baidu.com/womc/comt/?url=af00000Rel50LUO-AQE1W-2c9tsXMhVgbuDDIakqACoGiC2DfZ2uzaJAov56bqTukBnnXSwOXl0yW_xEdWvi0Lt5QYct_UOCVKD5qn25Rjkt3d9exMt2cUTbae5NLkdU-G3M-hD.7R_imS1ZA-hpAozolIhkDA5_kddqbA5_kkGuh9J6IodGhzHqSdrW6IPIAk-qhKnvWjlvmxg_sOj8sSLI9qIvZ133xgdsOgksOjeT5s4n5otrZlSxy7YUlayQvTyjQ-lYgf_YZ8BmC_kg51TVj_lYFhmXLDkblIhzzzz8EI8lXrHGz2UvgqJXgZJyAp7WFYvUqz6.U1Y10ZDqp-7dugF40ZfqpM7dugF4_QH7GUgW8Ox2so1S0A-V5Hc1P6KM5g9hn6KdpHY0TA-b5HD0mv-b5Hn3n6KVIjYknjDL0AVG5H00TMfqPHRd0ANGujY3njc0mhbqn0KVm1Y3rHT3rHndPfKkTA-b5H00TyPGujYs0ZFMIA7M5H00ULu_5fKVpyfqn0KGTgfqn0K9mWYsg100ugFM5H00TZ0qn0K8IM0qna3snj0snj0sn0KVIZ0qn0KbuAqs5H00ThCqn0KhIjYs0ZKC5H00ULnqn0KBI1Ys0A4Y5H00TLCq0ZwdT1YkPHT1PHf4nH0kPjRdnHckPWm1nsKzug7Y5HDYPWDsnWcLPHRsnjT0Tv-b5H0sPhRsmvDLPjRdnjNBmvm0mynqnfKlIjYs0APzm1YvnH6LP0'},report: {fm: '',rsvMt: '',p1: '',url: 'http://baozhang.baidu.com/guarantee/accu/?url=af00000Rel50LUO-AQE1W-2c9tsXMhVgbuDDIakqACoGiC2DfZ2uzaJAov56bqTukBnnXSwOXl0yW_xEdWvi0Lt5QYct_UOCVKD5qn25Rjkt3d9exMt2cUTbae5NLkdU-G3M-hD.7R_imS1ZA-hpAozolIhkDA5_kddqbA5_kkGuh9J6IodGhzHqSdrW6IPIAk-qhKnvWjlvmxg_sOj8sSLI9qIvZ133xgdsOgksOjeT5s4n5otrZlSxy7YUlayQvTyjQ-lYgf_YZ8BmC_kg51TVj_lYFhmXLDkblIhzzzz8EI8lXrHGz2UvgqJXgZJyAp7WFYvUqz6.U1Y10ZDqp-7dugF40ZfqpM7dugF4_QH7GUgW8Ox2so1S0A-V5Hc1P6KM5g9hn6KdpHY0TA-b5HD0mv-b5Hn3n6KVIjYknjDL0AVG5H00TMfqPHRd0ANGujY3njc0mhbqn0KVm1Y3rHT3rHndPfKkTA-b5H00TyPGujYs0ZFMIA7M5H00ULu_5fKVpyfqn0KGTgfqn0K9mWYsg100ugFM5H00TZ0qn0K8IM0qna3snj0snj0sn0KVIZ0qn0KbuAqs5H00ThCqn0KhIjYs0ZKC5H00ULnqn0KBI1Ys0A4Y5H00TLCq0ZwdT1YkPHT1PHf4nH0kPjRdnHckPWm1nsKzug7Y5HDYPWDsnWcLPHRsnjT0Tv-b5H0sPhRsmvDLPjRdnjNBmvm0mynqnfKlIjYs0APzm1YvnH6LP0'},identity: {a: {fm: '',rsvMt: '1017',p1:'',url: 'https://www.baidu.com/s?wd=www.tmall.com@v&amp;vmp_ec=1460963878&amp;vmp_ectm=b90657c10f212dcaea1ac=T58dkMlD38zdeccbM272d80OXYbkN310acaml282bX1e112f22&amp;from=fc&amp;url=af00000Rel50LUO-AQE1W-2c9tsXMhVgbuDDIakqACoGiC2DfZ2uzaJAov56bqTukBnnXSwOXl0yW_xEdWvi0Lt5QYct_UOCVKD5qn25Rjkt3d9exMt2cUTbae5NLkdU-G3M-hD.7R_imS1ZA-hpAozolIhkDA5_kddqbA5_kkGuh9J6IodGhzHqSdrW6IPIAk-qhKnvWjlvmxg_sOj8sSLI9qIvZ133xgdsOgksOjeT5s4n5otrZlSxy7YUlayQvTyjQ-lYgf_YZ8BmC_kg51TVj_lYFhmXLDkblIhzzzz8EI8lXrHGz2UvgqJXgZJyAp7WFYvUqz6.U1Y10ZDqp-7dugF40ZfqpM7dugF4_QH7GUgW8Ox2so1S0A-V5Hc1P6KM5g9hn6KdpHY0TA-b5HD0mv-b5Hn3n6KVIjYknjDL0AVG5H00TMfqPHRd0ANGujY3njc0mhbqn0KVm1Y3rHT3rHndPfKkTA-b5H00TyPGujYs0ZFMIA7M5H00ULu_5fKVpyfqn0KGTgfqn0K9mWYsg100ugFM5H00TZ0qn0K8IM0qna3snj0snj0sn0KVIZ0qn0KbuAqs5H00ThCqn0KhIjYs0ZKC5H00ULnqn0KBI1Ys0A4Y5H00TLCq0ZwdT1YkPHT1PHf4nH0kPjRdnHckPWm1nsKzug7Y5HDYPWDsnWcLPHRsnjT0Tv-b5H0sPhRsmvDLPjRdnjNBmvm0mynqnfKlIjYs0APzm1YvnH6LP0&amp;dataTime=84'}, img: '', text: '',credit: '5',process: '99',process_level: '2'}}" class="c-icon icon-certify c-icon-v2 c-icon-v efc-cert vtip-inited" data-tip-limite="true" data-tooltips="bc"></i>
+</a></div><br><div style="cursor:pointer;"><a href="http://www.baidu.com/baidu.php?url=af0000KgbnOXjJqr62RpkcBNf6iD36nw1Ox7-wZ97HSAS_cpqbAL8dOLOsYqU_Bwb_a3opFZdIn3A9LrQOFRBkB_9izm8hbthPLoOFdTkkJdLLCLRcNahTzxkeaB3DQhwgEAnR3.DR_iHF8xnhA94wEYL_SNK-deQbfHgI3ynDgg6msw5I7AMHdd_NR2A5jkus4PXZFoY8Wuxj4HFtJjQovgcs4PTpyuCp8NvjjkdEWx7DhUjk8_s4rhOKjv3_5AeF9zInzIX5793LpI5QblXMWbzUVMQkLyI-XHFztTheW_tXMF9zI5pMwsrh8stU_E_sFhYmT-tHnyZFY3tyZWIGYt8HGlXrHF8vTEZIuvN4nMQkzU8r1klThZFYL3X5zeQ2Szzzz1FEzyUEZu8lqoAVPXzOk8_eAThqPvlZoWmYlXgFYq5ZFbLUrgW8_e2thH-34PLZu3qrHoXkvyNq----hHxb_LXr1TGEuxvG4TXGmuCy2t--Ip60.U1YY0ZDqp-7dugF40ZfqpM7dugF4FHcsUh780A-V5Hc1P6KM5g9hn6KdpHY0TA-b5HD0mv-b5Hn3n6KVIjYknjDL0AVG5H00TMfqPHRd0ANGujY3njc0mhbqn0KVm1Y3rHcsn1mYnsKkTA-b5H00TyPGujYs0ZFMIA7M5H00ULu_5fKVpyfqn0KGTgfqn0K9mWYsg100ugFM5H00TZ0qn0K8IM0qna3snj0snj0sn0KVIZ0qn0KbuAqs5H00ThCqn0KhIjYs0ZKC5H00ULnqn0KBI1Ys0A4Y5H00TLCq0ZwdT1YknHT1rHDsn1DYrH6znWnvPjbkn0Kzug7Y5HDYPWDsnWcLPHRsnjT0Tv-b5H0sPhRsmvDLPjRdnjNBmvm0mynqnfKlIjYs0APzm1YYPWDdP0" target="_blank" style="line-height:18px;"><font style="font-size:14px;">淘宝网jquery nan更划算!j..</font></a><br><a href="http://www.baidu.com/baidu.php?url=af0000KgbnOXjJqr62RpkcBNf6iD36nw1Ox7-wZ97HSAS_cpqbAL8dOLOsYqU_Bwb_a3opFZdIn3A9LrQOFRBkB_9izm8hbthPLoOFdTkkJdLLCLRcNahTzxkeaB3DQhwgEAnR3.DR_iHF8xnhA94wEYL_SNK-deQbfHgI3ynDgg6msw5I7AMHdd_NR2A5jkus4PXZFoY8Wuxj4HFtJjQovgcs4PTpyuCp8NvjjkdEWx7DhUjk8_s4rhOKjv3_5AeF9zInzIX5793LpI5QblXMWbzUVMQkLyI-XHFztTheW_tXMF9zI5pMwsrh8stU_E_sFhYmT-tHnyZFY3tyZWIGYt8HGlXrHF8vTEZIuvN4nMQkzU8r1klThZFYL3X5zeQ2Szzzz1FEzyUEZu8lqoAVPXzOk8_eAThqPvlZoWmYlXgFYq5ZFbLUrgW8_e2thH-34PLZu3qrHoXkvyNq----hHxb_LXr1TGEuxvG4TXGmuCy2t--Ip60.U1YY0ZDqp-7dugF40ZfqpM7dugF4FHcsUh780A-V5Hc1P6KM5g9hn6KdpHY0TA-b5HD0mv-b5Hn3n6KVIjYknjDL0AVG5H00TMfqPHRd0ANGujY3njc0mhbqn0KVm1Y3rHcsn1mYnsKkTA-b5H00TyPGujYs0ZFMIA7M5H00ULu_5fKVpyfqn0KGTgfqn0K9mWYsg100ugFM5H00TZ0qn0K8IM0qna3snj0snj0sn0KVIZ0qn0KbuAqs5H00ThCqn0KhIjYs0ZKC5H00ULnqn0KBI1Ys0A4Y5H00TLCq0ZwdT1YknHT1rHDsn1DYrH6znWnvPjbkn0Kzug7Y5HDYPWDsnWcLPHRsnjT0Tv-b5H0sPhRsmvDLPjRdnjNBmvm0mynqnfKlIjYs0APzm1YYPWDdP0" target="_blank" style="font-size:13px;line-height:18px;text-decoration:none;color:#ffffff;"><font color="#000000">淘宝网jquery nan抢鲜购!男神新装大放价!jquery nan亲民价格 大..</font><br><font style="margin-right:8px;" color="#008000">www.taobao.com</font></a><a style="cursor:pointer;text-decoration:none;" href="https://www.baidu.com/s?wd=www.taobao.com@v&amp;vmp_ec=1460458822&amp;vmp_ectm=7cd2083c5b01de2b20eb9a2zzbYNDkXN5dd902DeaN7gEw69c38lXlb147m7edd405cccd9a&amp;from=fc&amp;url=af0000KgbnOXjJqr62RpkcBNf6iD36nw1Ox7-wZ97HSAS_cpqbAL8dOLOsYqU_Bwb_a3opFZdIn3A9LrQOFRBkB_9izm8hbthPLoOFdTkkJdLLCLRcNahTzxkeaB3DQhwgEAnR3.DR_iHF8xnhA94wEYL_SNK-deQbfHgI3ynDgg6msw5I7AMHdd_NR2A5jkus4PXZFoY8Wuxj4HFtJjQovgcs4PTpyuCp8NvjjkdEWx7DhUjk8_s4rhOKjv3_5AeF9zInzIX5793LpI5QblXMWbzUVMQkLyI-XHFztTheW_tXMF9zI5pMwsrh8stU_E_sFhYmT-tHnyZFY3tyZWIGYt8HGlXrHF8vTEZIuvN4nMQkzU8r1klThZFYL3X5zeQ2Szzzz1FEzyUEZu8lqoAVPXzOk8_eAThqPvlZoWmYlXgFYq5ZFbLUrgW8_e2thH-34PLZu3qrHoXkvyNq----hHxb_LXr1TGEuxvG4TXGmuCy2t--Ip60.U1YY0ZDqp-7dugF40ZfqpM7dugF4FHcsUh780A-V5Hc1P6KM5g9hn6KdpHY0TA-b5HD0mv-b5Hn3n6KVIjYknjDL0AVG5H00TMfqPHRd0ANGujY3njc0mhbqn0KVm1Y3rHcsn1mYnsKkTA-b5H00TyPGujYs0ZFMIA7M5H00ULu_5fKVpyfqn0KGTgfqn0K9mWYsg100ugFM5H00TZ0qn0K8IM0qna3snj0snj0sn0KVIZ0qn0KbuAqs5H00ThCqn0KhIjYs0ZKC5H00ULnqn0KBI1Ys0A4Y5H00TLCq0ZwdT1YknHT1rHDsn1DYrH6znWnvPjbkn0Kzug7Y5HDYPWDsnWcLPHRsnjT0Tv-b5H0sPhRsmvDLPjRdnjNBmvm0mynqnfKlIjYs0APzm1YYPWDdP0&amp;dataTime=84" target="_blank"><i data-renzheng="{title: '杭州阿里妈妈软件服务有限公司：',favorite: {fm: '',rsvMt: '',p1: '',url: 'http://i.baidu.com/myfavorite/set?url=af0000KgbnOXjJqr62RpkcBNf6iD36nw1Ox7-wZ97HSAS_cpqbAL8dOLOsYqU_Bwb_a3opFZdIn3A9LrQOFRBkB_9izm8hbthPLoOFdTkkJdLLCLRcNahTzxkeaB3DQhwgEAnR3.DR_iHF8xnhA94wEYL_SNK-deQbfHgI3ynDgg6msw5I7AMHdd_NR2A5jkus4PXZFoY8Wuxj4HFtJjQovgcs4PTpyuCp8NvjjkdEWx7DhUjk8_s4rhOKjv3_5AeF9zInzIX5793LpI5QblXMWbzUVMQkLyI-XHFztTheW_tXMF9zI5pMwsrh8stU_E_sFhYmT-tHnyZFY3tyZWIGYt8HGlXrHF8vTEZIuvN4nMQkzU8r1klThZFYL3X5zeQ2Szzzz1FEzyUEZu8lqoAVPXzOk8_eAThqPvlZoWmYlXgFYq5ZFbLUrgW8_e2thH-34PLZu3qrHoXkvyNq----hHxb_LXr1TGEuxvG4TXGmuCy2t--Ip60.U1YY0ZDqp-7dugF40ZfqpM7dugF4FHcsUh780A-V5Hc1P6KM5g9hn6KdpHY0TA-b5HD0mv-b5Hn3n6KVIjYknjDL0AVG5H00TMfqPHRd0ANGujY3njc0mhbqn0KVm1Y3rHcsn1mYnsKkTA-b5H00TyPGujYs0ZFMIA7M5H00ULu_5fKVpyfqn0KGTgfqn0K9mWYsg100ugFM5H00TZ0qn0K8IM0qna3snj0snj0sn0KVIZ0qn0KbuAqs5H00ThCqn0KhIjYs0ZKC5H00ULnqn0KBI1Ys0A4Y5H00TLCq0ZwdT1YknHT1rHDsn1DYrH6znWnvPjbkn0Kzug7Y5HDYPWDsnWcLPHRsnjT0Tv-b5H0sPhRsmvDLPjRdnjNBmvm0mynqnfKlIjYs0APzm1YYPWDdP0'},appraise: {fm: '',rsvMt: '',p1: '',url: 'http://trust.baidu.com/womc/comt/?url=af0000KgbnOXjJqr62RpkcBNf6iD36nw1Ox7-wZ97HSAS_cpqbAL8dOLOsYqU_Bwb_a3opFZdIn3A9LrQOFRBkB_9izm8hbthPLoOFdTkkJdLLCLRcNahTzxkeaB3DQhwgEAnR3.DR_iHF8xnhA94wEYL_SNK-deQbfHgI3ynDgg6msw5I7AMHdd_NR2A5jkus4PXZFoY8Wuxj4HFtJjQovgcs4PTpyuCp8NvjjkdEWx7DhUjk8_s4rhOKjv3_5AeF9zInzIX5793LpI5QblXMWbzUVMQkLyI-XHFztTheW_tXMF9zI5pMwsrh8stU_E_sFhYmT-tHnyZFY3tyZWIGYt8HGlXrHF8vTEZIuvN4nMQkzU8r1klThZFYL3X5zeQ2Szzzz1FEzyUEZu8lqoAVPXzOk8_eAThqPvlZoWmYlXgFYq5ZFbLUrgW8_e2thH-34PLZu3qrHoXkvyNq----hHxb_LXr1TGEuxvG4TXGmuCy2t--Ip60.U1YY0ZDqp-7dugF40ZfqpM7dugF4FHcsUh780A-V5Hc1P6KM5g9hn6KdpHY0TA-b5HD0mv-b5Hn3n6KVIjYknjDL0AVG5H00TMfqPHRd0ANGujY3njc0mhbqn0KVm1Y3rHcsn1mYnsKkTA-b5H00TyPGujYs0ZFMIA7M5H00ULu_5fKVpyfqn0KGTgfqn0K9mWYsg100ugFM5H00TZ0qn0K8IM0qna3snj0snj0sn0KVIZ0qn0KbuAqs5H00ThCqn0KhIjYs0ZKC5H00ULnqn0KBI1Ys0A4Y5H00TLCq0ZwdT1YknHT1rHDsn1DYrH6znWnvPjbkn0Kzug7Y5HDYPWDsnWcLPHRsnjT0Tv-b5H0sPhRsmvDLPjRdnjNBmvm0mynqnfKlIjYs0APzm1YYPWDdP0'},report: {fm: '',rsvMt: '',p1: '',url: 'http://baozhang.baidu.com/guarantee/accu/?url=af0000KgbnOXjJqr62RpkcBNf6iD36nw1Ox7-wZ97HSAS_cpqbAL8dOLOsYqU_Bwb_a3opFZdIn3A9LrQOFRBkB_9izm8hbthPLoOFdTkkJdLLCLRcNahTzxkeaB3DQhwgEAnR3.DR_iHF8xnhA94wEYL_SNK-deQbfHgI3ynDgg6msw5I7AMHdd_NR2A5jkus4PXZFoY8Wuxj4HFtJjQovgcs4PTpyuCp8NvjjkdEWx7DhUjk8_s4rhOKjv3_5AeF9zInzIX5793LpI5QblXMWbzUVMQkLyI-XHFztTheW_tXMF9zI5pMwsrh8stU_E_sFhYmT-tHnyZFY3tyZWIGYt8HGlXrHF8vTEZIuvN4nMQkzU8r1klThZFYL3X5zeQ2Szzzz1FEzyUEZu8lqoAVPXzOk8_eAThqPvlZoWmYlXgFYq5ZFbLUrgW8_e2thH-34PLZu3qrHoXkvyNq----hHxb_LXr1TGEuxvG4TXGmuCy2t--Ip60.U1YY0ZDqp-7dugF40ZfqpM7dugF4FHcsUh780A-V5Hc1P6KM5g9hn6KdpHY0TA-b5HD0mv-b5Hn3n6KVIjYknjDL0AVG5H00TMfqPHRd0ANGujY3njc0mhbqn0KVm1Y3rHcsn1mYnsKkTA-b5H00TyPGujYs0ZFMIA7M5H00ULu_5fKVpyfqn0KGTgfqn0K9mWYsg100ugFM5H00TZ0qn0K8IM0qna3snj0snj0sn0KVIZ0qn0KbuAqs5H00ThCqn0KhIjYs0ZKC5H00ULnqn0KBI1Ys0A4Y5H00TLCq0ZwdT1YknHT1rHDsn1DYrH6znWnvPjbkn0Kzug7Y5HDYPWDsnWcLPHRsnjT0Tv-b5H0sPhRsmvDLPjRdnjNBmvm0mynqnfKlIjYs0APzm1YYPWDdP0'},identity: {a: {fm: '',rsvMt: '1017',p1:'',url: 'https://www.baidu.com/s?wd=www.taobao.com@v&amp;vmp_ec=1460458822&amp;vmp_ectm=7cd2083c5b01de2b20eb9a2zzbYNDkXN5dd902DeaN7gEw69c38lXlb147m7edd405cccd9a&amp;from=fc&amp;url=af0000KgbnOXjJqr62RpkcBNf6iD36nw1Ox7-wZ97HSAS_cpqbAL8dOLOsYqU_Bwb_a3opFZdIn3A9LrQOFRBkB_9izm8hbthPLoOFdTkkJdLLCLRcNahTzxkeaB3DQhwgEAnR3.DR_iHF8xnhA94wEYL_SNK-deQbfHgI3ynDgg6msw5I7AMHdd_NR2A5jkus4PXZFoY8Wuxj4HFtJjQovgcs4PTpyuCp8NvjjkdEWx7DhUjk8_s4rhOKjv3_5AeF9zInzIX5793LpI5QblXMWbzUVMQkLyI-XHFztTheW_tXMF9zI5pMwsrh8stU_E_sFhYmT-tHnyZFY3tyZWIGYt8HGlXrHF8vTEZIuvN4nMQkzU8r1klThZFYL3X5zeQ2Szzzz1FEzyUEZu8lqoAVPXzOk8_eAThqPvlZoWmYlXgFYq5ZFbLUrgW8_e2thH-34PLZu3qrHoXkvyNq----hHxb_LXr1TGEuxvG4TXGmuCy2t--Ip60.U1YY0ZDqp-7dugF40ZfqpM7dugF4FHcsUh780A-V5Hc1P6KM5g9hn6KdpHY0TA-b5HD0mv-b5Hn3n6KVIjYknjDL0AVG5H00TMfqPHRd0ANGujY3njc0mhbqn0KVm1Y3rHcsn1mYnsKkTA-b5H00TyPGujYs0ZFMIA7M5H00ULu_5fKVpyfqn0KGTgfqn0K9mWYsg100ugFM5H00TZ0qn0K8IM0qna3snj0snj0sn0KVIZ0qn0KbuAqs5H00ThCqn0KhIjYs0ZKC5H00ULnqn0KBI1Ys0A4Y5H00TLCq0ZwdT1YknHT1rHDsn1DYrH6znWnvPjbkn0Kzug7Y5HDYPWDsnWcLPHRsnjT0Tv-b5H0sPhRsmvDLPjRdnjNBmvm0mynqnfKlIjYs0APzm1YYPWDdP0&amp;dataTime=84'}, img: '', text: '',credit: '5',process: '99',process_level: '2'}}" class="c-icon icon-certify c-icon-v2 c-icon-v efc-cert vtip-inited" data-tip-limite="true" data-tooltips="bc"></i>
+</a></div><br><br></div><script>(function(){function c(){var 
+e={statistics:{identity:{url:"http://trustrcv.baidu.com/v.php",query:{tag:"vshenfenhover"}}}};window.__nsTip__.init(e)}if(window.__nsTip__){c()}else{function
+ b(j){var g=false;var f=document.getElementsByTagName("script");for(var 
+h=0,e=f.length;h<e;h++){if(f[h].getAttribute("id")===j){g=true;break}}return
+ g}function a(i,f,h){if(!b(i)){var 
+g=document.getElementsByTagName("head")[0]||document.body;var 
+e=document.createElement("script");e.setAttribute("type","text/javascript");e.setAttribute("src",f);e.setAttribute("id",i);if(h!=null){e.onload=e.onreadystatechange=function(){if(e.ready){return
+ 
+false}if(!e.readyState||e.readyState=="loaded"||e.readyState=="complete"){e.ready=true;h()}}}g.appendChild(e)}}var
+ 
+d="http://s1.bdstatic.com/r/www/cache/biz/ecom/common/api/v-nstip/20151117/nstip.js";a("nstip",d,c)}})();</script></div>
+<div id="side_box_unionAd" class="unionAd side-box">
+<p>推广链接</p>
+<div class="union-content"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="after-content">
+<div style="display: block;" class="fc-guess-like" id="fc_guess_like">
+<h6>猜你喜欢</h6>
+<div>
+<ul class="cmn-clearfix"><li><a href="https://www.baidu.com/s?wd=%B0%AE%C6%E6%D2%D5%CF%C2%D4%D8%B2%A5%B7%C5%C6%F7&amp;tn=SE_baikepcxf01_fcetbk01&amp;lqsource=-1" target="_blank">爱奇艺下载播放器</a></li>
+<li><a href="https://www.baidu.com/s?wd=%CA%D6%BB%FA%B0%E6%B0%AE%C6%E6%D2%D5%CF%C2%D4%D8&amp;tn=SE_baikepcxf01_fcetbk01&amp;lqsource=-1" target="_blank">手机版爱奇艺下载</a></li>
+<li><a href="https://www.baidu.com/s?wd=%B0%AE%C6%E6%D2%D5%D3%D7%B6%F9%D3%A2%D3%EF&amp;tn=SE_baikepcxf01_fcetbk01&amp;lqsource=-1" target="_blank">爱奇艺幼儿英语</a></li>
+<li><a href="https://www.baidu.com/s?wd=%B0%AE%C6%E6%D2%D5+%CA%D3%C6%B5&amp;tn=SE_baikepcxf01_fcetbk01&amp;lqsource=-1" target="_blank">爱奇艺 视频</a></li>
+<li><a href="https://www.baidu.com/s?wd=%B0%AE%C6%E6%D2%D5%CA%D3%C6%B5%C0%EB%CF%DF%CF%C2%D4%D8&amp;tn=SE_baikepcxf01_fcetbk01&amp;lqsource=-1" target="_blank">爱奇艺视频离线下载</a></li>
+<li><a href="https://www.baidu.com/s?wd=%B0%AE%C6%E6%D2%D5%BB%FD%B7%D6%B6%D2%BB%BB%B9%D9%CD%F8&amp;tn=SE_baikepcxf01_fcetbk01&amp;lqsource=-1" target="_blank">爱奇艺积分兑换官网</a></li>
+<li><a href="https://www.baidu.com/s?wd=%B0%AE%C6%E6%D2%D5%CA%D3%C6%B5%C8%ED%BC%FE%CF%C2%D4%D8&amp;tn=SE_baikepcxf01_fcetbk01&amp;lqsource=-1" target="_blank">爱奇艺视频软件下载</a></li>
+<li><a href="https://www.baidu.com/s?wd=jquery+workflow&amp;tn=SE_baikepcxf01_fcetbk01&amp;lqsource=0" target="_blank">jquery workflow</a></li>
+<li><a href="https://www.baidu.com/s?wd=jquery%C8%EB%C3%C5&amp;tn=SE_baikepcxf01_fcetbk01&amp;lqsource=0" target="_blank">jquery入门</a></li>
+<li><a href="https://www.baidu.com/s?wd=%B1%E3%C0%FB%B5%EA%BC%D3%C3%CB&amp;tn=SE_baikepcxf01_fcetbk01&amp;lqsource=-1" target="_blank">便利店加盟</a></li>
+</ul>
+</div>
+</div>
+<div style="display: block;" class="bottom-promotion" id="bottom-promotion">
+<div id="BOTTOM_PRO_AD"><iframe id="iframe1120393_0" onload="BAIDU_SSP_cacheRequest('8b93ba1ddfc6e702', this);" src="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/ackm.htm" vspace="0" hspace="0" marginwidth="0" marginheight="0" scrolling="no" style="border:0; vertical-align:bottom;margin:0;" allowtransparency="true" frameborder="0" height="90" align="center,center" width="960"></iframe></div>
+</div></div>
+</div>
+
+<div class="wgt-footer-main">
+<div class="content">
+<dl class="fresh">
+<dt><em class="cmn-icon cmn-icons cmn-icons_footer-fresh"></em>新手上路</dt>
+<dd>
+<div><a target="_blank" href="http://baike.baidu.com/usercenter/tasks#guide">成长任务</a></div>
+<div><a target="_blank" href="http://baike.baidu.com/help#main01">编辑入门</a></div>
+<div><a target="_blank" href="http://baike.baidu.com/help#main06">编辑规则</a></div>
+<div><a target="_blank" href="http://baike.baidu.com/help#main05">百科术语</a></div>
+</dd>
+</dl>
+<dl class="question">
+<dt><em class="cmn-icon cmn-icons cmn-icons_footer-question"></em>我有疑问</dt>
+<dd>
+<div><a target="_blank" href="http://baike.baidu.com/wikiui/doubt?lemmaId=5385065">我要质疑</a></div>
+<div><a target="_blank" href="http://ikefu.baidu.com/baidubaike/chat.html" nslog-type="10000003">我要提问</a></div>
+<div><a target="_blank" href="http://tieba.baidu.com/f?ie=utf-8&amp;fr=bks0000&amp;kw=%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91">参加讨论</a></div>
+<div><a target="_blank" href="http://baike.baidu.com/feedback">意见反馈</a></div>
+</dd>
+</dl>
+<dl class="suggestion">
+<dt><em class="cmn-icon cmn-icons cmn-icons_footer-suggestion"></em>投诉建议</dt>
+<dd>
+<div><a target="_blank" href="http://tousu.baidu.com/baike/add?word=jQuery&amp;&amp;submit_link=http%3A%2F%2Fbaike.baidu.com%2Flink%3Furl%3D5TZq0U2eKygflsDQFqG5IKcax52uW52jc6PeuBwtPSDccLVI8rn3E_DbnJLStjJ33PbdVACWyy9aIdoiZic1o_#1">举报不良信息</a></div>
+<div><a target="_blank" href="http://tousu.baidu.com/baike/add?word=jQuery&amp;&amp;submit_link=http%3A%2F%2Fbaike.baidu.com%2Flink%3Furl%3D5TZq0U2eKygflsDQFqG5IKcax52uW52jc6PeuBwtPSDccLVI8rn3E_DbnJLStjJ33PbdVACWyy9aIdoiZic1o_#2">未通过词条申诉</a></div>
+<div><a target="_blank" href="http://tousu.baidu.com/baike/add?word=jQuery&amp;&amp;submit_link=http%3A%2F%2Fbaike.baidu.com%2Flink%3Furl%3D5TZq0U2eKygflsDQFqG5IKcax52uW52jc6PeuBwtPSDccLVI8rn3E_DbnJLStjJ33PbdVACWyy9aIdoiZic1o_#4">投诉侵权信息</a></div>
+<div><a target="_blank" href="http://tousu.baidu.com/baike/add?word=jQuery&amp;&amp;submit_link=http%3A%2F%2Fbaike.baidu.com%2Flink%3Furl%3D5TZq0U2eKygflsDQFqG5IKcax52uW52jc6PeuBwtPSDccLVI8rn3E_DbnJLStjJ33PbdVACWyy9aIdoiZic1o_#3">封禁查询与解封</a></div>
+</dd>
+</dl>
+</div>
+<div class="copyright">©2016Baidu&nbsp;<a href="http://www.baidu.com/duty/" target="_blank">使用百度前必读</a>&nbsp;|&nbsp;<a href="http://help.baidu.com/question?prod_en=baike&amp;class=159&amp;id=1047" target="_blank">百科协议</a>&nbsp;|&nbsp;<a href="http://baike.baidu.com/operation/cooperation" target="_blank">百度百科合作平台</a></div>
+</div>
+
+<div class="lemmaWgt-searchHeader">
+<div class="layout">
+<div class="logo-container">
+<a class="logo cmn-inline-block" title="到百科首页" href="http://baike.baidu.com/">
+<span class="cmn-baike-logo">
+<em class="cmn-icon cmn-icons cmn-icons_logo-bai"></em>
+<em class="cmn-icon cmn-icons cmn-icons_logo-du"></em>
+<em class="cmn-icon cmn-icons cmn-icons_logo-baike"></em>
+</span>
+</a>
+</div>
+<div class="search">
+<div class="form">
+<form id="searchForm" action="/search/word" method="GET" target="_self">
+<input id="query" name="word" autocomplete="off" autocorrect="off" value="jQuery" type="text"><a id="search" href="javascript:;"><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_search"></em></a>
+</form>
+<ul style="display: none;" id="suggestion" class="suggestion">
+<div></div>
+<li class="extra">
+<span id="close">关闭</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="tool-buttons">
+<a class="toolButtons-edit button j-edit-link" href="javascript:;" nslog-type="10010001"></a>
+<a class="toolButtons-collect button" href="javascript:;" nslog-type="10010002"></a>
+<a class="toolButtons-vote button" href="javascript:;" nslog-type="10010003"></a>
+</div>
+<div class="user-info">
+<a class="user-link unlogin" href="http://baike.baidu.com/usercenter" target="_blank">qingyuqiaoqiao</a>
+</div>
+</div></div>
+<div class="new-bdsharebuttonbox new-side-share" id="side-share">
+<span class="title">分享</span>
+<div class="side-border">
+<div class="triangle"></div>
+<a class="bds_qzone" href="javascript:void(0);" nslog-type="10060101">
+<em class="cmn-icon cmn-icons cmn-icons_logo-qzone"></em>
+</a>
+<a class="bds_tsina" href="javascript:void(0);" nslog-type="10060301">
+<em class="cmn-icon cmn-icons cmn-icons_logo-sina-weibo"></em>
+</a>
+<a class="bds_wechat" href="javascript:void(0);" nslog-type="10060001">
+<em class="cmn-icon cmn-icons cmn-icons_logo-wechat"></em>
+</a>
+<a class="bds_tqq" href="javascript:void(0);" nslog-type="10060201">
+<em class="cmn-icon cmn-icons cmn-icons_logo-qq"></em>
+</a>
+</div>
+</div>
+<div class="qrcode-wrapper" id="layer" style="display: none">
+<div class="bd_weixin_popup_head">
+<em class="cmn-icon cmn-icons cmn-icons_close"></em>
+<span>分享到微信朋友圈</span>
+</div>
+<div id="wechat-qrcode-img"></div>
+<div class="bd_weixin_popup_foot">打开微信“扫一扫”即可将网页分享至朋友圈</div>
+</div>
+<script src="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/qzopensl.js" charset="utf-8"></script>
+
+<script type="text/javascript" src="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/wiki-common_sync_js_0_556fe8d.js"></script>
+<script type="text/javascript">require.resourceMap({"res":{"wiki-lemma:widget/lemma_content/mainContent/lemmaRelation/lemmaInsert.js":{"url":"http://baike.bdimg.com/static/wiki-lemma/widget/lemma_content/mainContent/lemmaRelation/lemmaInsert_17d225d.js","pkg":"wiki-lemma:p5","deps":["wiki-common:widget/component/nslog/nslog.js"]},"wiki-lemma:widget/lemma_content/mainContent/lemmaRelation/tangram.js":{"url":"http://baike.bdimg.com/static/wiki-lemma/widget/lemma_content/mainContent/lemmaRelation/tangram_67429c3.js","pkg":"wiki-lemma:p5"},"wiki-lemma:widget/lemma_content/mainContent/lemmaReference/lemmaReferenceTip/lemmaReferenceTip.js":{"url":"http://baike.bdimg.com/static/wiki-lemma/widget/lemma_content/mainContent/lemmaReference/lemmaReferenceTip/lemmaReferenceTip_98e1259.js","deps":["wiki-common:widget/lib/jquery/jquery.js"]}},"pkg":{"wiki-lemma:p5":{"url":"http://baike.bdimg.com/static/wiki-lemma/pkg/wiki-lemma-module-lemmaRelation_49e0809.js"}}});</script><script type="text/javascript" src="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/PHPJS_3347e0a.js"></script>
+<script type="text/javascript" src="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/wiki-common_sync_js_1_56bd75b.js"></script>
+<script type="text/javascript" src="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/wiki-common_sync_js_2_7a24e62.js"></script>
+<script type="text/javascript" src="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/wiki-common_sync_js_5_62d9343.js"></script>
+<script type="text/javascript" src="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/wiki-lemma_3ca9644.js"></script>
+<script type="text/javascript" src="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/XRegExp_3e3f85b.js"></script>
+<script type="text/javascript" src="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/shCore_e2d4316.js"></script>
+<script type="text/javascript" src="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/shBrushJScript_db5a222.js"></script>
+<script type="text/javascript" src="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/shBrushPowerShell_9372229.js"></script>
+<script type="text/javascript" src="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/zhixin_d2befc8.js"></script>
+<script type="text/javascript">!function(){  var $ = 
+require('wiki-common:widget/lib/jquery/jquery.js'),
+    userbar = 
+require('wiki-common:widget/component/userbar/userbar.js');
+    
+  $(function() {
+    userbar.buildUserbar($('.wgt-userbar'), null);
+  });
+}();
+!function(){    var $ = 
+require('wiki-common:widget/lib/jquery/jquery.js'),
+      initSearchbar = 
+require('wiki-common:widget/component/searchbar/searchbar.js');  
+    initSearchbar($('.wgt-searchbar-main'));
+  }();
+!function(){  var $ = 
+require('wiki-common:widget/lib/jquery/jquery.js');
+
+  var timer = '';
+
+  $('.wgt-navbar').on('mouseenter', 'dl', function() {
+  clearTimeout(timer);
+  timer = setTimeout(function() {
+  $('.wgt-navbar').addClass('wgt-navbar-hover');
+}, 300);
+}).on('mouseleave', function() {
+clearTimeout(timer);
+$('.wgt-navbar').removeClass('wgt-navbar-hover');
+}).on('click', 'a', function() {
+clearTimeout(timer);
+$('.wgt-navbar').removeClass('wgt-navbar-hover');
+});
+}();
+!function(){            var $ = 
+require('wiki-common:widget/lib/jquery/jquery.js');
+            var rightCheck = 
+require('wiki-lemma:widget/tools/rightCheck/rightCheck.js');
+
+            // 展现策略
+            rightCheck.editView('5385065', function(res) {
+                if (!res.errno) {
+                    if (res.data.edit) {
+                        $('.lemmaWgt-lemmaTitle 
+.add-subLemma').css('display', 'inline-block');
+                        $('.top-tool .add-sub-icon').css('display', 
+'inline-block');
+                    }
+                } else {
+                    if ('1') {
+                        $('.lemmaWgt-lemmaTitle 
+.add-subLemma').css('display', 'inline-block');
+                        $('.top-tool .add-sub-icon').css('display', 
+'inline-block');
+                    }
+                }
+            }); 
+
+            require('wiki-lemma:widget/basicElement/addSub/addSub.js')({
+                lemmaId: '5385065',
+                lemmaTitle: 'jQuery',
+                lemmaDesc: '',
+                versionId: '106100770',
+                subLemmaId: '1020297'
+            });
+        }();
+!function(){        var $ = 
+require('wiki-common:widget/lib/jquery/jquery.js');
+        var rightCheck = 
+require('wiki-lemma:widget/tools/rightCheck/rightCheck.js');
+
+        // 展现策略
+        rightCheck.editView('5385065', function(res) {
+            if (!res.errno) {
+                if (res.data.divide) {
+                    $('.top-tool .split-icon').css('display', 'block');
+                }
+            }
+        });
+    }();
+!function(){    var nslog = 
+require('wiki-common:widget/component/nslog/nslog.js');
+	
+require.async("wiki-lemma:widget/basicElement/collect/collect.js",function(collect){
+
+		collect({
+            newLemmaId:"5385065",
+			lemmaId:"1020297",
+			subLemmaId:"1020297"
+		});
+	});
+}();
+!function(){    var nslog = 
+require('wiki-common:widget/component/nslog/nslog.js');
+	
+require.async("wiki-lemma:widget/basicElement/vote/vote.js",function(vote){
+
+		vote({
+			lemmaId:"1020297",
+            subLemmaId:"1020297"
+		});
+	});
+}();
+!function(){    var nslog = 
+require('wiki-common:widget/component/nslog/nslog.js');
+	!!window.BKShare && window.BKShare.regist({
+		"tag" : "top-share",
+		"bdSize" : 32,
+		"bdMini":1
+	});
+}();
+!function(){    var $ = 
+require('wiki-common:widget/lib/jquery/jquery.js');
+    var rightCheck = 
+require('wiki-lemma:widget/tools/rightCheck/rightCheck.js');
+
+    // 展现策略
+    rightCheck.editView('5385065', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.lemmaWgt-lemmaTitle .edit-lemma').css('display', 
+'inline-block');
+            } else {
+                $('.lemmaWgt-lemmaTitle .lock-lemma').show();
+            }
+        } else {
+            if ('1') {
+                $('.lemmaWgt-lemmaTitle .edit-lemma').css('display', 
+'inline-block');
+            } else {
+                $('.lemmaWgt-lemmaTitle .lock-lemma').show();
+            }
+        }
+    });
+}();
+!function(){	
+require('wiki-lemma:widget/lemma_content/mainContent/basicInfo/basicInfo.js')();
+}();
+!function(){
+    var $ = require('wiki-common:widget/lib/jquery/jquery.js');
+    var rightCheck = 
+require('wiki-lemma:widget/tools/rightCheck/rightCheck.js');
+
+    // 展现策略
+    rightCheck.editView('5385065', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = 
+require('wiki-common:widget/lib/jquery/jquery.js');
+    var rightCheck = 
+require('wiki-lemma:widget/tools/rightCheck/rightCheck.js');
+
+    // 展现策略
+    rightCheck.editView('5385065', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = 
+require('wiki-common:widget/lib/jquery/jquery.js');
+    var rightCheck = 
+require('wiki-lemma:widget/tools/rightCheck/rightCheck.js');
+
+    // 展现策略
+    rightCheck.editView('5385065', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = 
+require('wiki-common:widget/lib/jquery/jquery.js');
+    var rightCheck = 
+require('wiki-lemma:widget/tools/rightCheck/rightCheck.js');
+
+    // 展现策略
+    rightCheck.editView('5385065', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = 
+require('wiki-common:widget/lib/jquery/jquery.js');
+    var rightCheck = 
+require('wiki-lemma:widget/tools/rightCheck/rightCheck.js');
+
+    // 展现策略
+    rightCheck.editView('5385065', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = 
+require('wiki-common:widget/lib/jquery/jquery.js');
+    var rightCheck = 
+require('wiki-lemma:widget/tools/rightCheck/rightCheck.js');
+
+    // 展现策略
+    rightCheck.editView('5385065', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = 
+require('wiki-common:widget/lib/jquery/jquery.js');
+    var rightCheck = 
+require('wiki-lemma:widget/tools/rightCheck/rightCheck.js');
+
+    // 展现策略
+    rightCheck.editView('5385065', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = 
+require('wiki-common:widget/lib/jquery/jquery.js');
+    var rightCheck = 
+require('wiki-lemma:widget/tools/rightCheck/rightCheck.js');
+
+    // 展现策略
+    rightCheck.editView('5385065', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = 
+require('wiki-common:widget/lib/jquery/jquery.js');
+    var rightCheck = 
+require('wiki-lemma:widget/tools/rightCheck/rightCheck.js');
+
+    // 展现策略
+    rightCheck.editView('5385065', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = 
+require('wiki-common:widget/lib/jquery/jquery.js');
+    var rightCheck = 
+require('wiki-lemma:widget/tools/rightCheck/rightCheck.js');
+
+    // 展现策略
+    rightCheck.editView('5385065', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = 
+require('wiki-common:widget/lib/jquery/jquery.js');
+    var rightCheck = 
+require('wiki-lemma:widget/tools/rightCheck/rightCheck.js');
+
+    // 展现策略
+    rightCheck.editView('5385065', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = 
+require('wiki-common:widget/lib/jquery/jquery.js');
+    var rightCheck = 
+require('wiki-lemma:widget/tools/rightCheck/rightCheck.js');
+
+    // 展现策略
+    rightCheck.editView('5385065', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = 
+require('wiki-common:widget/lib/jquery/jquery.js');
+    var rightCheck = 
+require('wiki-lemma:widget/tools/rightCheck/rightCheck.js');
+
+    // 展现策略
+    rightCheck.editView('5385065', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = 
+require('wiki-common:widget/lib/jquery/jquery.js');
+    var rightCheck = 
+require('wiki-lemma:widget/tools/rightCheck/rightCheck.js');
+
+    // 展现策略
+    rightCheck.editView('5385065', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = 
+require('wiki-common:widget/lib/jquery/jquery.js');
+    var rightCheck = 
+require('wiki-lemma:widget/tools/rightCheck/rightCheck.js');
+
+    // 展现策略
+    rightCheck.editView('5385065', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = 
+require('wiki-common:widget/lib/jquery/jquery.js');
+    var rightCheck = 
+require('wiki-lemma:widget/tools/rightCheck/rightCheck.js');
+
+    // 展现策略
+    rightCheck.editView('5385065', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = 
+require('wiki-common:widget/lib/jquery/jquery.js');
+    var rightCheck = 
+require('wiki-lemma:widget/tools/rightCheck/rightCheck.js');
+
+    // 展现策略
+    rightCheck.editView('5385065', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = 
+require('wiki-common:widget/lib/jquery/jquery.js');
+    var rightCheck = 
+require('wiki-lemma:widget/tools/rightCheck/rightCheck.js');
+
+    // 展现策略
+    rightCheck.editView('5385065', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = 
+require('wiki-common:widget/lib/jquery/jquery.js');
+    var rightCheck = 
+require('wiki-lemma:widget/tools/rightCheck/rightCheck.js');
+
+    // 展现策略
+    rightCheck.editView('5385065', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = 
+require('wiki-common:widget/lib/jquery/jquery.js');
+    var rightCheck = 
+require('wiki-lemma:widget/tools/rightCheck/rightCheck.js');
+
+    // 展现策略
+    rightCheck.editView('5385065', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = 
+require('wiki-common:widget/lib/jquery/jquery.js');
+    var rightCheck = 
+require('wiki-lemma:widget/tools/rightCheck/rightCheck.js');
+
+    // 展现策略
+    rightCheck.editView('5385065', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = 
+require('wiki-common:widget/lib/jquery/jquery.js');
+    var rightCheck = 
+require('wiki-lemma:widget/tools/rightCheck/rightCheck.js');
+
+    // 展现策略
+    rightCheck.editView('5385065', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = 
+require('wiki-common:widget/lib/jquery/jquery.js');
+    var rightCheck = 
+require('wiki-lemma:widget/tools/rightCheck/rightCheck.js');
+
+    // 展现策略
+    rightCheck.editView('5385065', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = 
+require('wiki-common:widget/lib/jquery/jquery.js');
+    var rightCheck = 
+require('wiki-lemma:widget/tools/rightCheck/rightCheck.js');
+
+    // 展现策略
+    rightCheck.editView('5385065', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = 
+require('wiki-common:widget/lib/jquery/jquery.js');
+    var rightCheck = 
+require('wiki-lemma:widget/tools/rightCheck/rightCheck.js');
+
+    // 展现策略
+    rightCheck.editView('5385065', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = 
+require('wiki-common:widget/lib/jquery/jquery.js');
+    var rightCheck = 
+require('wiki-lemma:widget/tools/rightCheck/rightCheck.js');
+
+    // 展现策略
+    rightCheck.editView('5385065', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){        SyntaxHighlighter.all();
+    }();
+!function(){        
+require.async(['wiki-lemma:widget/lemma_content/mainContent/lemmaRelation/lemmaInsert.js'],
+ function(init) {
+            init({ // 关系化统计需求--传参  shangwenbin
+                lemmaId: "1020297",
+                newLemmaId: "5385065",
+                subLemmaId: "1020297",
+                lemmaTitle: "jQuery"
+            });
+        });
+    }();
+!function(){		
+require.async(["wiki-lemma:widget/lemma_content/mainContent/lemmaReference/lemmaReference.js",
+ 
+"wiki-lemma:widget/lemma_content/mainContent/lemmaReference/lemmaReferenceTip/lemmaReferenceTip.js"],function(Reference,ReferenceTip){
+
+			new Reference({
+				subLemmaId:"1020297"
+			});
+			new ReferenceTip({
+				subLemmaId:"1020297"
+			});
+		});
+	}();
+!function(){        
+require.async("wiki-common:widget/lib/jquery/jquery.js",function($){
+            function openTagToggle(node) {
+                if ($(node).hasClass("collapse")) {
+                    $(node).removeClass("collapse");
+                    $("#open-tag").css("height", '22px');
+                } else {
+                    $(node).addClass("collapse");
+                    $("#open-tag").css("height", 
+$("#open-tag-item").css("height"));
+                }
+            }
+            if (parseInt($("#open-tag-item").css("height")) <= 30) {
+                $('#open-tag-collapse').hide();
+            }
+            $("#open-tag-collapse").on("click", function () {
+                openTagToggle($("#open-tag")[0]);
+            });
+        });
+    }();
+!function(){        
+require('wiki-lemma:widget/lemma_content/configModule/zhixin/zhixin.js')(
+
+            5385065,
+            'jQuery'
+        );
+    }();
+!function(){    
+require.async("wiki-lemma:widget/lemma_content/mainContent/lemmaStatistics/lemmaStatistics.js",function(init){
+
+        init({
+            newLemmaIdEnc:"77a06242df9371d606bea908"
+        });
+    });
+}();
+!function(){	
+require.async("wiki-lemma:widget/lemma_content/mainContent/sideCatalog/sideCatalog.js",function(SideCatalog){
+
+		new SideCatalog();
+	});
+}();
+!function(){        
+require.async(['wiki-lemma:widget/promotion/unionAdFromPs/unionAdFromPs.js'],
+ function (init) {
+            init({
+                adManager: null
+            });
+        });
+    }();
+!function(){    
+require.async(["wiki-lemma:widget/promotion/fengchao/fengchao.js", 
+"wiki-lemma:widget/promotion/unionAd/unionAd.js"], function (init, 
+unionAd) {
+        init({
+            newLemmaId: "5385065",
+            lemmaTitle: "jQuery",
+            encodeLemmaTitle: "jQuery",
+            adManager: null
+        }, {
+            errFn: unionAd,
+            dom: $('#side_box_unionAd')
+        });
+    });
+}();
+!function(){    
+require.async('wiki-lemma:widget/promotion/guessLike/guessLike.js', 
+function (app) {
+        app.init({
+            lemmaTitle: 'jQuery',
+            adManager: null
+        });
+    });
+}();
+!function(){        
+require.async('wiki-lemma:widget/promotion/bottomAd/bottomAd.js', 
+function (init) {
+            init({
+                sId: 'BOTTOM_PRO_AD',
+                adManager: null
+            });
+        });
+    }();
+!function(){    var $ = 
+require('wiki-common:widget/lib/jquery/jquery.js');
+    var Dialog = require("wiki-common:widget/ui/dialog/dialog.js");
+    var userLogin = 
+require('wiki-common:widget/component/userLogin/userLogin.js');
+    var unameFiller = 
+require('wiki-common:widget/component/unameFiller/unameFiller.js');
+    var rightCheck = 
+require('wiki-lemma:widget/tools/rightCheck/rightCheck.js');
+
+
+    var editUrl = '/edit/' + encodeURIComponent('jQuery') + '/' + 
+'5385065';
+
+    function gotoEdit(url, isMidNight) {
+        if (isMidNight) {
+            Dialog.alert({
+                title: '编辑提示',
+                subMsg: 
+'晚23:00至次日8:00，因审核系统例行维护，您提交的版本可能需要较长时间才能通过，望您谅解。',
+                onConfirm: function() {
+                    window.location.href = url;
+                }
+            });
+        } else {
+            window.location.href = url;
+        }    
+    }
+
+    $(document.body).on('click', '.j-edit-link', function() {
+        var dl = $(this).attr('data-edit-dl');
+        if (dl) {
+            var url = editUrl + '?dl=' + dl;
+        } else {
+            var url = editUrl;
+        }
+
+        rightCheck.preeditCheck('5385065', 'jQuery', 'jQuery开发', 
+'106100770', function(res) {
+            if (res.errno) {
+                switch (res.errno) {
+                    case 100001:
+                        userLogin.showLoginPop();
+                        break;
+                    case 100006: 
+                        unameFiller.show();
+                        break;
+                    case 100005:
+                        alert('对不起，您目前被封禁');
+                        break;
+                    case 110001:
+                        alert('对不起，该词条被锁定');
+                        break;
+                    case 110007:
+                        alert('对不起，消歧页无法编辑');
+                        break;
+                    case 110005:
+                        Dialog.alert({
+                            title: '编辑提示',
+                            mainMsg: '对不起，您暂时没有权限编辑该词条。',
+                            subMsg: 
+'<p>您好，该词条内容已较丰富，现仅对百科等级达到<b>四级</b>且通过率达到<b>85%</b>的科友开放编辑。</p><p>当您通过努力
+达到以上要求，就可以参与编辑该词条了。</p><p><img 
+src="http://img.baidu.com/img/baike/usercenter/growuptask/star.gif" 
+class="star" />参加<a target="_blank" 
+href="/usercenter#guide">成长任务</a>，更快掌握百科编辑技巧，加速升级！</p>'
+                        });
+                        break;
+                    case 110008:
+                        Dialog.alert({
+                            title: '编辑提示',
+                            mainMsg: '对不起，您暂时没有权限编辑该词条。',
+                            subMsg: 
+'<p>您好，该词条内容已较丰富，现仅对百科等级达到<b>六级</b>且通过率达到<b>85%</b>的科友开放编辑。</p><p>当您通过努力
+达到以上要求，就可以参与编辑该词条了。</p><p><img 
+src="http://img.baidu.com/img/baike/usercenter/growuptask/star.gif" 
+class="star" />参加<a target="_blank" 
+href="/usercenter#guide">成长任务</a>，更快掌握百科编辑技巧，加速升级！</p>'
+                        });
+                        break;
+                    case 470001:
+                        alert('系统错误，请刷新重试');
+                        break;
+                }
+            } else {
+                if (!res.data.right.noAudit) {
+                    Dialog.alert({
+                        title: '编辑提示',
+                        subMsg: 
+'很抱歉，该词条有其他用户编辑的版本正在提交，您暂时无法编辑。<br/>百科建议您晚些时候再编辑该词条，或者尝试编辑其他的词条。'
+                    });
+                    return;
+                }
+                gotoEdit(url, res.data.notice.isMidNight);
+            }
+        });
+    });
+}();
+!function(){    
+require.async("wiki-lemma:widget/tools/searchHeader/toolButtons/toolButtons.js",function(init){
+
+        init({
+            newLemmaId:"5385065",
+            lemmaId:"1020297",
+            subLemmaId:"1020297"
+        });
+    });
+}();
+!function(){    
+require('wiki-lemma:widget/tools/searchHeader/toolButtons/userInfo.js')();
+}();
+!function(){
+    var $ = require('wiki-common:widget/lib/jquery/jquery.js'),
+      animation = require('wiki-common:widget/util/animation.js'),
+      initSearchbar = 
+require('wiki-common:widget/component/searchbar/searchbar.js');
+
+    var isFadeIn = false,
+        isFadeOut = false;
+
+    var fadeInAni, fadeOutAni;
+
+    $(window).on('scroll', function(e) {
+        var scrollTop = $(this).scrollTop();
+
+        if (scrollTop > 200 && !isFadeIn && 
+$('.lemmaWgt-searchHeader').css('display') == 'none') {
+            fadeOutAni && fadeOutAni.stop();
+            fadeInAni = animation({
+                duration: 200,
+                easing: 'linear',
+                onStart: function() {
+                    isFadeOut = false;
+                    isFadeIn = true;
+                    $('.lemmaWgt-searchHeader').css('display', 'block');
+                },
+                onStep: function(progress) {
+                    $('.lemmaWgt-searchHeader').css('opacity', progress)
+                },
+                onComplete: function(progress) {
+                    isFadeIn = false;
+                }
+            });
+        } else if (scrollTop <= 200 && !isFadeOut && 
+$('.lemmaWgt-searchHeader').css('display') == 'block') {
+            fadeInAni && fadeInAni.stop();
+            fadeOutAni = animation({
+                duration: 300,
+                easing: 'linear',
+                onStart: function() {
+                    $('.lemmaWgt-searchHeader #suggestion').hide();
+                    isFadeIn = false;
+                    isFadeOut = true;
+                },
+                onStep: function(progress) {
+                    $('.lemmaWgt-searchHeader').css('opacity', 1 - 
+progress);
+                },
+                onComplete: function(progress) {
+                    isFadeOut = false;
+                    $('.lemmaWgt-searchHeader').css('display', 'none');
+                }
+            });
+        }
+    });
+
+    initSearchbar($('.lemmaWgt-searchHeader'));
+}();
+!function(){    
+require.async("wiki-lemma:widget/tools/newSideShare/taskSideShare.js",function(taskShare){
+
+        taskShare.init({
+            title: 'jQuery',
+            desc: 'JQuery是继prototype之后又一个优秀的Javascript库。它是轻量级的js库 
+，它兼容CSS3，还兼容各种浏览器（IE 6.0+, FF 1.5+, Safari 2.0+, Opera 
+9.0+），jQuery2.0及后续版本将不再支持IE6\\\/7\\\/8浏览器。jQuery使用户能更方便地处理HTML（标准通用标记语言下
+的一个应用）、events、实现动画效果，并且方便地为网站提供AJAX交互。',
+            pic: 
+'http:\/\/d.hiphotos.baidu.com\/baike\/w%3D268\/sign=d2927263c45c1038247ec9c48a10931c\/37d12f2eb9389b507400922b8735e5dde6116ecf.jpg',
+
+            url: '',
+            qqPic: 
+'http:\/\/d.hiphotos.baidu.com\/baike\/whfpf%3D300%2C300%2C50\/sign=49490059bb12c8fcb4a6a58d9a3ea175\/37d12f2eb9389b507400922b8735e5dde6116ecf.jpg'
+
+        });
+    });
+}();
+!function(){    var $ = 
+require('wiki-common:widget/lib/jquery/jquery.js');
+    var nslog = require("wiki-common:widget/component/nslog/nslog.js");
+    var testElem = 
+require('wiki-common:widget/component/testElem/testElem.js');
+
+    require.async("wiki-lemma:widget/tools/lazyLoad/lazyLoad.js", 
+function(LazyLoad) {
+        new LazyLoad();
+    });
+
+    require.async(['wiki-common:widget/component/nslog/nslog.js', 
+'wiki-common:widget/lib/jquery/jquery.js'], function(nslog, $) {
+        nslog().setGlobal({
+            lemmaId: "1020297",
+            newLemmaId: "5385065",
+            subLemmaId: "1020297",
+            lemmaTitle: "jQuery"
+        });
+        
+        // 词条页 pv
+        nslog(9322);
+
+        // 链接点击 pv
+        var lemmaPageRegExp = new 
+RegExp(/\/subview\/\d+|\/view\/\d+|\/item\//i); 
+        $('body').on('mousedown', 'a', function() {
+            var href = $(this).attr('href');
+            if (href && href.indexOf('/') >= 0 && href.indexOf('#') !== 
+0) {
+                // 链接点击 pv
+                nslog(10000001);
+                if (lemmaPageRegExp.test(href)) {
+                    // 词条页链接点击 pv
+                    nslog(10000002);
+                }
+            }
+        });
+
+        /****** 词条页站内流转需求统计 start ******/
+        (function () {
+            // 各种统计配置
+            var circulationLinkCfg = {
+                innerLink: [ // 内链
+                    '.para',
+                    '.lemmaWgt-baseInfo-simple-largeMovie',
+                    '.lemmaWgt-baseInfo-simple-largeStar',
+                    '.basic-info .basicInfo-block',
+                    '.lemma-summary',
+                    '.lemmaWgt-lemmaSummary',
+                    '.view-tip-panel',
+                    '.horizontal-module',
+                    '.lemmaWgt-roleIntroduction',
+                    '.dramaSeries .dramaSerialList',
+                    '.module-music',
+                    '.table-view',
+                    '[log-set-param="table_view"]',
+                    '.list-module',
+                    '.cell-module',
+                    '.baseBox .dl-baseinfo', // 配置后台字段
+                    '.pvBtn-box .leadPVBtnWrapper',
+                    '.drama-actor',
+                    '#staffList',
+                    '.starMovieAndTvplay',
+                    '.main_tab:not(.main_tab-defaultTab)' // 
+除去词条tab外的tab
+                ],
+                relationTable: '.rs-container-foot', // 关系表 
+                peopleRelation: '.star-info-block.relations, 
+.lemmaWgt-focusAndRelation', // 人物关系（明星+普通）
+                moduleActors: '.featureBaseInfo .actors, 
+.lemmaWgt-majorActors', // 主要演员、嘉宾、主持人
+                moduleWorks: '.featureBaseInfo .works, .large-feature 
+.works', // 代表作品
+                moduleQuarterly: '.featureBaseInfo .po_quarterly, 
+.mian_quarterly', // 分季介绍
+                rankStar: '.rank-list.stars-rank', // 明星榜
+                rankDrama: '.drama-rank-list', // 电视剧榜
+                specialTopic: '.special-topic', // 专题模块
+                modDetailTable: '#modDetailTable', // 关系表出图
+                chuizhitu: '.chuizhitu', // 垂直化模块
+                polysemantList: '.polysemantList-wrapper' // 义项切换
+            };
+            /****** 连接统计 ******/
+            function clickNslogFn() {
+                for (var k in circulationLinkCfg) {
+                    if (k === 'innerLink') {
+                        // 词条内链到词条页
+                        var tempArr = circulationLinkCfg[k];
+                        for (var i = 0, l = tempArr.length; i < l; i++) {
+                            tempArr[i] += ' a';
+                        }
+                        var sSelector = tempArr.join(', ');
+
+                        $('body').on('mousedown', sSelector, {key: 
+k},function(e) {
+                            var key = e.data.key;
+                            var href = $(this).attr('href');
+                            var tar = $(this).attr('target') || '';
+                            if (href && href.indexOf('/') >= 0 && 
+href.indexOf('#') !== 0 
+                            && tar === '_blank' && 
+lemmaPageRegExp.test(href)) {
+                                // 词条页普通内链点击 pv
+                                nslog(10000004, null ,{division: key});
+                            }
+                        });
+                    } else {
+                        // 模块到词条页链接
+                        $(circulationLinkCfg[k]).on('mousedown', 'a', 
+{key: k}, function (e) {
+                            var key = e.data.key;
+                            var href = $(this).attr('href');
+                            if (href && href.indexOf('#') !== 0 && 
+lemmaPageRegExp.test(href)) {
+                                // 词条页配置模块链接点击 pv
+                                nslog(10000004, null, {division: key});
+                            }
+                        });
+                    }
+                }
+            }
+            // 发起统计请求
+            clickNslogFn();
+            
+            /****** 各模块展现量pv ******/
+            function checkModuleIsShow() {
+                var result = [];
+                for (var k in circulationLinkCfg) {
+                    if (k !== 'innerLink' && k !== 'relationTable') {
+                        !!$(circulationLinkCfg[k]).html() && 
+result.push(k);
+                    }
+                }
+                if (result.length > 0) {
+                    nslog(10000005, null, {showModules: 
+result.join(',')});
+                }
+            }
+            checkModuleIsShow();
+
+        })();
+        /****** 词条页站内流转需求统计 end ******/
+
+    });
+
+    // 广告接入 wikiad 统一加载
+    // log 词条页广告被拦截情况（此处 log 请求行为）
+    nslog(70000101, window.location.href, {
+        api: 'lemma-ad',
+        action: 'request'
+    });    
+    $.ajax({
+        type: 'GET',
+        url: '/api/wikiad/getsquirrels',
+        data: {
+            lemmaId: 5385065
+        },
+        cache: false,
+        dataType: 'JSON',
+        success: function (res) {
+            // log 词条页广告被拦截情况（此处 log 请求成功）
+            nslog(70000101, window.location.href, {
+                api: 'lemma-ad',
+                action: 'success'
+            });
+
+            if (!res.errno) {
+                if (res.data[5]) {
+                    
+require.async(['wiki-lemma:widget/promotion/rightPreciseAd/rightPreciseAd.js'],
+ function(rightPreciseAd) {
+                        rightPreciseAd(res.data[5]);
+                        nslog(10002201, location.href, {
+                            adId: res.data[5][0].adId,
+                            adTitle: res.data[5][0].name,
+                            adPos: 5
+                        });
+                    });
+                } else if (res.data[1]) {
+                    
+require.async(['wiki-lemma:widget/promotion/vbaike/vbaike.js'], 
+function(vbaike) {
+                        vbaike(res.data[1]);
+                        for(var i in res.data[1]) {
+                            nslog(10002201, location.href, {
+                                adId: res.data[1][i].adId,
+                                adTitle: res.data[1][i].name,
+                                adPos: 1
+                            });
+                        }
+                    });
+                }
+                if (res.data[9]) {
+                    
+require.async(['wiki-lemma:widget/promotion/rightBigAd/rightBigAd.js'], 
+function(rightBigAd) {
+                        rightBigAd(res.data[9]);
+                            nslog(10002201, location.href, {
+                                adId: res.data[9][0].adId,
+                                adTitle: res.data[9][0].name,
+                                adPos: 9
+                            });  
+                    });
+                } else if(res.data[2]) {
+                    
+require.async(['wiki-lemma:widget/promotion/slide/slide.js'], 
+function(slide) {
+                        slide(res.data[2]);
+                        for(var i in res.data[2]) {
+                            nslog(10002201, location.href, {
+                                adId: res.data[2][i].adId,
+                                adTitle: res.data[2][i].name,
+                                adPos: 2
+                            });
+                        }
+                    });
+                }
+                if (res.data[3]) {
+                    
+require.async(['wiki-lemma:widget/promotion/topAd/topAd.js'], 
+function(topAd) {
+                        topAd(res.data[3]);
+                        nslog(10002201, location.href, {
+                            adId: res.data[3][0].adId,
+                            adTitle: res.data[3][0].name,
+                            adPos: 3
+                        });
+                    });
+                }
+                if (res.data[4]) {
+                    
+require.async(['wiki-lemma:widget/promotion/rightAd/rightAd.js'], 
+function(rightAd) {
+                        rightAd(res.data[4]);
+                        nslog(10002201, location.href, {
+                            adId: res.data[4][0].adId,
+                            adTitle: res.data[4][0].name,
+                            adPos: 4
+                        });
+                    });
+                }
+            } else {
+                return;
+            }
+
+            setTimeout(function () {
+                var elemArr = {};
+                res.data[1] && res.data[1].length > 0 && 
+(elemArr['lemma-vbaike-ad'] = $('.lemmaWgt-promotion-vbaike 
+.promotion_viewport a:eq(0) img').get(0));
+                res.data[2] && res.data[2].length > 0 && 
+(elemArr['lemma-slide-ad'] = $('.lemmaWgt-promotion-slide 
+.promotion_viewport a:eq(0) img').get(0));
+                res.data[3] && res.data[3].length > 0 && 
+(elemArr['lemma-navbar-ad'] = {
+                    node: $('.header [nslog-type="10002202"]').get(0),
+                    validations: {
+                        'noBackgroundImage': function() {
+                            return $('.header 
+[nslog-type="10002202"]').css('background-image').indexOf(res.data[3][0].picUrl)
+ < 0
+                        }
+                    }
+                });
+                res.data[4] && res.data[4].length > 0 && 
+(elemArr['lemma-side-ad'] = {
+                    node: $('.right-ad img').get(0),
+                    validations: {
+                        'noBackgroundImage': function() {
+                            return $('.right-ad 
+img').attr('src').indexOf(res.data[4][0].picUrl) < 0
+                        }
+                    }                    
+                });
+
+                testElem.log(elemArr, 70000102);
+            }, 1000);            
+        },
+        error: function () {
+            // log 词条页广告被拦截情况（此处 log 请求失败）
+            nslog(70000101, window.location.href, {
+                api: 'lemma-ad',
+                action: 'error'
+            });
+        }
+    });
+
+    // 设置分享内容
+    window.BKShare.setCommon({
+        bdText: 
+'【jQuery_百度百科】JQuery是继prototype之后又一个优秀的Javascript库。它是轻量级的js库 
+，它兼容CSS3，还兼容各种浏览器（IE 6.0+, FF 1.5+, Safari 2.0+, Opera 
+9.0+），jQuery2.0及后续版本将不再支持IE6\/7\/8浏览器。jQuery使用户能更方便地处理HTML（标准通用标记语言下的一个应
+用）、events、实现动画效果，并且方便地为网站提供AJAX交互。.....（分享自@百度百科）',
+        bdDesc: '',
+        bdUrl: 
+'http:\/\/baike.baidu.com\/subview\/1020297\/1020297.htm',
+        bdPic: ''
+    });
+
+    // 底部投诉带入当前页面 url
+    var map = [1, 2, 4, 3];
+    $('.wgt-footer-main .suggestion').find('a').each(function(i) {
+        $(this).attr('href', 
+'http://tousu.baidu.com/baike/add?word=jQuery' + '&&submit_link=' + 
+encodeURIComponent(window.location.href) + '#' + map[i]);
+    });
+}();
+!function(){      
+require('wiki-common:widget/component/psLink/psLink.js');
+    }();</script><div style="opacity: 0; position: fixed;" class="wgt_overlay"></div><dl style="display: none;" class="wgt_dialog modal add-sub-dialog">
+<dt>添加义项描述<a href="http://baike.baidu.com/view/10811633.htm" target="_blank">义项命名规则</a></dt>
+<dd class="close dialog-btn" title="关闭" btn-key="close"><em class="cmn-icon cmn-icons cmn-icons_close"></em></dd>
+<dd class="con no-icon no-sub-msg">
+<div class="add-sub">                        <div class="content-inner">                            <div class="tip">您需要给原有的义项和新增加的义项都写一个“义项描述”，让读者能分清楚同名的两个事物。</div>                            <div class="example">                                <div class="example-tit">示例</div>                                <div class="example-show">                                    <ul>                                        <li class="show-li clearfix"><div class="tit">词条名</div><div class="content">环太平洋</div></li>                                        <li class="show-li clearfix"><div class="tit">原有义项描述</div><div class="content">地理区域</div></li>                                        <li class="show-li clearfix"><div class="tit">新增义项描述</div><div class="content">2013年美国科幻电影</div></li>                                    </ul>                                </div>                            </div>                            <form action="/createsub/jQuery" method="get">                                <div class="form-item name-lemma clearfix"><label for="">词条名</label><input value="jQuery" disabled="disabled" type="text"></div>                                <div class="form-item clearfix"><label for="">原有义项描述(不大于20字)</label><input name="ori_desc" type="text"></div>                                <div class="form-item clearfix"><label for="">新增义项描述(不大于20字)</label><input name="desc" type="text"></div>                                <div class="form-item form-notice"><strong>[注意]</strong>如果原义项中已经罗列了多个义项的内容，那么建议您不要直接添加义项，而是<a href="http://tieba.baidu.com/p/4152042379" target="_blank">报告未拆分多义词。</a></div>                                <div class="add-sub-main-footer"><input class="add-sub-main-button add-sub-main-accept" value="确定" type="submit"><span class="add-sub-main-button add-sub-main-cancel">取消</span></div>                            </form>                        </div>                    </div>
+</dd>
+</dl>
+<script type="text/javascript">
+  var Hunter = window.Hunter || {};
+  Hunter.userConfig = Hunter.userConfig || [];
+  </script>
+<script type="text/javascript" src="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/baike.js" defer="defer"></script><script type="text/javascript">
+  // DOM Ready时，统计用户可操作时间。
+  alog('speed.set', 'drt', +new Date);
+
+  // 配置 PD 监控。
+  window.alogObjectConfig = {
+    product: '103',
+    page: '103_1',
+    monkey_page: '',
+    speed_page: '',
+    speed: {
+      sample: '0.008'
+    },
+    monkey: {
+      sample: '1',
+      hid: '1533'
+    },
+    exception: { 
+      sample: '0.004'
+    },
+    feature: {
+      sample: '0.004'
+    },
+    csp: {
+      sample: '0.008',
+      'default-src': [
+        {match: '*.baidu.com,*.bdimg.com,localhost', target: 'Accept'},
+        {match: '*', target: 'Accept,Warn'}
+      ]
+    }
+  };
+
+  void function(a,b,c,d,e,f){function 
+g(b){a.attachEvent?a.attachEvent("onload",b,!1):a.addEventListener&&a.addEventListener("load",b)}function
+ h(a,c,d){d=d||15;var e=new Date;e.setTime((new 
+Date).getTime()+1e3*d),b.cookie=a+"="+escape(c)+";path=/;expires="+e.toGMTString()}function
+ i(a){var c=b.cookie.match(new RegExp("(^| )"+a+"=([^;]*)(;|$)"));return
+ null!=c?unescape(c[2]):null}function j(){var 
+a=i("PMS_JT");if(a){h("PMS_JT","",-1);try{a=a.match(/{["']s["']:(\d+),["']r["']:["']([\s\S]+)["']}/),a=a&&a[1]&&a[2]?{s:parseInt(a[1]),r:a[2]}:{}}catch(c){a={}}a.r&&b.referrer.replace(/#.*/,"")!=a.r||alog("speed.set","wt",a.s)}}if(a.alogObjectConfig){var
+ 
+k=a.alogObjectConfig.sample,l=a.alogObjectConfig.rand;if("https:"===a.location.protocol){if(d="https://gss2.bdstatic.com/70cFsjip0QIZ8tyhnq"+d,!k||!l)return}else
+ 
+d="http://img.baidu.com"+d;k&&l&&l>k||(g(function(){alog("speed.set","lt",+new
+ Date),e=b.createElement(c),e.async=!0,e.src=d+"?v="+~(new 
+Date/864e5),f=b.getElementsByTagName(c)[0],f.parentNode.insertBefore(e,f)}),j())}}(window,document,"script","/hunter/alog/dp.min.js");
+</script>
+<div class="reference-tip"><table><tbody><tr><td class="content"></td><td class="title" valign="middle">参考资料</td></tr></tbody></table><em class="triangle-bg"></em><em class="triangle-border"></em></div><div class="right-ad"><a class="rightAd-link" nslog-type="10002202" nslog-params="{&quot;adId&quot;:&quot;515&quot;, &quot;adTitle&quot;: &quot;百科十周年&quot;, &quot;adPos&quot;: 4}" title="" href="http://baike.baidu.com/operation/10year" target="_blank"><img src="jQuery_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91_files/4b90f603738da97713b26586b751f8198718e3fa.png" alt=""></a><a class="rightAd-close" href="javascript:;"></a></div><div style="display: none;" class="wgt_bubble wgt-bubble-userMenu"><ul>
+<li class="top"><a href="http://baike.baidu.com/usercenter" target="_blank">我的百科</a></li>
+<li><a href="http://baike.baidu.com/usercenter/tasks#mine" target="_blank">我的任务</a></li>
+<li><a href="http://baike.baidu.com/usercenter/lemmas" target="_blank">我的词条</a></li>
+<li><a href="http://passport.baidu.com/center" target="_blank">账号设置</a></li>
+<li class="bottom logout"><a data-action="logout" href="javascript:;">退出</a></li>
+</ul><em class="tail"></em></div><div style="display: none;" class="wgt_bubble wgt-bubble-userMsg"><ul>
+<li class="top"><a href="http://baike.baidu.com/messages" target="_blank"><span class="userMsgType">通知</span></a></li><li class="bottom"><a href="http://msg.baidu.com/" target="_blank"><span class="userMsgType">私信</span></a></li>
+</ul><em class="tail"></em></div><div class="c-tips-container" id="c-tips-container"></div></body></html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="#" method="get">
+			<!--在后台传输数据-->
+			隐藏域:<input type="hidden" name="userid" value=""><br />
+			<!--将所有的表单项放入form标签中-->
+			用户名:<input type="text"><br />
+			密码：<input type="password"><br />
+			性别：<input type="radio" name="sex">男
+			      <input type="radio" name="sex">女<br />
+			兴趣：<input type="checkbox" name="hobby">跳舞	
+				<input type="checkbox" name="hobby">唱歌
+				<input type="checkbox" name="hobby">运动
+				<input type="checkbox" name="hobby">编程<br />
+			头像：<input type="file"><br />
+			<!--下拉列表-->
+			籍贯：<select name="province">
+					<option>--请选择省份--</option>
+					<option>黑龙江</option>
+					<option>江苏</option>
+					<option>浙江</option>
+			</select><br />
+			<!--多行文本框-->
+			描述：<textarea>请输入您的简单描述
+			</textarea><br />
+			
+			<input type="submit" value="注册" /><br>
+			<input type="reset"><br />
+			<input type="button" value="普通按钮">
+		</form>
+	</body>
+</html>

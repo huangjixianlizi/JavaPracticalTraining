@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script>
+		function method(num1,num2)
+		{
+			//alert(num1+num2);
+			return num1+num2;
+		}
+		//调用函数
+//		外部调用
+//		method(10,20);
+	function getMethod()
+	{
+		var result = method(10,30);
+		alert(result);
+	}
+	//JS中事件调用函数不能加()
+	//window.onload=getMethod;
+	//匿名函数
+	window.onload=function(){
+		alert("这是匿名函数");
+	}
+	</script>
+	<body>
+		<input type="button" onclick="getMethod()">
+	</body>
+</html>

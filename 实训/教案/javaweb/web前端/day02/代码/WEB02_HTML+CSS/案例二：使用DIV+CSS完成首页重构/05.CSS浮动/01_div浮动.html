@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>DIV浮动</title>
+		<style>
+			#one{
+				background-color: red;
+				width: 400px;
+				height: 150px;
+				float: left;
+			}
+			#two{
+				background-color: black;
+				width: 400px;
+				height: 150px;
+				/*float: left;*/
+			}
+			#three{
+				background-color: blue;
+				width: 400px;
+				height: 150px;
+				/*float: left;*/
+			}
+			.clear{
+				/*清除浮动*/
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="one"></div>
+		<div class="clear"></div>
+		<div id="two"></div>
+		<div id="three"></div>
+		
+	</body>
+</html>
