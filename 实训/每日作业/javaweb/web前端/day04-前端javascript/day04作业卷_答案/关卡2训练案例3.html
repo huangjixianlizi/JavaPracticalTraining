@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		//定义一个正则 非空
+		var reg = /^\s*$/;
+		
+		//校验表单主方法
+		function run(){
+			clearSpan();//清空span校验信息 
+			var flag1=checkNotNull("username");//用户名校验
+			var flag2=checkNotNull("pwd");//密码校验
+			var flag3=checkNotNull("pwd2");//确认密码校验
+			var flag4=checkIschoice("utype");//用户类型校验
+			var flag5=checkIsSelected("city");//所在城市校验
+			var flag6=checkpwd(flag2,flag3);//验证密码和确认密码是否一致
+			return flag1&&flag2&&flag3&&flag4&&flag5&&flag6;
+		}
+		//清空span校验信息
+		function clearSpan(){
+			document.getElementById("usernamespan").innerHTML="";
+			document.getElementById("pwdspan").innerHTML="";
+			document.getElementById("pwd2span").innerHTML="";
+			document.getElementById("utypespan").innerHTML="";
+			document.getElementById("cityspan").innerHTML="";
+		}
+		//通过元素ID进行元素非空判断
+		function checkNotNull(nodeid){
+			//获取表单元素
+			var nodex = document.getElementById(nodeid);
+			//获取span元素
+			var spann = document.getElementById(nodeid+"span");
+			if(reg.test(nodex.value)){
+				spann.innerHTML="不能为空";
+				return false;
+			}else{
+				return true;
+			}
+		}
+		
+		//用户类型  radio   checked=true
+		function checkIschoice(nodename){
+			//获取表单元素
+			var nodex = document.getElementsByName(nodename);
+			//获取span元素（显示校验信息）
+			var spann = document.getElementById(nodename+"span");
+			
+			//遍历数组
+			for(var i=0;i<nodex.length;i++){
+				if(nodex[i].checked){
+					return true;
+				}
+			}
+			spann.innerHTML="不能为空";
+			return false;
+		}
+		
+		//所在城市校验	 option value
+		function checkIsSelected(nodeid){
+			//获取select表单元素
+			var nodex = document.getElementById(nodeid);
+			//获取span元素
+			var spann = document.getElementById(nodeid+"span");
+			
+			//获取select option子元素
+			var options=nodex.options;
+			//获取value
+			var val=options[nodex.selectedIndex].value;
+			
+			//判断
+			if(reg.test(val)){
+				spann.innerHTML="不能为空";
+				return false;
+			}else{
+				return true;
+			}
+		}
+		var cities = new Array(4);
+		cities[0] = new Array("市辖区","县");
+		cities[1] = new Array("长春市","吉林市","松原市","延边市");
+		cities[2] = new Array("济南市","青岛市","烟台市","潍坊市","淄博市");
+		cities[3] = new Array("石家庄市","唐山市","邯郸市","廊坊市");
+		cities[4] = new Array("南京市","苏州市","扬州市","无锡市");
+		
+		//通过选择的省，显示对应的所有的市
+		function selectCity(index){
+			//通过索引获得对应的所有的市
+			var allCity = cities[index];
+			// 获得city select 对象
+			var cityObj = document.getElementById("city");
+			cityObj.innerHTML = "<option value=''>----请-选-择-市----</option>";
+			//遍历所有的市
+			for(var i = 0 ; i < allCity.length ; i ++){
+				// 获得具体的市
+				var cityName = allCity[i];
+				// 创建option
+				var option = document.createElement("option");
+				// 创建文本节点
+				var textNode = document.createTextNode(cityName);
+				//将文本添加到option中
+				option.appendChild(textNode);
+				// 将option追加到select中
+				cityObj.appendChild(option);
+			}
+		}
+		
+		//校验密码和确认密码是否一致
+		function checkpwd(a,b){
+			var pwd = document.getElementById("pwd");
+			var pwd2 = document.getElementById("pwd2");
+			//获取span（显示校验信息）
+			var pwd2span = document.getElementById("pwd2span");
+			if(a&&b&&pwd.value!=pwd2.value){
+				//不一致
+				pwd2span.innerHTML="密码和确认密码不一致";
+				return false;
+			}else{
+				return true;
+			}
+		}
+	</script>
+	
+	<style type="text/css">
+		.errorspan{
+			color:red;
+			font-size: 12px;
+		}
+	</style>
+	
+  </head>
+  <body>
+    	<form action="#" method="get" id="f1" onsubmit="return run()">
+    		<table>
+    			<tr>
+    				<td>用户名</td>
+    				<td><input type="text" name="username" id="username"/>
+    				<span id="usernamespan" class="errorspan"></span></td>
+    			</tr>
+    			<tr>
+    				<td>密码</td>
+    				<td><input type="password" name="pwd" id="pwd"/>
+    				<span id="pwdspan" class="errorspan"></span></td>
+    			</tr>
+    			<tr>
+    				<td>确认密码</td>
+    				<td><input type="password" name="pwd2" id="pwd2"/>
+    				<span id="pwd2span" class="errorspan"></span></td>
+    			</tr>
+    			<tr>
+    				<td>用户类型</td>
+    				<td><input type="radio" name="utype" value="vip"/>vip<br/>
+    				<input type="radio" name="utype" value="normal"/>一般用户<br/>
+    				<span id="utypespan" class="errorspan"></span>
+    				</td>
+    			</tr>
+    			<tr>
+    				<td>所在地区</td>
+    				<td><select id="provinceId" onchange="selectCity(this.value)" style="width:150px">
+					<option value="">----请-选-择-省----</option>
+					<option value="0">北京</option>
+					<option value="1">吉林省</option>
+					<option value="2">山东省</option>
+					<option value="3">河北省</option>
+					<option value="4">江苏省</option>
+				</select>
+				<select id="city" style="width:150px">
+					<option value="">----请-选-择-市----</option>
+				</select>
+    				<span id="cityspan" class="errorspan"></span>
+    				</td>
+    			</tr>
+    			<tr>
+    				<td></td>
+    				<td><input type="submit" value="注册提交"/>
+    				<input type="reset" value="重置"/></td>
+    			</tr>
+    		</table>
+    	</form>
+  </body>
+
+</html>

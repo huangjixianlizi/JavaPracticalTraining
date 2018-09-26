@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			function showhid(){
+				var div1=document.getElementById("div1");
+				var checkboxed=document.getElementById("checkboxId");
+				
+				if(checkboxed.checked){
+					div1.style.display='';
+				}else{
+					div1.style.display='none';
+				}
+			}
+		</script>
+	</head>
+	<body>	
+		<input type="checkbox" id="checkboxId" onclick="showhid();"><label>展示隐藏内容</label>
+		<div id="div1" style="display:none;"><font color="#FF8E20">~~各位老好，这是隐藏内容~~</font></div>
+	</body>
+</html>

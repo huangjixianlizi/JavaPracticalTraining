@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>鼠标经过链接显示说明信息</title>
+		<style type="text/css">
+			 body {  font-family: "宋体"; font-size: 9pt; margin-top: 0px; margin-left: 0px; margin-right: 0px}
+			 A { COLOR: black; FONT-SIZE: 9pt; FONT-WEIGHT: 400; TEXT-DECORATION: none }
+			 A:hover { COLOR: red; FONT-SIZE: 9pt; FONT-WEIGHT: 400; TEXT-DECORATION: underline }
+			 a:active     { font: 9pt "宋体"; cursor: hand; color: #FF0033 }
+		</style>
+	</head>
+	<body>
+		<table border=1 bordercolor=#000000 borderlight=green style="border-collapse: collapse" cellpadding="0" cellspacing="0">
+		<tr><td align=center><font size=5 color=red face="Arial, Helvetica, sans-serif"><strong>下面为效果显示区!</strong></font></td></tr>
+			<tr>
+				<td align=center>
+					<table border="0">
+						<tr>
+							 <td valign=top width="50">
+								 <a onMouseOver="niit()" href="http://www.czniit.cn/index.html">NIIT</a> <br>
+								 <a onMouseOver="jky()" href="http://www.czniit.cn/index.html">极客营</a> <br>
+								 <a onMouseOver="jky02()" href="http://www.czniit.cn/index.html">极客营程序员</a> <br>
+							 </td>
+							 <td width="270">
+								<a id="words">把鼠标放在文字链接上，就会出现相应的说明信息.</a>
+							 </td>
+						 </tr>
+					 </table>
+				 </td>
+			</tr>
+		</table>
+		<script>
+			 var description = new Array();
+			 description[0] = "<font color=blue>niit高质量计算机品牌教育机构</font>";
+			 description[1] = "<font color=green><i>享受政府学费补助,让您安心学习!</i></font>";
+			 description[2] = "<font color=red>6年时间累积向社会输送\"20000\"多名专业人才</font>";
+			 var words=document.getElementById("words");
+			 function niit(){
+			 	words.innerHTML= description[0];
+			 }
+			 function jky(){
+			 	words.innerHTML= description[2];
+			 }
+			 function jky02(){
+			 	words.innerHTML= description[1];
+			 }
+			 
+		 </script>
+	</body>
+</html>

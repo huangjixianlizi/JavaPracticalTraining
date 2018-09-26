@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>new document</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript">
+			window.onload = function() {
+				document.getElementById("table").style.background = "pink";
+				setInterval("highlight()",200);//添加定时器，使得新添加的数据也具有颜色变化效果
+			}
+			//隔行换色
+			function highlight() {
+				var tb = document.getElementById("table");
+				var tr = tb.getElementsByTagName("tr");
+				for ( var i = 0; i < tr.length; i++) {
+					tr[i].onmouseover = function() {
+						this.style.background = "red";
+					}
+					tr[i].onmouseout = function() {
+						this.style.background = "yellow";
+					}
+				}
+			}
+			//删除行操作
+			function deleteRow(obj) {
+				var tr = obj.parentNode.parentNode;
+				tr.parentNode.removeChild(tr);
+			}
+			//添加行操作
+			function addRow() {
+				var row1 = document.createElement("tr");
+		
+				var col1 = document.createElement("td");
+				col1.innerHTML = document.getElementById("xh").value;
+				var col2 = document.createElement("td");
+				col2.innerHTML = document.getElementById("name").value;
+				var col3 = document.createElement("td");
+				col3.innerHTML = "<a href='javascript:;' onclick='deleteRow(this)'>删除</a>"
+				row1.appendChild(col3);
+				row1.insertBefore(col2, col3);
+				row1.insertBefore(col1, col2);
+		
+				var tb = document.getElementById("table");
+				tb.appendChild(row1);
+				
+				document.getElementById("xh").value='';
+				document.getElementById("name").value='';
+			}
+		</script>
+	</head>
+	<body>
+		<table border="1" id="table" style="width: 50%">
+			<tr>
+				<th>学号</th>
+				<th>姓名</th>
+				<th>操作</th>
+			</tr>
+			<tr>
+				<td>niit001</td>
+				<td>zhangsan</td>
+				<td><a href="javascript:void(0);" onclick="deleteRow(this)">删除</a></td>
+			</tr>
+			<tr>
+				<td>niit002</td>
+				<td>lisi</td>
+				<td><a href="javascript:void(0);" onclick="deleteRow(this)">删除</a></td>
+			</tr>
+		</table>
+		<br />
+		<label>学号：<input type="text" size=20 id="xh" /></label>
+		<label>姓名：<input type="text" size=20 id="name" /></label>
+		<input type="button" value="添加一行数据" onclick="addRow()" />
+	
+	</body>
+</html>
