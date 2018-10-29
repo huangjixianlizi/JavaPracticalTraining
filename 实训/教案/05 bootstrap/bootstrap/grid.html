@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--为了确保适当的绘制和触屏缩放，需要在 <head> 之中添加 viewport 元数据标签 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- 引入css 相对、绝对、相对绝对路径 -->
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+		<!-- js - jQuery、bootstrap -->
+		<script type="text/javascript" src="jQuery/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js" ></script>
+		<title>栅格系统</title>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<!-- 栅格系统 - 系统会自动分为最多12列 -->
+		<div class="container">
+			<div class="row" >
+				<div class="col-md-3">
+					商品种类菜单					
+				</div>
+				<div class="col-md-7">
+					商品图片滚动					
+				</div>
+				<div class="col-md-2">
+					右侧小广告					
+				</div>
+			</div>			
+		</div>
+		
+		<!-- 结合不同的像数 显示不同栅格大小 -->
+		<div class="container">
+			<div class="row" >
+				<div class="col-xs-5 col-sm-3 col-md-3">
+					商品种类菜单					
+				</div>
+				<div class="col-xs-7 col-sm-7 col-md-7">
+					商品图片滚动					
+				</div>
+				<div class="col-sm-2 col-md-2">
+					右侧小广告					
+				</div>
+			</div>			
+		</div>
+		
+		<!-- 商品栅格 -->		
+		<div class="container">
+			<div class="row" >
+				<div class="col-xs-6 col-sm-4 col-md-2">
+					<img src="img/board2.jpg" class="img-rounded"/>
+					<div class="caption">
+				        <h4>5888.00</h4>
+				        <p>超级好用。。。。</p>
+				      </div>
+				</div>
+				<div class="col-xs-6 col-sm-4 col-md-2">
+					<img src="img/board2.jpg" class="img-circle"/>
+					5888.88<br>
+					加入购物车
+					立即购买
+				</div>
+				<div class="col-xs-6 col-sm-4 col-md-2">
+					<img src="img/board2.jpg" class="img-thumbnail"/>
+					5888.88<br>
+					加入购物车
+					立即购买
+				</div>
+				<div class="col-xs-6 col-sm-4 col-md-2">
+					<img src="img/board2.jpg" class="img-responsive"/>
+					5888.88<br>
+					加入购物车
+					立即购买
+				</div>
+				<div class="col-xs-6 col-sm-4 col-md-2">
+					<img src="img/board2.jpg"/>
+					5888.88<br>
+					加入购物车
+					立即购买
+				</div>
+				<div class="col-xs-6 col-sm-4 col-md-2">
+					<img src="img/board2.jpg"/>
+					5888.88<br>
+					加入购物车
+					立即购买
+				</div>
+			</div>			
+		</div>
+		
+		<div class="container">
+			<div class="row">
+				<!-- 设置在某一情况下 - 不显示该内容 -->
+				<div class="col-xs-12 hidden-sm col-md-4">
+					<img src="img/5bbf04e1N7868fa72.jpg" class="img-rounded"/>
+				</div>	
+				<div class="col-xs-12 col-sm-6 col-md-4">
+					家电馆<br>
+					<div class="row">
+						<div>
+							<img src="img/5bbf326fN50b1b331.jpg"/>
+						</div>
+					</div>
+					<div class="row">
+						<!-- row中 - 分为12列 -->
+						<div class="col-xs-6 col-sm-6 col-md-6">
+							<img src="img/5bbeb30aNb379911e.jpg"/>
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-6">
+							<img src="img/5bbf03ccN72beff0c.jpg"/>
+						</div>
+					</div>
+				</div>	
+				<div class="col-xs-12 col-sm-6 col-md-4">
+					我爱我家<br>
+					<div class="row">
+						<div>
+							<img src="img/1.jpg"/>
+						</div>
+					</div>
+					<div class="row">
+						<!-- row中 - 分为12列 -->
+						<div class="col-xs-6 col-sm-6 col-md-6">
+							<img src="img/2.jpg"/>
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-6">
+							<img src="img/3.jpg"/>
+						</div>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</body>
+</html>
